@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Wedding" Class="WeddingPlanningDataDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-9KPGMTV;Initial Catalog=Wedding;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="WeddingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Adminstrator" Member="Adminstrators">
+    <Type Name="Adminstrator">
+      <Column Name="ADM_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOGIN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Login_Detail_Adminstrator" Member="Login_Detail" ThisKey="LOGIN_ID" OtherKey="LOGIN_ID" Type="Login_Detail" IsForeignKey="true" />
+      <Association Name="Person_Adminstrator" Member="Person" ThisKey="P_ID" OtherKey="P_ID" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Client" Member="Clients">
+    <Type Name="Client">
+      <Column Name="CL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOGIN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Login_Detail_Client" Member="Login_Detail" ThisKey="LOGIN_ID" OtherKey="LOGIN_ID" Type="Login_Detail" IsForeignKey="true" />
+      <Association Name="Person_Client" Member="Person" ThisKey="P_ID" OtherKey="P_ID" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cutlery" Member="Cutleries">
+    <Type Name="Cutlery">
+      <Column Name="CUT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PL_DESIGN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PL_MATERIAL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Decor_Cutlery" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Decor" Member="Decors">
+    <Type Name="Decor">
+      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DEC_NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DEC_PRICE" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="DEC_MAKE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEC_COLOUR" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DEC_TYPE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DEC_IMAGE_PATH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Decor_Cutlery" Member="Cutleries" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Cutlery" />
+      <Association Name="Decor_Decor_Invoice" Member="Decor_Invoices" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor_Invoice" />
+      <Association Name="Decor_Flower_bouquet" Member="Flower_bouquets" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Flower_bouquet" />
+      <Association Name="Decor_Plate" Member="Plates" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Plate" />
+      <Association Name="Decor_Special" Member="Specials" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Special" />
+      <Association Name="Decor_Wedding_Welcome_Card" Member="Wedding_Welcome_Cards" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Wedding_Welcome_Card" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Decor_Invoice" Member="Decor_Invoices">
+    <Type Name="Decor_Invoice">
+      <Column Name="DEC_INV_DECORINVOICE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[DEC_INV_TOTAL COST]" Member="DEC_INV_TOTAL_COST" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Decor_Invoice_Venue_Decor_Invoice" Member="Venue_Decor_Invoices" ThisKey="DEC_INV_DECORINVOICE_ID" OtherKey="DEC_VN_INV_DECORINVOICE" Type="Venue_Decor_Invoice" />
+      <Association Name="Decor_Decor_Invoice" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Disc_Jockey" Member="Disc_Jockeys">
+    <Type Name="Disc_Jockey">
+      <Column Name="DJ_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DJ_STAGENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VNC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Venue_Contractor_Disc_Jockey" Member="Venue_Contractor" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Venue_Contractor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Flower_bouquet" Member="Flower_bouquets">
+    <Type Name="Flower_bouquet">
+      <Column Name="FB_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[FB_TYPE OF FLOWER]" Member="FB_TYPE_OF_FLOWER" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[FB_LIFE SPAN]" Member="FB_LIFE_SPAN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Decor_Flower_bouquet" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Login_Details" Member="Login_Details">
+    <Type Name="Login_Detail">
+      <Column Name="LOGIN_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[LOG_LOGIN USERNAME]" Member="LOG_LOGIN_USERNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[LOG_LOGIN PASSWORD]" Member="LOG_LOGIN_PASSWORD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Login_Detail_Adminstrator" Member="Adminstrators" ThisKey="LOGIN_ID" OtherKey="LOGIN_ID" Type="Adminstrator" />
+      <Association Name="Login_Detail_Client" Member="Clients" ThisKey="LOGIN_ID" OtherKey="LOGIN_ID" Type="Client" />
+      <Association Name="Login_Detail_Wedding_Planner" Member="Wedding_Planners" ThisKey="LOGIN_ID" OtherKey="LOGIN_ID" Type="Wedding_Planner" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_of_Ceremony" Member="Master_of_Ceremonies">
+    <Type Name="Master_of_Ceremony">
+      <Column Name="MC_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MC_STAGENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VNC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Venue_Contractor_Master_of_Ceremony" Member="Venue_Contractor" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Venue_Contractor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="P_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="P_NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="P_SURNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="[P_PHONE NUMBER]" Member="P_PHONE_NUMBER" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="[P_EMAIL ADDRESS]" Member="P_EMAIL_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[P_STREET ADDRESS]" Member="P_STREET_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="P_USERNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="P_PASSWORD" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Person_Adminstrator" Member="Adminstrators" ThisKey="P_ID" OtherKey="P_ID" Type="Adminstrator" />
+      <Association Name="Person_Client" Member="Clients" ThisKey="P_ID" OtherKey="P_ID" Type="Client" />
+      <Association Name="Person_Wedding_Planner" Member="Wedding_Planners" ThisKey="P_ID" OtherKey="P_ID" Type="Wedding_Planner" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Photographer" Member="Photographers">
+    <Type Name="Photographer">
+      <Column Name="PHO_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VNC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Venue_Contractor_Photographer" Member="Venue_Contractor" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Venue_Contractor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Plate" Member="Plates">
+    <Type Name="Plate">
+      <Column Name="PL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PL_DESIGN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PL_MATERIAL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PL_SHAPE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Decor_Plate" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Special" Member="Specials">
+    <Type Name="Special">
+      <Column Name="SPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[SPE_START DATE]" Member="SPE_START_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[SPE_END DATE]" Member="SPE_END_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[SPE_SHORT DESCRIPTION]" Member="SPE_SHORT_DESCRIPTION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[SPE_DISCOUNT PERCENTAGE]" Member="SPE_DISCOUNT_PERCENTAGE" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Decor_Special" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venue" Member="Venues">
+    <Type Name="Venue">
+      <Column Name="VN_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VN_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[VN_STREET ADDRESS]" Member="VN_STREET_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VN_CAPACITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VN_PRICE" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="VN_COORDINATES" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="VN_IMAGE_PATH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Venue_Venue_Booking_Schedule" Member="Venue_Booking_Schedules" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue_Booking_Schedule" />
+      <Association Name="Venue_Venue_Contractor" Member="Venue_Contractors" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue_Contractor" />
+      <Association Name="Venue_Venue_Decor_Invoice" Member="Venue_Decor_Invoices" ThisKey="VN_ID" OtherKey="DEC_VN_INV_VENUE" Type="Venue_Decor_Invoice" />
+      <Association Name="Venue_Venue_Decor_Invoice1" Member="Venue_Decor_Invoices1" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue_Decor_Invoice" />
+      <Association Name="Venue_Venue_Location_and_Contact_Detail" Member="Venue_Location_and_Contact_Details" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue_Location_and_Contact_Detail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venue_Booking_Schedule" Member="Venue_Booking_Schedules">
+    <Type Name="Venue_Booking_Schedule">
+      <Column Name="VBS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VBS_START_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VBS_END_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Venue_Venue_Booking_Schedule" Member="Venue" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venue_Contractor" Member="Venue_Contractors">
+    <Type Name="Venue_Contractor">
+      <Column Name="VNC_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VNC_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VNC_SURNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[VNC_EMAIL ADDRESS]" Member="VNC_EMAIL_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[VNC_PHONE NUMBER]" Member="VNC_PHONE_NUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VNC_RATE" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="VN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Venue_Contractor_Disc_Jockey" Member="Disc_Jockeys" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Disc_Jockey" />
+      <Association Name="Venue_Contractor_Master_of_Ceremony" Member="Master_of_Ceremonies" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Master_of_Ceremony" />
+      <Association Name="Venue_Contractor_Photographer" Member="Photographers" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Photographer" />
+      <Association Name="Venue_Contractor_Videoagrapher" Member="Videoagraphers" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Videoagrapher" />
+      <Association Name="Venue_Venue_Contractor" Member="Venue" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venue_Decor_Invoice" Member="Venue_Decor_Invoices">
+    <Type Name="Venue_Decor_Invoice">
+      <Column Name="DEC_VN_INV_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DEC_VN_INV_DECORINVOICE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEC_VN_INV_VENUE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Decor_Invoice_Venue_Decor_Invoice" Member="Decor_Invoice" ThisKey="DEC_VN_INV_DECORINVOICE" OtherKey="DEC_INV_DECORINVOICE_ID" Type="Decor_Invoice" IsForeignKey="true" />
+      <Association Name="Venue_Venue_Decor_Invoice" Member="Venue" ThisKey="DEC_VN_INV_VENUE" OtherKey="VN_ID" Type="Venue" IsForeignKey="true" />
+      <Association Name="Venue_Venue_Decor_Invoice1" Member="Venue1" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venue_Location_and_Contact_Details" Member="Venue_Location_and_Contact_Details">
+    <Type Name="Venue_Location_and_Contact_Detail">
+      <Column Name="LOC_LOCATION_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[LOC_STREET ADDRESS]" Member="LOC_STREET_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOC_PROVINCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[LOC_GPS COORDINATES]" Member="LOC_GPS_COORDINATES" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="[LOC_PHONE NUMBER]" Member="LOC_PHONE_NUMBER" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="[LOC_EMAIL ADDRESS]" Member="LOC_EMAIL_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Venue_Venue_Location_and_Contact_Detail" Member="Venue" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Videoagrapher" Member="Videoagraphers">
+    <Type Name="Videoagrapher">
+      <Column Name="VID_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VNC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Venue_Contractor_Videoagrapher" Member="Venue_Contractor" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Venue_Contractor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wedding_Planner" Member="Wedding_Planners">
+    <Type Name="Wedding_Planner">
+      <Column Name="WP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WP_HISTORYDESCRIPTION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOGIN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Wedding_Planner_Wedding_Planner_Working_Location" Member="Wedding_Planner_Working_Locations" ThisKey="WP_ID" OtherKey="WP_ID" Type="Wedding_Planner_Working_Location" />
+      <Association Name="Login_Detail_Wedding_Planner" Member="Login_Detail" ThisKey="LOGIN_ID" OtherKey="LOGIN_ID" Type="Login_Detail" IsForeignKey="true" />
+      <Association Name="Person_Wedding_Planner" Member="Person" ThisKey="P_ID" OtherKey="P_ID" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wedding_Planner_Working_Location" Member="Wedding_Planner_Working_Locations">
+    <Type Name="Wedding_Planner_Working_Location">
+      <Column Name="WPWL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WPWL_PROVINCE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="WP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Wedding_Planner_Wedding_Planner_Working_Location" Member="Wedding_Planner" ThisKey="WP_ID" OtherKey="WP_ID" Type="Wedding_Planner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wedding_Welcome_Card" Member="Wedding_Welcome_Cards">
+    <Type Name="Wedding_Welcome_Card">
+      <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[PC_TYPE OF MATERIAL]" Member="PC_TYPE_OF_MATERIAL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PC_PATTERN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Decor_Wedding_Welcome_Card" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

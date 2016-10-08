@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.ServiceModel.Web;
+using System.Text;
+
+
+namespace Service
+{
+    
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
+    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
+    public class Service1 : IService1
+    {
+
+        private WeddingPlanningDataDataContext db = new WeddingPlanningDataDataContext();
+        public string GetData(int value)
+        {
+            return string.Format("You entered: {0}", value);
+        }
+
+        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        {
+            if (composite == null)
+            {
+                throw new ArgumentNullException("composite");
+            }
+            if (composite.BoolValue)
+            {
+                composite.StringValue += "Suffix";
+            }
+            return composite;
+        }
+
+        
+        public List<Person> GetPerson()
+        {
+           
+            var query = from s in db.Persons
+                        select s;
+            if(query != null)
+            {
+                return query.ToList();
+            }
+         
+                return null;
+            
+           
+        }
+
+        public List<Wedding_Planner> GetAllWeddingPlanners()
+        {
+
+            var query = from s in db.Wedding_Planners
+                        select s;
+            if(query != null)
+            {
+                return query.ToList();
+            }
+
+                return null;
+        }
+
+        public string Test()
+        {
+            Person p = new Person();
+            p.P_NAME = "Holly";
+
+            var query = (from s in db.Persons select s).First();
+
+            if(query != null)
+            {
+                return ((Person)query).P_STREET_ADDRESS;
+            }
+
+            return p.P_NAME;
+
+
+
+
+        }
+    }
+}   
