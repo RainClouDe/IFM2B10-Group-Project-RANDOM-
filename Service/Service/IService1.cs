@@ -29,6 +29,9 @@ namespace Service
 
         [OperationContract]
         string Test();
+
+        [OperationContract]
+        List<Venue> GetAllVenues();
     }
    
   
