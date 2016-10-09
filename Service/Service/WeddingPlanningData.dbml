@@ -202,25 +202,6 @@
       <Association Name="Venue_Contractor_Videoagrapher" Member="Venue_Contractor" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Venue_Contractor" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Wedding_Planner" Member="Wedding_Planners">
-    <Type Name="Wedding_Planner">
-      <Column Name="WP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="WP_HISTORYDESCRIPTION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LOGIN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Wedding_Planner_Wedding_Planner_Working_Location" Member="Wedding_Planner_Working_Locations" ThisKey="WP_ID" OtherKey="WP_ID" Type="Wedding_Planner_Working_Location" />
-      <Association Name="Login_Detail_Wedding_Planner" Member="Login_Detail" ThisKey="LOGIN_ID" OtherKey="LOGIN_ID" Type="Login_Detail" IsForeignKey="true" />
-      <Association Name="Person_Wedding_Planner" Member="Person" ThisKey="P_ID" OtherKey="P_ID" Type="Person" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Wedding_Planner_Working_Location" Member="Wedding_Planner_Working_Locations">
-    <Type Name="Wedding_Planner_Working_Location">
-      <Column Name="WPWL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="WPWL_PROVINCE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="WP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Wedding_Planner_Wedding_Planner_Working_Location" Member="Wedding_Planner" ThisKey="WP_ID" OtherKey="WP_ID" Type="Wedding_Planner" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Wedding_Welcome_Card" Member="Wedding_Welcome_Cards">
     <Type Name="Wedding_Welcome_Card">
       <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -228,6 +209,26 @@
       <Column Name="PC_PATTERN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Decor_Wedding_Welcome_Card" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wedding_Planner" Member="Wedding_Planners">
+    <Type Name="Wedding_Planner">
+      <Column Name="WP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WP_HISTORYDESCRIPTION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="P_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LOGIN_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WP_IMAGELOCATION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Wedding_Planner_WP_Working_Location" Member="WP_Working_Locations" ThisKey="WP_ID" OtherKey="WP_ID" Type="WP_Working_Location" />
+      <Association Name="Login_Detail_Wedding_Planner" Member="Login_Detail" ThisKey="LOGIN_ID" OtherKey="LOGIN_ID" Type="Login_Detail" IsForeignKey="true" />
+      <Association Name="Person_Wedding_Planner" Member="Person" ThisKey="P_ID" OtherKey="P_ID" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WP_Working_Location" Member="WP_Working_Locations">
+    <Type Name="WP_Working_Location">
+      <Column Name="WPWL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WPWL_PROVINCE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="WP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Wedding_Planner_WP_Working_Location" Member="Wedding_Planner" ThisKey="WP_ID" OtherKey="WP_ID" Type="Wedding_Planner" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

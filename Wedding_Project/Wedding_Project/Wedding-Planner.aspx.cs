@@ -31,26 +31,23 @@ namespace Wedding_Project
         {
 
             ServiceReference1.Service1Client proxy = new ServiceReference1.Service1Client();
-            ServiceReference1.Person[] x;
-            //var test = proxy.Test();
-            //GridView1.DataSource = proxy.GetPerson();
-            //GridView1.DataBind();
-            string test = proxy.Test();
-            x = proxy.GetPerson();
-            //MessageBox.show(this, test.P_NAME);
-            Testdiv.InnerHtml = x[0].P_EMAIL_ADDRESS;
-            
+            ServiceReference1.Wedding_Planner[] weddingplannerlist;
+         
+ 
 
-
-            //MessageBox.show(this, "is this working?");
-
-            //list = proxy.GetPerson("Ivan").ToList();
-            // MessageBox.show(this, GetPerson.GetLe);
-
-            for (int i = 0;i < 1;i++)
+            weddingplannerlist = proxy.GetAllWeddingPlanners();
+        
+            for (int i = 0; i < weddingplannerlist.Length; i++)
             {
-               // MessageBox.show(this, GetPerson[i].P_NAME);
+                
+                Testdiv.InnerHtml = "<IMG SRC='App_Media\\Wedding_Planner\\Test.jpg'/>";
+                MessageBox.show(this, weddingplannerlist[i].WP_IMAGELOCATION);
+                Testdiv.InnerHtml = "<br>" + weddingplannerlist[i].WP_HISTORYDESCRIPTION;
+               
+
             }
+          
+   
            
         }
     }

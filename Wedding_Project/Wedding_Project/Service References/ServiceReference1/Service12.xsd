@@ -85,9 +85,10 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="WP_ID" type="xs:int" />
       <xs:element minOccurs="0" name="WP_HISTORYDESCRIPTION" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="P_ID" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="LOGIN_ID" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="Wedding_Planner_Working_Locations" nillable="true" type="tns:ArrayOfWedding_Planner_Working_Location">
+      <xs:element minOccurs="0" name="P_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LOGIN_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="WP_IMAGELOCATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WP_Working_Locations" nillable="true" type="tns:ArrayOfWP_Working_Location">
         <xs:annotation>
           <xs:appinfo>
             <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
@@ -97,18 +98,219 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Wedding_Planner" nillable="true" type="tns:Wedding_Planner" />
-  <xs:complexType name="ArrayOfWedding_Planner_Working_Location">
+  <xs:complexType name="ArrayOfWP_Working_Location">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Wedding_Planner_Working_Location" nillable="true" type="tns:Wedding_Planner_Working_Location" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WP_Working_Location" nillable="true" type="tns:WP_Working_Location" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfWedding_Planner_Working_Location" nillable="true" type="tns:ArrayOfWedding_Planner_Working_Location" />
-  <xs:complexType name="Wedding_Planner_Working_Location">
+  <xs:element name="ArrayOfWP_Working_Location" nillable="true" type="tns:ArrayOfWP_Working_Location" />
+  <xs:complexType name="WP_Working_Location">
     <xs:sequence>
       <xs:element minOccurs="0" name="WPWL_ID" type="xs:int" />
       <xs:element minOccurs="0" name="WPWL_PROVINCE" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WP_ID" nillable="true" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Wedding_Planner_Working_Location" nillable="true" type="tns:Wedding_Planner_Working_Location" />
+  <xs:element name="WP_Working_Location" nillable="true" type="tns:WP_Working_Location" />
+  <xs:complexType name="ArrayOfVenue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Venue" nillable="true" type="tns:Venue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVenue" nillable="true" type="tns:ArrayOfVenue" />
+  <xs:complexType name="Venue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VN_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VN_STREET_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VN_CAPACITY" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VN_PRICE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VN_COORDINATES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VN_IMAGE_PATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Venue_Booking_Schedules" nillable="true" type="tns:ArrayOfVenue_Booking_Schedule">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Venue_Contractors" nillable="true" type="tns:ArrayOfVenue_Contractor">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Venue_Decor_Invoices" nillable="true" type="tns:ArrayOfVenue_Decor_Invoice">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Venue_Decor_Invoices1" nillable="true" type="tns:ArrayOfVenue_Decor_Invoice">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Venue_Location_and_Contact_Details" nillable="true" type="tns:ArrayOfVenue_Location_and_Contact_Detail">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Venue" nillable="true" type="tns:Venue" />
+  <xs:complexType name="ArrayOfVenue_Booking_Schedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Venue_Booking_Schedule" nillable="true" type="tns:Venue_Booking_Schedule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVenue_Booking_Schedule" nillable="true" type="tns:ArrayOfVenue_Booking_Schedule" />
+  <xs:complexType name="Venue_Booking_Schedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VBS_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VBS_START_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VBS_END_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VN_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Venue_Booking_Schedule" nillable="true" type="tns:Venue_Booking_Schedule" />
+  <xs:complexType name="ArrayOfVenue_Contractor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Venue_Contractor" nillable="true" type="tns:Venue_Contractor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVenue_Contractor" nillable="true" type="tns:ArrayOfVenue_Contractor" />
+  <xs:complexType name="Venue_Contractor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VNC_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VNC_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VNC_SURNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VNC_EMAIL_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VNC_PHONE_NUMBER" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VNC_RATE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VN_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Disc_Jockeys" nillable="true" type="tns:ArrayOfDisc_Jockey">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Master_of_Ceremonies" nillable="true" type="tns:ArrayOfMaster_of_Ceremony">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Photographers" nillable="true" type="tns:ArrayOfPhotographer">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Videoagraphers" nillable="true" type="tns:ArrayOfVideoagrapher">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Venue_Contractor" nillable="true" type="tns:Venue_Contractor" />
+  <xs:complexType name="ArrayOfDisc_Jockey">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Disc_Jockey" nillable="true" type="tns:Disc_Jockey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDisc_Jockey" nillable="true" type="tns:ArrayOfDisc_Jockey" />
+  <xs:complexType name="Disc_Jockey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DJ_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DJ_STAGENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VNC_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Disc_Jockey" nillable="true" type="tns:Disc_Jockey" />
+  <xs:complexType name="ArrayOfMaster_of_Ceremony">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Master_of_Ceremony" nillable="true" type="tns:Master_of_Ceremony" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaster_of_Ceremony" nillable="true" type="tns:ArrayOfMaster_of_Ceremony" />
+  <xs:complexType name="Master_of_Ceremony">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MC_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MC_STAGENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VNC_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Master_of_Ceremony" nillable="true" type="tns:Master_of_Ceremony" />
+  <xs:complexType name="ArrayOfPhotographer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Photographer" nillable="true" type="tns:Photographer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhotographer" nillable="true" type="tns:ArrayOfPhotographer" />
+  <xs:complexType name="Photographer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PHO_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VNC_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Photographer" nillable="true" type="tns:Photographer" />
+  <xs:complexType name="ArrayOfVideoagrapher">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Videoagrapher" nillable="true" type="tns:Videoagrapher" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVideoagrapher" nillable="true" type="tns:ArrayOfVideoagrapher" />
+  <xs:complexType name="Videoagrapher">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VID_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VNC_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Videoagrapher" nillable="true" type="tns:Videoagrapher" />
+  <xs:complexType name="ArrayOfVenue_Decor_Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Venue_Decor_Invoice" nillable="true" type="tns:Venue_Decor_Invoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVenue_Decor_Invoice" nillable="true" type="tns:ArrayOfVenue_Decor_Invoice" />
+  <xs:complexType name="Venue_Decor_Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEC_VN_INV_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DEC_VN_INV_DECORINVOICE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DEC_VN_INV_VENUE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VN_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Venue_Decor_Invoice" nillable="true" type="tns:Venue_Decor_Invoice" />
+  <xs:complexType name="ArrayOfVenue_Location_and_Contact_Detail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Venue_Location_and_Contact_Detail" nillable="true" type="tns:Venue_Location_and_Contact_Detail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVenue_Location_and_Contact_Detail" nillable="true" type="tns:ArrayOfVenue_Location_and_Contact_Detail" />
+  <xs:complexType name="Venue_Location_and_Contact_Detail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LOC_LOCATION_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LOC_STREET_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOC_PROVINCE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOC_GPS_COORDINATES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOC_PHONE_NUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOC_EMAIL_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VN_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Venue_Location_and_Contact_Detail" nillable="true" type="tns:Venue_Location_and_Contact_Detail" />
 </xs:schema>
