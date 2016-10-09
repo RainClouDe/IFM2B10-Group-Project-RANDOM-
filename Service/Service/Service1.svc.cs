@@ -64,6 +64,21 @@ namespace Service
                 return null;
         }
 
+        public List<Venue> GetAllVenues()
+        {
+
+            var query = from s in db.Venues
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+
+
         public string Test()
         {
             Person p = new Person();

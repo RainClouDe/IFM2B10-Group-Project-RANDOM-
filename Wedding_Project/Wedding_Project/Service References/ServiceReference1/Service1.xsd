@@ -65,4 +65,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllVenues">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllVenuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Service" minOccurs="0" name="GetAllVenuesResult" nillable="true" type="q5:ArrayOfVenue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

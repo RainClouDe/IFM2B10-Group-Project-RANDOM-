@@ -88,15 +88,15 @@ namespace Service
     partial void InsertVideoagrapher(Videoagrapher instance);
     partial void UpdateVideoagrapher(Videoagrapher instance);
     partial void DeleteVideoagrapher(Videoagrapher instance);
-    partial void InsertWedding_Planner(Wedding_Planner instance);
-    partial void UpdateWedding_Planner(Wedding_Planner instance);
-    partial void DeleteWedding_Planner(Wedding_Planner instance);
-    partial void InsertWedding_Planner_Working_Location(Wedding_Planner_Working_Location instance);
-    partial void UpdateWedding_Planner_Working_Location(Wedding_Planner_Working_Location instance);
-    partial void DeleteWedding_Planner_Working_Location(Wedding_Planner_Working_Location instance);
     partial void InsertWedding_Welcome_Card(Wedding_Welcome_Card instance);
     partial void UpdateWedding_Welcome_Card(Wedding_Welcome_Card instance);
     partial void DeleteWedding_Welcome_Card(Wedding_Welcome_Card instance);
+    partial void InsertWedding_Planner(Wedding_Planner instance);
+    partial void UpdateWedding_Planner(Wedding_Planner instance);
+    partial void DeleteWedding_Planner(Wedding_Planner instance);
+    partial void InsertWP_Working_Location(WP_Working_Location instance);
+    partial void UpdateWP_Working_Location(WP_Working_Location instance);
+    partial void DeleteWP_Working_Location(WP_Working_Location instance);
     #endregion
 		
 		public WeddingPlanningDataDataContext() : 
@@ -281,6 +281,14 @@ namespace Service
 			}
 		}
 		
+		public System.Data.Linq.Table<Wedding_Welcome_Card> Wedding_Welcome_Cards
+		{
+			get
+			{
+				return this.GetTable<Wedding_Welcome_Card>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Wedding_Planner> Wedding_Planners
 		{
 			get
@@ -289,19 +297,11 @@ namespace Service
 			}
 		}
 		
-		public System.Data.Linq.Table<Wedding_Planner_Working_Location> Wedding_Planner_Working_Locations
+		public System.Data.Linq.Table<WP_Working_Location> WP_Working_Locations
 		{
 			get
 			{
-				return this.GetTable<Wedding_Planner_Working_Location>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Wedding_Welcome_Card> Wedding_Welcome_Cards
-		{
-			get
-			{
-				return this.GetTable<Wedding_Welcome_Card>();
+				return this.GetTable<WP_Working_Location>();
 			}
 		}
 	}
@@ -5023,456 +5023,6 @@ namespace Service
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Wedding_Planner")]
-	[global::System.Runtime.Serialization.DataContractAttribute()]
-	public partial class Wedding_Planner : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _WP_ID;
-		
-		private string _WP_HISTORYDESCRIPTION;
-		
-		private System.Nullable<int> _P_ID;
-		
-		private System.Nullable<int> _LOGIN_ID;
-		
-		private EntitySet<Wedding_Planner_Working_Location> _Wedding_Planner_Working_Locations;
-		
-		private EntityRef<Login_Detail> _Login_Detail;
-		
-		private EntityRef<Person> _Person;
-		
-		private bool serializing;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnWP_IDChanging(int value);
-    partial void OnWP_IDChanged();
-    partial void OnWP_HISTORYDESCRIPTIONChanging(string value);
-    partial void OnWP_HISTORYDESCRIPTIONChanged();
-    partial void OnP_IDChanging(System.Nullable<int> value);
-    partial void OnP_IDChanged();
-    partial void OnLOGIN_IDChanging(System.Nullable<int> value);
-    partial void OnLOGIN_IDChanged();
-    #endregion
-		
-		public Wedding_Planner()
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WP_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int WP_ID
-		{
-			get
-			{
-				return this._WP_ID;
-			}
-			set
-			{
-				if ((this._WP_ID != value))
-				{
-					this.OnWP_IDChanging(value);
-					this.SendPropertyChanging();
-					this._WP_ID = value;
-					this.SendPropertyChanged("WP_ID");
-					this.OnWP_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WP_HISTORYDESCRIPTION", DbType="VarChar(100)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public string WP_HISTORYDESCRIPTION
-		{
-			get
-			{
-				return this._WP_HISTORYDESCRIPTION;
-			}
-			set
-			{
-				if ((this._WP_HISTORYDESCRIPTION != value))
-				{
-					this.OnWP_HISTORYDESCRIPTIONChanging(value);
-					this.SendPropertyChanging();
-					this._WP_HISTORYDESCRIPTION = value;
-					this.SendPropertyChanged("WP_HISTORYDESCRIPTION");
-					this.OnWP_HISTORYDESCRIPTIONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_ID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public System.Nullable<int> P_ID
-		{
-			get
-			{
-				return this._P_ID;
-			}
-			set
-			{
-				if ((this._P_ID != value))
-				{
-					if (this._Person.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnP_IDChanging(value);
-					this.SendPropertyChanging();
-					this._P_ID = value;
-					this.SendPropertyChanged("P_ID");
-					this.OnP_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOGIN_ID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-		public System.Nullable<int> LOGIN_ID
-		{
-			get
-			{
-				return this._LOGIN_ID;
-			}
-			set
-			{
-				if ((this._LOGIN_ID != value))
-				{
-					if (this._Login_Detail.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnLOGIN_IDChanging(value);
-					this.SendPropertyChanging();
-					this._LOGIN_ID = value;
-					this.SendPropertyChanged("LOGIN_ID");
-					this.OnLOGIN_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Wedding_Planner_Wedding_Planner_Working_Location", Storage="_Wedding_Planner_Working_Locations", ThisKey="WP_ID", OtherKey="WP_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5, EmitDefaultValue=false)]
-		public EntitySet<Wedding_Planner_Working_Location> Wedding_Planner_Working_Locations
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Wedding_Planner_Working_Locations.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Wedding_Planner_Working_Locations;
-			}
-			set
-			{
-				this._Wedding_Planner_Working_Locations.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_Detail_Wedding_Planner", Storage="_Login_Detail", ThisKey="LOGIN_ID", OtherKey="LOGIN_ID", IsForeignKey=true)]
-		public Login_Detail Login_Detail
-		{
-			get
-			{
-				return this._Login_Detail.Entity;
-			}
-			set
-			{
-				Login_Detail previousValue = this._Login_Detail.Entity;
-				if (((previousValue != value) 
-							|| (this._Login_Detail.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Login_Detail.Entity = null;
-						previousValue.Wedding_Planners.Remove(this);
-					}
-					this._Login_Detail.Entity = value;
-					if ((value != null))
-					{
-						value.Wedding_Planners.Add(this);
-						this._LOGIN_ID = value.LOGIN_ID;
-					}
-					else
-					{
-						this._LOGIN_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Login_Detail");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Person_Wedding_Planner", Storage="_Person", ThisKey="P_ID", OtherKey="P_ID", IsForeignKey=true)]
-		public Person Person
-		{
-			get
-			{
-				return this._Person.Entity;
-			}
-			set
-			{
-				Person previousValue = this._Person.Entity;
-				if (((previousValue != value) 
-							|| (this._Person.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Person.Entity = null;
-						previousValue.Wedding_Planners.Remove(this);
-					}
-					this._Person.Entity = value;
-					if ((value != null))
-					{
-						value.Wedding_Planners.Add(this);
-						this._P_ID = value.P_ID;
-					}
-					else
-					{
-						this._P_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Person");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Wedding_Planner_Working_Locations(Wedding_Planner_Working_Location entity)
-		{
-			this.SendPropertyChanging();
-			entity.Wedding_Planner = this;
-		}
-		
-		private void detach_Wedding_Planner_Working_Locations(Wedding_Planner_Working_Location entity)
-		{
-			this.SendPropertyChanging();
-			entity.Wedding_Planner = null;
-		}
-		
-		private void Initialize()
-		{
-			this._Wedding_Planner_Working_Locations = new EntitySet<Wedding_Planner_Working_Location>(new Action<Wedding_Planner_Working_Location>(this.attach_Wedding_Planner_Working_Locations), new Action<Wedding_Planner_Working_Location>(this.detach_Wedding_Planner_Working_Locations));
-			this._Login_Detail = default(EntityRef<Login_Detail>);
-			this._Person = default(EntityRef<Person>);
-			OnCreated();
-		}
-		
-		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnDeserializing(StreamingContext context)
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Runtime.Serialization.OnSerializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnSerializing(StreamingContext context)
-		{
-			this.serializing = true;
-		}
-		
-		[global::System.Runtime.Serialization.OnSerializedAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnSerialized(StreamingContext context)
-		{
-			this.serializing = false;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Wedding_Planner_Working_Location")]
-	[global::System.Runtime.Serialization.DataContractAttribute()]
-	public partial class Wedding_Planner_Working_Location : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _WPWL_ID;
-		
-		private string _WPWL_PROVINCE;
-		
-		private System.Nullable<int> _WP_ID;
-		
-		private EntityRef<Wedding_Planner> _Wedding_Planner;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnWPWL_IDChanging(int value);
-    partial void OnWPWL_IDChanged();
-    partial void OnWPWL_PROVINCEChanging(string value);
-    partial void OnWPWL_PROVINCEChanged();
-    partial void OnWP_IDChanging(System.Nullable<int> value);
-    partial void OnWP_IDChanged();
-    #endregion
-		
-		public Wedding_Planner_Working_Location()
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WPWL_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int WPWL_ID
-		{
-			get
-			{
-				return this._WPWL_ID;
-			}
-			set
-			{
-				if ((this._WPWL_ID != value))
-				{
-					this.OnWPWL_IDChanging(value);
-					this.SendPropertyChanging();
-					this._WPWL_ID = value;
-					this.SendPropertyChanged("WPWL_ID");
-					this.OnWPWL_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WPWL_PROVINCE", DbType="VarChar(30)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public string WPWL_PROVINCE
-		{
-			get
-			{
-				return this._WPWL_PROVINCE;
-			}
-			set
-			{
-				if ((this._WPWL_PROVINCE != value))
-				{
-					this.OnWPWL_PROVINCEChanging(value);
-					this.SendPropertyChanging();
-					this._WPWL_PROVINCE = value;
-					this.SendPropertyChanged("WPWL_PROVINCE");
-					this.OnWPWL_PROVINCEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WP_ID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public System.Nullable<int> WP_ID
-		{
-			get
-			{
-				return this._WP_ID;
-			}
-			set
-			{
-				if ((this._WP_ID != value))
-				{
-					if (this._Wedding_Planner.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnWP_IDChanging(value);
-					this.SendPropertyChanging();
-					this._WP_ID = value;
-					this.SendPropertyChanged("WP_ID");
-					this.OnWP_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Wedding_Planner_Wedding_Planner_Working_Location", Storage="_Wedding_Planner", ThisKey="WP_ID", OtherKey="WP_ID", IsForeignKey=true)]
-		public Wedding_Planner Wedding_Planner
-		{
-			get
-			{
-				return this._Wedding_Planner.Entity;
-			}
-			set
-			{
-				Wedding_Planner previousValue = this._Wedding_Planner.Entity;
-				if (((previousValue != value) 
-							|| (this._Wedding_Planner.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Wedding_Planner.Entity = null;
-						previousValue.Wedding_Planner_Working_Locations.Remove(this);
-					}
-					this._Wedding_Planner.Entity = value;
-					if ((value != null))
-					{
-						value.Wedding_Planner_Working_Locations.Add(this);
-						this._WP_ID = value.WP_ID;
-					}
-					else
-					{
-						this._WP_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Wedding_Planner");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void Initialize()
-		{
-			this._Wedding_Planner = default(EntityRef<Wedding_Planner>);
-			OnCreated();
-		}
-		
-		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnDeserializing(StreamingContext context)
-		{
-			this.Initialize();
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Wedding_Welcome_Card")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Wedding_Welcome_Card : INotifyPropertyChanging, INotifyPropertyChanged
@@ -5654,6 +5204,481 @@ namespace Service
 		private void Initialize()
 		{
 			this._Decor = default(EntityRef<Decor>);
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Wedding_Planner")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Wedding_Planner : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _WP_ID;
+		
+		private string _WP_HISTORYDESCRIPTION;
+		
+		private int _P_ID;
+		
+		private int _LOGIN_ID;
+		
+		private string _WP_IMAGELOCATION;
+		
+		private EntitySet<WP_Working_Location> _WP_Working_Locations;
+		
+		private EntityRef<Login_Detail> _Login_Detail;
+		
+		private EntityRef<Person> _Person;
+		
+		private bool serializing;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnWP_IDChanging(int value);
+    partial void OnWP_IDChanged();
+    partial void OnWP_HISTORYDESCRIPTIONChanging(string value);
+    partial void OnWP_HISTORYDESCRIPTIONChanged();
+    partial void OnP_IDChanging(int value);
+    partial void OnP_IDChanged();
+    partial void OnLOGIN_IDChanging(int value);
+    partial void OnLOGIN_IDChanged();
+    partial void OnWP_IMAGELOCATIONChanging(string value);
+    partial void OnWP_IMAGELOCATIONChanged();
+    #endregion
+		
+		public Wedding_Planner()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WP_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int WP_ID
+		{
+			get
+			{
+				return this._WP_ID;
+			}
+			set
+			{
+				if ((this._WP_ID != value))
+				{
+					this.OnWP_IDChanging(value);
+					this.SendPropertyChanging();
+					this._WP_ID = value;
+					this.SendPropertyChanged("WP_ID");
+					this.OnWP_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WP_HISTORYDESCRIPTION", DbType="VarChar(100)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public string WP_HISTORYDESCRIPTION
+		{
+			get
+			{
+				return this._WP_HISTORYDESCRIPTION;
+			}
+			set
+			{
+				if ((this._WP_HISTORYDESCRIPTION != value))
+				{
+					this.OnWP_HISTORYDESCRIPTIONChanging(value);
+					this.SendPropertyChanging();
+					this._WP_HISTORYDESCRIPTION = value;
+					this.SendPropertyChanged("WP_HISTORYDESCRIPTION");
+					this.OnWP_HISTORYDESCRIPTIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_ID", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public int P_ID
+		{
+			get
+			{
+				return this._P_ID;
+			}
+			set
+			{
+				if ((this._P_ID != value))
+				{
+					if (this._Person.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnP_IDChanging(value);
+					this.SendPropertyChanging();
+					this._P_ID = value;
+					this.SendPropertyChanged("P_ID");
+					this.OnP_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOGIN_ID", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public int LOGIN_ID
+		{
+			get
+			{
+				return this._LOGIN_ID;
+			}
+			set
+			{
+				if ((this._LOGIN_ID != value))
+				{
+					if (this._Login_Detail.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLOGIN_IDChanging(value);
+					this.SendPropertyChanging();
+					this._LOGIN_ID = value;
+					this.SendPropertyChanged("LOGIN_ID");
+					this.OnLOGIN_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WP_IMAGELOCATION", DbType="VarChar(50)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public string WP_IMAGELOCATION
+		{
+			get
+			{
+				return this._WP_IMAGELOCATION;
+			}
+			set
+			{
+				if ((this._WP_IMAGELOCATION != value))
+				{
+					this.OnWP_IMAGELOCATIONChanging(value);
+					this.SendPropertyChanging();
+					this._WP_IMAGELOCATION = value;
+					this.SendPropertyChanged("WP_IMAGELOCATION");
+					this.OnWP_IMAGELOCATIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Wedding_Planner_WP_Working_Location", Storage="_WP_Working_Locations", ThisKey="WP_ID", OtherKey="WP_ID")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6, EmitDefaultValue=false)]
+		public EntitySet<WP_Working_Location> WP_Working_Locations
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._WP_Working_Locations.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._WP_Working_Locations;
+			}
+			set
+			{
+				this._WP_Working_Locations.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_Detail_Wedding_Planner", Storage="_Login_Detail", ThisKey="LOGIN_ID", OtherKey="LOGIN_ID", IsForeignKey=true)]
+		public Login_Detail Login_Detail
+		{
+			get
+			{
+				return this._Login_Detail.Entity;
+			}
+			set
+			{
+				Login_Detail previousValue = this._Login_Detail.Entity;
+				if (((previousValue != value) 
+							|| (this._Login_Detail.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Login_Detail.Entity = null;
+						previousValue.Wedding_Planners.Remove(this);
+					}
+					this._Login_Detail.Entity = value;
+					if ((value != null))
+					{
+						value.Wedding_Planners.Add(this);
+						this._LOGIN_ID = value.LOGIN_ID;
+					}
+					else
+					{
+						this._LOGIN_ID = default(int);
+					}
+					this.SendPropertyChanged("Login_Detail");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Person_Wedding_Planner", Storage="_Person", ThisKey="P_ID", OtherKey="P_ID", IsForeignKey=true)]
+		public Person Person
+		{
+			get
+			{
+				return this._Person.Entity;
+			}
+			set
+			{
+				Person previousValue = this._Person.Entity;
+				if (((previousValue != value) 
+							|| (this._Person.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Person.Entity = null;
+						previousValue.Wedding_Planners.Remove(this);
+					}
+					this._Person.Entity = value;
+					if ((value != null))
+					{
+						value.Wedding_Planners.Add(this);
+						this._P_ID = value.P_ID;
+					}
+					else
+					{
+						this._P_ID = default(int);
+					}
+					this.SendPropertyChanged("Person");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_WP_Working_Locations(WP_Working_Location entity)
+		{
+			this.SendPropertyChanging();
+			entity.Wedding_Planner = this;
+		}
+		
+		private void detach_WP_Working_Locations(WP_Working_Location entity)
+		{
+			this.SendPropertyChanging();
+			entity.Wedding_Planner = null;
+		}
+		
+		private void Initialize()
+		{
+			this._WP_Working_Locations = new EntitySet<WP_Working_Location>(new Action<WP_Working_Location>(this.attach_WP_Working_Locations), new Action<WP_Working_Location>(this.detach_WP_Working_Locations));
+			this._Login_Detail = default(EntityRef<Login_Detail>);
+			this._Person = default(EntityRef<Person>);
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerializing(StreamingContext context)
+		{
+			this.serializing = true;
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializedAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerialized(StreamingContext context)
+		{
+			this.serializing = false;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.WP_Working_Location")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class WP_Working_Location : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _WPWL_ID;
+		
+		private string _WPWL_PROVINCE;
+		
+		private System.Nullable<int> _WP_ID;
+		
+		private EntityRef<Wedding_Planner> _Wedding_Planner;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnWPWL_IDChanging(int value);
+    partial void OnWPWL_IDChanged();
+    partial void OnWPWL_PROVINCEChanging(string value);
+    partial void OnWPWL_PROVINCEChanged();
+    partial void OnWP_IDChanging(System.Nullable<int> value);
+    partial void OnWP_IDChanged();
+    #endregion
+		
+		public WP_Working_Location()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WPWL_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int WPWL_ID
+		{
+			get
+			{
+				return this._WPWL_ID;
+			}
+			set
+			{
+				if ((this._WPWL_ID != value))
+				{
+					this.OnWPWL_IDChanging(value);
+					this.SendPropertyChanging();
+					this._WPWL_ID = value;
+					this.SendPropertyChanged("WPWL_ID");
+					this.OnWPWL_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WPWL_PROVINCE", DbType="VarChar(30)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public string WPWL_PROVINCE
+		{
+			get
+			{
+				return this._WPWL_PROVINCE;
+			}
+			set
+			{
+				if ((this._WPWL_PROVINCE != value))
+				{
+					this.OnWPWL_PROVINCEChanging(value);
+					this.SendPropertyChanging();
+					this._WPWL_PROVINCE = value;
+					this.SendPropertyChanged("WPWL_PROVINCE");
+					this.OnWPWL_PROVINCEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WP_ID", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public System.Nullable<int> WP_ID
+		{
+			get
+			{
+				return this._WP_ID;
+			}
+			set
+			{
+				if ((this._WP_ID != value))
+				{
+					if (this._Wedding_Planner.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnWP_IDChanging(value);
+					this.SendPropertyChanging();
+					this._WP_ID = value;
+					this.SendPropertyChanged("WP_ID");
+					this.OnWP_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Wedding_Planner_WP_Working_Location", Storage="_Wedding_Planner", ThisKey="WP_ID", OtherKey="WP_ID", IsForeignKey=true)]
+		public Wedding_Planner Wedding_Planner
+		{
+			get
+			{
+				return this._Wedding_Planner.Entity;
+			}
+			set
+			{
+				Wedding_Planner previousValue = this._Wedding_Planner.Entity;
+				if (((previousValue != value) 
+							|| (this._Wedding_Planner.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Wedding_Planner.Entity = null;
+						previousValue.WP_Working_Locations.Remove(this);
+					}
+					this._Wedding_Planner.Entity = value;
+					if ((value != null))
+					{
+						value.WP_Working_Locations.Add(this);
+						this._WP_ID = value.WP_ID;
+					}
+					else
+					{
+						this._WP_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Wedding_Planner");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void Initialize()
+		{
+			this._Wedding_Planner = default(EntityRef<Wedding_Planner>);
 			OnCreated();
 		}
 		
