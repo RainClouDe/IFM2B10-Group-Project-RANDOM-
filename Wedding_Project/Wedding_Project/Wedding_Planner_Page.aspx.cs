@@ -31,15 +31,15 @@ namespace Wedding_Project
 
 
             weddingplannerlist = proxy.GetAllWeddingPlanners();
-
+            
             for (int i = 0; i < weddingplannerlist.Length; i++)
             {
 
-                Testdiv.InnerHtml = "<IMG SRC='App_Media\\Wedding_Planner\\Test.jpg'/>";
+                
                 MessageBox.show(this, weddingplannerlist[i].WP_IMAGELOCATION);
-                Testdiv.InnerHtml = "<br>" + weddingplannerlist[i].WP_HISTORYDESCRIPTION;
-
-
+                Testdiv.InnerHtml = weddingplannerlist[i].WP_HISTORYDESCRIPTION + "<br>";
+                Testdiv.InnerHtml += "<img src='App_Media/Wedding_Planner/"+weddingplannerlist[i].WP_IMAGELOCATION+"'>";
+                
             }
         }
     }
