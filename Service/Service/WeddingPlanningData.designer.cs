@@ -49,9 +49,6 @@ namespace Service
     partial void InsertDisc_Jockey(Disc_Jockey instance);
     partial void UpdateDisc_Jockey(Disc_Jockey instance);
     partial void DeleteDisc_Jockey(Disc_Jockey instance);
-    partial void InsertFlower_bouquet(Flower_bouquet instance);
-    partial void UpdateFlower_bouquet(Flower_bouquet instance);
-    partial void DeleteFlower_bouquet(Flower_bouquet instance);
     partial void InsertLogin_Detail(Login_Detail instance);
     partial void UpdateLogin_Detail(Login_Detail instance);
     partial void DeleteLogin_Detail(Login_Detail instance);
@@ -97,6 +94,9 @@ namespace Service
     partial void InsertWP_Working_Location(WP_Working_Location instance);
     partial void UpdateWP_Working_Location(WP_Working_Location instance);
     partial void DeleteWP_Working_Location(WP_Working_Location instance);
+    partial void InsertFlower_bouquet(Flower_bouquet instance);
+    partial void UpdateFlower_bouquet(Flower_bouquet instance);
+    partial void DeleteFlower_bouquet(Flower_bouquet instance);
     #endregion
 		
 		public WeddingPlanningDataDataContext() : 
@@ -174,14 +174,6 @@ namespace Service
 			get
 			{
 				return this.GetTable<Disc_Jockey>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Flower_bouquet> Flower_bouquets
-		{
-			get
-			{
-				return this.GetTable<Flower_bouquet>();
 			}
 		}
 		
@@ -302,6 +294,14 @@ namespace Service
 			get
 			{
 				return this.GetTable<WP_Working_Location>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Flower_bouquet> Flower_bouquets
+		{
+			get
+			{
+				return this.GetTable<Flower_bouquet>();
 			}
 		}
 	}
@@ -939,13 +939,13 @@ namespace Service
 		
 		private EntitySet<Decor_Invoice> _Decor_Invoices;
 		
-		private EntitySet<Flower_bouquet> _Flower_bouquets;
-		
 		private EntitySet<Plate> _Plates;
 		
 		private EntitySet<Special> _Specials;
 		
 		private EntitySet<Wedding_Welcome_Card> _Wedding_Welcome_Cards;
+		
+		private EntitySet<Flower_bouquet> _Flower_bouquets;
 		
 		private bool serializing;
 		
@@ -1159,27 +1159,8 @@ namespace Service
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Flower_bouquet", Storage="_Flower_bouquets", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10, EmitDefaultValue=false)]
-		public EntitySet<Flower_bouquet> Flower_bouquets
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Flower_bouquets.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Flower_bouquets;
-			}
-			set
-			{
-				this._Flower_bouquets.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Plate", Storage="_Plates", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10, EmitDefaultValue=false)]
 		public EntitySet<Plate> Plates
 		{
 			get
@@ -1198,7 +1179,7 @@ namespace Service
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Special", Storage="_Specials", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11, EmitDefaultValue=false)]
 		public EntitySet<Special> Specials
 		{
 			get
@@ -1217,7 +1198,7 @@ namespace Service
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Wedding_Welcome_Card", Storage="_Wedding_Welcome_Cards", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=13, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12, EmitDefaultValue=false)]
 		public EntitySet<Wedding_Welcome_Card> Wedding_Welcome_Cards
 		{
 			get
@@ -1232,6 +1213,25 @@ namespace Service
 			set
 			{
 				this._Wedding_Welcome_Cards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Flower_bouquet", Storage="_Flower_bouquets", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=13, EmitDefaultValue=false)]
+		public EntitySet<Flower_bouquet> Flower_bouquets
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Flower_bouquets.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Flower_bouquets;
+			}
+			set
+			{
+				this._Flower_bouquets.Assign(value);
 			}
 		}
 		
@@ -1279,18 +1279,6 @@ namespace Service
 			entity.Decor = null;
 		}
 		
-		private void attach_Flower_bouquets(Flower_bouquet entity)
-		{
-			this.SendPropertyChanging();
-			entity.Decor = this;
-		}
-		
-		private void detach_Flower_bouquets(Flower_bouquet entity)
-		{
-			this.SendPropertyChanging();
-			entity.Decor = null;
-		}
-		
 		private void attach_Plates(Plate entity)
 		{
 			this.SendPropertyChanging();
@@ -1327,14 +1315,26 @@ namespace Service
 			entity.Decor = null;
 		}
 		
+		private void attach_Flower_bouquets(Flower_bouquet entity)
+		{
+			this.SendPropertyChanging();
+			entity.Decor = this;
+		}
+		
+		private void detach_Flower_bouquets(Flower_bouquet entity)
+		{
+			this.SendPropertyChanging();
+			entity.Decor = null;
+		}
+		
 		private void Initialize()
 		{
 			this._Cutleries = new EntitySet<Cutlery>(new Action<Cutlery>(this.attach_Cutleries), new Action<Cutlery>(this.detach_Cutleries));
 			this._Decor_Invoices = new EntitySet<Decor_Invoice>(new Action<Decor_Invoice>(this.attach_Decor_Invoices), new Action<Decor_Invoice>(this.detach_Decor_Invoices));
-			this._Flower_bouquets = new EntitySet<Flower_bouquet>(new Action<Flower_bouquet>(this.attach_Flower_bouquets), new Action<Flower_bouquet>(this.detach_Flower_bouquets));
 			this._Plates = new EntitySet<Plate>(new Action<Plate>(this.attach_Plates), new Action<Plate>(this.detach_Plates));
 			this._Specials = new EntitySet<Special>(new Action<Special>(this.attach_Specials), new Action<Special>(this.detach_Specials));
 			this._Wedding_Welcome_Cards = new EntitySet<Wedding_Welcome_Card>(new Action<Wedding_Welcome_Card>(this.attach_Wedding_Welcome_Cards), new Action<Wedding_Welcome_Card>(this.detach_Wedding_Welcome_Cards));
+			this._Flower_bouquets = new EntitySet<Flower_bouquet>(new Action<Flower_bouquet>(this.attach_Flower_bouquets), new Action<Flower_bouquet>(this.detach_Flower_bouquets));
 			OnCreated();
 		}
 		
@@ -1733,198 +1733,6 @@ namespace Service
 		private void Initialize()
 		{
 			this._Venue_Contractor = default(EntityRef<Venue_Contractor>);
-			OnCreated();
-		}
-		
-		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnDeserializing(StreamingContext context)
-		{
-			this.Initialize();
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Flower_bouquet")]
-	[global::System.Runtime.Serialization.DataContractAttribute()]
-	public partial class Flower_bouquet : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _FB_ID;
-		
-		private System.Nullable<System.DateTime> _FB_TYPE_OF_FLOWER;
-		
-		private System.Nullable<System.DateTime> _FB_LIFE_SPAN;
-		
-		private System.Nullable<int> _DEC_ITEM_ID;
-		
-		private EntityRef<Decor> _Decor;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFB_IDChanging(int value);
-    partial void OnFB_IDChanged();
-    partial void OnFB_TYPE_OF_FLOWERChanging(System.Nullable<System.DateTime> value);
-    partial void OnFB_TYPE_OF_FLOWERChanged();
-    partial void OnFB_LIFE_SPANChanging(System.Nullable<System.DateTime> value);
-    partial void OnFB_LIFE_SPANChanged();
-    partial void OnDEC_ITEM_IDChanging(System.Nullable<int> value);
-    partial void OnDEC_ITEM_IDChanged();
-    #endregion
-		
-		public Flower_bouquet()
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FB_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int FB_ID
-		{
-			get
-			{
-				return this._FB_ID;
-			}
-			set
-			{
-				if ((this._FB_ID != value))
-				{
-					this.OnFB_IDChanging(value);
-					this.SendPropertyChanging();
-					this._FB_ID = value;
-					this.SendPropertyChanged("FB_ID");
-					this.OnFB_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[FB_TYPE OF FLOWER]", Storage="_FB_TYPE_OF_FLOWER", DbType="Date")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public System.Nullable<System.DateTime> FB_TYPE_OF_FLOWER
-		{
-			get
-			{
-				return this._FB_TYPE_OF_FLOWER;
-			}
-			set
-			{
-				if ((this._FB_TYPE_OF_FLOWER != value))
-				{
-					this.OnFB_TYPE_OF_FLOWERChanging(value);
-					this.SendPropertyChanging();
-					this._FB_TYPE_OF_FLOWER = value;
-					this.SendPropertyChanged("FB_TYPE_OF_FLOWER");
-					this.OnFB_TYPE_OF_FLOWERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[FB_LIFE SPAN]", Storage="_FB_LIFE_SPAN", DbType="Date")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public System.Nullable<System.DateTime> FB_LIFE_SPAN
-		{
-			get
-			{
-				return this._FB_LIFE_SPAN;
-			}
-			set
-			{
-				if ((this._FB_LIFE_SPAN != value))
-				{
-					this.OnFB_LIFE_SPANChanging(value);
-					this.SendPropertyChanging();
-					this._FB_LIFE_SPAN = value;
-					this.SendPropertyChanged("FB_LIFE_SPAN");
-					this.OnFB_LIFE_SPANChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEC_ITEM_ID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-		public System.Nullable<int> DEC_ITEM_ID
-		{
-			get
-			{
-				return this._DEC_ITEM_ID;
-			}
-			set
-			{
-				if ((this._DEC_ITEM_ID != value))
-				{
-					if (this._Decor.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnDEC_ITEM_IDChanging(value);
-					this.SendPropertyChanging();
-					this._DEC_ITEM_ID = value;
-					this.SendPropertyChanged("DEC_ITEM_ID");
-					this.OnDEC_ITEM_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Flower_bouquet", Storage="_Decor", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID", IsForeignKey=true)]
-		public Decor Decor
-		{
-			get
-			{
-				return this._Decor.Entity;
-			}
-			set
-			{
-				Decor previousValue = this._Decor.Entity;
-				if (((previousValue != value) 
-							|| (this._Decor.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Decor.Entity = null;
-						previousValue.Flower_bouquets.Remove(this);
-					}
-					this._Decor.Entity = value;
-					if ((value != null))
-					{
-						value.Flower_bouquets.Add(this);
-						this._DEC_ITEM_ID = value.DEC_ITEM_ID;
-					}
-					else
-					{
-						this._DEC_ITEM_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Decor");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void Initialize()
-		{
-			this._Decor = default(EntityRef<Decor>);
 			OnCreated();
 		}
 		
@@ -5679,6 +5487,198 @@ namespace Service
 		private void Initialize()
 		{
 			this._Wedding_Planner = default(EntityRef<Wedding_Planner>);
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Flower_bouquet")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Flower_bouquet : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _FB_ID;
+		
+		private string _FB_TYPE_OF_FLOWER;
+		
+		private System.Nullable<int> _FB_LIFE_SPAN;
+		
+		private System.Nullable<int> _DEC_ITEM_ID;
+		
+		private EntityRef<Decor> _Decor;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFB_IDChanging(int value);
+    partial void OnFB_IDChanged();
+    partial void OnFB_TYPE_OF_FLOWERChanging(string value);
+    partial void OnFB_TYPE_OF_FLOWERChanged();
+    partial void OnFB_LIFE_SPANChanging(System.Nullable<int> value);
+    partial void OnFB_LIFE_SPANChanged();
+    partial void OnDEC_ITEM_IDChanging(System.Nullable<int> value);
+    partial void OnDEC_ITEM_IDChanged();
+    #endregion
+		
+		public Flower_bouquet()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FB_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int FB_ID
+		{
+			get
+			{
+				return this._FB_ID;
+			}
+			set
+			{
+				if ((this._FB_ID != value))
+				{
+					this.OnFB_IDChanging(value);
+					this.SendPropertyChanging();
+					this._FB_ID = value;
+					this.SendPropertyChanged("FB_ID");
+					this.OnFB_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[FB_TYPE OF FLOWER]", Storage="_FB_TYPE_OF_FLOWER", DbType="VarChar(50)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public string FB_TYPE_OF_FLOWER
+		{
+			get
+			{
+				return this._FB_TYPE_OF_FLOWER;
+			}
+			set
+			{
+				if ((this._FB_TYPE_OF_FLOWER != value))
+				{
+					this.OnFB_TYPE_OF_FLOWERChanging(value);
+					this.SendPropertyChanging();
+					this._FB_TYPE_OF_FLOWER = value;
+					this.SendPropertyChanged("FB_TYPE_OF_FLOWER");
+					this.OnFB_TYPE_OF_FLOWERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[FB_LIFE SPAN]", Storage="_FB_LIFE_SPAN", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public System.Nullable<int> FB_LIFE_SPAN
+		{
+			get
+			{
+				return this._FB_LIFE_SPAN;
+			}
+			set
+			{
+				if ((this._FB_LIFE_SPAN != value))
+				{
+					this.OnFB_LIFE_SPANChanging(value);
+					this.SendPropertyChanging();
+					this._FB_LIFE_SPAN = value;
+					this.SendPropertyChanged("FB_LIFE_SPAN");
+					this.OnFB_LIFE_SPANChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEC_ITEM_ID", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public System.Nullable<int> DEC_ITEM_ID
+		{
+			get
+			{
+				return this._DEC_ITEM_ID;
+			}
+			set
+			{
+				if ((this._DEC_ITEM_ID != value))
+				{
+					if (this._Decor.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDEC_ITEM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._DEC_ITEM_ID = value;
+					this.SendPropertyChanged("DEC_ITEM_ID");
+					this.OnDEC_ITEM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Flower_bouquet", Storage="_Decor", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID", IsForeignKey=true)]
+		public Decor Decor
+		{
+			get
+			{
+				return this._Decor.Entity;
+			}
+			set
+			{
+				Decor previousValue = this._Decor.Entity;
+				if (((previousValue != value) 
+							|| (this._Decor.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Decor.Entity = null;
+						previousValue.Flower_bouquets.Remove(this);
+					}
+					this._Decor.Entity = value;
+					if ((value != null))
+					{
+						value.Flower_bouquets.Add(this);
+						this._DEC_ITEM_ID = value.DEC_ITEM_ID;
+					}
+					else
+					{
+						this._DEC_ITEM_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Decor");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void Initialize()
+		{
+			this._Decor = default(EntityRef<Decor>);
 			OnCreated();
 		}
 		

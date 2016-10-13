@@ -43,6 +43,18 @@
   <wsdl:message name="IService1_GetAllVenues_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllVenuesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetAllDecorItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDecorItems" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllDecorItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDecorItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllFlowers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFlowers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllFlowers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFlowersResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -67,6 +79,14 @@
     <wsdl:operation name="GetAllVenues">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllVenues" message="tns:IService1_GetAllVenues_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllVenuesResponse" message="tns:IService1_GetAllVenues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDecorItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllDecorItems" message="tns:IService1_GetAllDecorItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllDecorItemsResponse" message="tns:IService1_GetAllDecorItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFlowers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllFlowers" message="tns:IService1_GetAllFlowers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllFlowersResponse" message="tns:IService1_GetAllFlowers_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -118,6 +138,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllVenues">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAllVenues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDecorItems">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllDecorItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFlowers">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllFlowers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
