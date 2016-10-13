@@ -1664,6 +1664,849 @@ namespace Wedding_Project.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Decor", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Decor : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DEC_ITEM_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DEC_NAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> DEC_PRICEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DEC_MAKEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DEC_COLOURField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DEC_TYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DEC_IMAGE_PATHField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Cutlery[] CutleriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Decor_Invoice[] Decor_InvoicesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Plate[] PlatesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Special[] SpecialsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Wedding_Welcome_Card[] Wedding_Welcome_CardsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Flower_bouquet[] Flower_bouquetsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DEC_ITEM_ID {
+            get {
+                return this.DEC_ITEM_IDField;
+            }
+            set {
+                if ((this.DEC_ITEM_IDField.Equals(value) != true)) {
+                    this.DEC_ITEM_IDField = value;
+                    this.RaisePropertyChanged("DEC_ITEM_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DEC_NAME {
+            get {
+                return this.DEC_NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DEC_NAMEField, value) != true)) {
+                    this.DEC_NAMEField = value;
+                    this.RaisePropertyChanged("DEC_NAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> DEC_PRICE {
+            get {
+                return this.DEC_PRICEField;
+            }
+            set {
+                if ((this.DEC_PRICEField.Equals(value) != true)) {
+                    this.DEC_PRICEField = value;
+                    this.RaisePropertyChanged("DEC_PRICE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string DEC_MAKE {
+            get {
+                return this.DEC_MAKEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DEC_MAKEField, value) != true)) {
+                    this.DEC_MAKEField = value;
+                    this.RaisePropertyChanged("DEC_MAKE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string DEC_COLOUR {
+            get {
+                return this.DEC_COLOURField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DEC_COLOURField, value) != true)) {
+                    this.DEC_COLOURField = value;
+                    this.RaisePropertyChanged("DEC_COLOUR");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public string DEC_TYPE {
+            get {
+                return this.DEC_TYPEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DEC_TYPEField, value) != true)) {
+                    this.DEC_TYPEField = value;
+                    this.RaisePropertyChanged("DEC_TYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public string DEC_IMAGE_PATH {
+            get {
+                return this.DEC_IMAGE_PATHField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DEC_IMAGE_PATHField, value) != true)) {
+                    this.DEC_IMAGE_PATHField = value;
+                    this.RaisePropertyChanged("DEC_IMAGE_PATH");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public Wedding_Project.ServiceReference1.Cutlery[] Cutleries {
+            get {
+                return this.CutleriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CutleriesField, value) != true)) {
+                    this.CutleriesField = value;
+                    this.RaisePropertyChanged("Cutleries");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public Wedding_Project.ServiceReference1.Decor_Invoice[] Decor_Invoices {
+            get {
+                return this.Decor_InvoicesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Decor_InvoicesField, value) != true)) {
+                    this.Decor_InvoicesField = value;
+                    this.RaisePropertyChanged("Decor_Invoices");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public Wedding_Project.ServiceReference1.Plate[] Plates {
+            get {
+                return this.PlatesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlatesField, value) != true)) {
+                    this.PlatesField = value;
+                    this.RaisePropertyChanged("Plates");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public Wedding_Project.ServiceReference1.Special[] Specials {
+            get {
+                return this.SpecialsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpecialsField, value) != true)) {
+                    this.SpecialsField = value;
+                    this.RaisePropertyChanged("Specials");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public Wedding_Project.ServiceReference1.Wedding_Welcome_Card[] Wedding_Welcome_Cards {
+            get {
+                return this.Wedding_Welcome_CardsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Wedding_Welcome_CardsField, value) != true)) {
+                    this.Wedding_Welcome_CardsField = value;
+                    this.RaisePropertyChanged("Wedding_Welcome_Cards");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public Wedding_Project.ServiceReference1.Flower_bouquet[] Flower_bouquets {
+            get {
+                return this.Flower_bouquetsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Flower_bouquetsField, value) != true)) {
+                    this.Flower_bouquetsField = value;
+                    this.RaisePropertyChanged("Flower_bouquets");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cutlery", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Cutlery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CUT_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PL_DESIGNField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PL_MATERIALField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DEC_ITEM_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CUT_ID {
+            get {
+                return this.CUT_IDField;
+            }
+            set {
+                if ((this.CUT_IDField.Equals(value) != true)) {
+                    this.CUT_IDField = value;
+                    this.RaisePropertyChanged("CUT_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PL_DESIGN {
+            get {
+                return this.PL_DESIGNField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PL_DESIGNField, value) != true)) {
+                    this.PL_DESIGNField = value;
+                    this.RaisePropertyChanged("PL_DESIGN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PL_MATERIAL {
+            get {
+                return this.PL_MATERIALField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PL_MATERIALField, value) != true)) {
+                    this.PL_MATERIALField = value;
+                    this.RaisePropertyChanged("PL_MATERIAL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.Nullable<int> DEC_ITEM_ID {
+            get {
+                return this.DEC_ITEM_IDField;
+            }
+            set {
+                if ((this.DEC_ITEM_IDField.Equals(value) != true)) {
+                    this.DEC_ITEM_IDField = value;
+                    this.RaisePropertyChanged("DEC_ITEM_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Decor_Invoice", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Decor_Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DEC_INV_DECORINVOICE_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> DEC_INV_TOTAL_COSTField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DEC_ITEM_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Venue_Decor_Invoice[] Venue_Decor_InvoicesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DEC_INV_DECORINVOICE_ID {
+            get {
+                return this.DEC_INV_DECORINVOICE_IDField;
+            }
+            set {
+                if ((this.DEC_INV_DECORINVOICE_IDField.Equals(value) != true)) {
+                    this.DEC_INV_DECORINVOICE_IDField = value;
+                    this.RaisePropertyChanged("DEC_INV_DECORINVOICE_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> DEC_INV_TOTAL_COST {
+            get {
+                return this.DEC_INV_TOTAL_COSTField;
+            }
+            set {
+                if ((this.DEC_INV_TOTAL_COSTField.Equals(value) != true)) {
+                    this.DEC_INV_TOTAL_COSTField = value;
+                    this.RaisePropertyChanged("DEC_INV_TOTAL_COST");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> DEC_ITEM_ID {
+            get {
+                return this.DEC_ITEM_IDField;
+            }
+            set {
+                if ((this.DEC_ITEM_IDField.Equals(value) != true)) {
+                    this.DEC_ITEM_IDField = value;
+                    this.RaisePropertyChanged("DEC_ITEM_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public Wedding_Project.ServiceReference1.Venue_Decor_Invoice[] Venue_Decor_Invoices {
+            get {
+                return this.Venue_Decor_InvoicesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Venue_Decor_InvoicesField, value) != true)) {
+                    this.Venue_Decor_InvoicesField = value;
+                    this.RaisePropertyChanged("Venue_Decor_Invoices");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Plate", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Plate : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PL_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PL_DESIGNField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PL_MATERIALField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PL_SHAPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DEC_ITEM_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PL_ID {
+            get {
+                return this.PL_IDField;
+            }
+            set {
+                if ((this.PL_IDField.Equals(value) != true)) {
+                    this.PL_IDField = value;
+                    this.RaisePropertyChanged("PL_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public string PL_DESIGN {
+            get {
+                return this.PL_DESIGNField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PL_DESIGNField, value) != true)) {
+                    this.PL_DESIGNField = value;
+                    this.RaisePropertyChanged("PL_DESIGN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string PL_MATERIAL {
+            get {
+                return this.PL_MATERIALField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PL_MATERIALField, value) != true)) {
+                    this.PL_MATERIALField = value;
+                    this.RaisePropertyChanged("PL_MATERIAL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string PL_SHAPE {
+            get {
+                return this.PL_SHAPEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PL_SHAPEField, value) != true)) {
+                    this.PL_SHAPEField = value;
+                    this.RaisePropertyChanged("PL_SHAPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.Nullable<int> DEC_ITEM_ID {
+            get {
+                return this.DEC_ITEM_IDField;
+            }
+            set {
+                if ((this.DEC_ITEM_IDField.Equals(value) != true)) {
+                    this.DEC_ITEM_IDField = value;
+                    this.RaisePropertyChanged("DEC_ITEM_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Special", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Special : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SPE_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> SPE_START_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> SPE_END_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SPE_SHORT_DESCRIPTIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> SPE_DISCOUNT_PERCENTAGEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DEC_ITEM_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SPE_ID {
+            get {
+                return this.SPE_IDField;
+            }
+            set {
+                if ((this.SPE_IDField.Equals(value) != true)) {
+                    this.SPE_IDField = value;
+                    this.RaisePropertyChanged("SPE_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> SPE_START_DATE {
+            get {
+                return this.SPE_START_DATEField;
+            }
+            set {
+                if ((this.SPE_START_DATEField.Equals(value) != true)) {
+                    this.SPE_START_DATEField = value;
+                    this.RaisePropertyChanged("SPE_START_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.Nullable<System.DateTime> SPE_END_DATE {
+            get {
+                return this.SPE_END_DATEField;
+            }
+            set {
+                if ((this.SPE_END_DATEField.Equals(value) != true)) {
+                    this.SPE_END_DATEField = value;
+                    this.RaisePropertyChanged("SPE_END_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string SPE_SHORT_DESCRIPTION {
+            get {
+                return this.SPE_SHORT_DESCRIPTIONField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SPE_SHORT_DESCRIPTIONField, value) != true)) {
+                    this.SPE_SHORT_DESCRIPTIONField = value;
+                    this.RaisePropertyChanged("SPE_SHORT_DESCRIPTION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.Nullable<decimal> SPE_DISCOUNT_PERCENTAGE {
+            get {
+                return this.SPE_DISCOUNT_PERCENTAGEField;
+            }
+            set {
+                if ((this.SPE_DISCOUNT_PERCENTAGEField.Equals(value) != true)) {
+                    this.SPE_DISCOUNT_PERCENTAGEField = value;
+                    this.RaisePropertyChanged("SPE_DISCOUNT_PERCENTAGE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<int> DEC_ITEM_ID {
+            get {
+                return this.DEC_ITEM_IDField;
+            }
+            set {
+                if ((this.DEC_ITEM_IDField.Equals(value) != true)) {
+                    this.DEC_ITEM_IDField = value;
+                    this.RaisePropertyChanged("DEC_ITEM_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Wedding_Welcome_Card", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Wedding_Welcome_Card : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PC_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PC_TYPE_OF_MATERIALField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PC_PATTERNField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DEC_ITEM_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PC_ID {
+            get {
+                return this.PC_IDField;
+            }
+            set {
+                if ((this.PC_IDField.Equals(value) != true)) {
+                    this.PC_IDField = value;
+                    this.RaisePropertyChanged("PC_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PC_TYPE_OF_MATERIAL {
+            get {
+                return this.PC_TYPE_OF_MATERIALField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PC_TYPE_OF_MATERIALField, value) != true)) {
+                    this.PC_TYPE_OF_MATERIALField = value;
+                    this.RaisePropertyChanged("PC_TYPE_OF_MATERIAL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string PC_PATTERN {
+            get {
+                return this.PC_PATTERNField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PC_PATTERNField, value) != true)) {
+                    this.PC_PATTERNField = value;
+                    this.RaisePropertyChanged("PC_PATTERN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.Nullable<int> DEC_ITEM_ID {
+            get {
+                return this.DEC_ITEM_IDField;
+            }
+            set {
+                if ((this.DEC_ITEM_IDField.Equals(value) != true)) {
+                    this.DEC_ITEM_IDField = value;
+                    this.RaisePropertyChanged("DEC_ITEM_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Flower_bouquet", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Flower_bouquet : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FB_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FB_TYPE_OF_FLOWERField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> FB_LIFE_SPANField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DEC_ITEM_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FB_ID {
+            get {
+                return this.FB_IDField;
+            }
+            set {
+                if ((this.FB_IDField.Equals(value) != true)) {
+                    this.FB_IDField = value;
+                    this.RaisePropertyChanged("FB_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FB_TYPE_OF_FLOWER {
+            get {
+                return this.FB_TYPE_OF_FLOWERField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FB_TYPE_OF_FLOWERField, value) != true)) {
+                    this.FB_TYPE_OF_FLOWERField = value;
+                    this.RaisePropertyChanged("FB_TYPE_OF_FLOWER");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.Nullable<int> FB_LIFE_SPAN {
+            get {
+                return this.FB_LIFE_SPANField;
+            }
+            set {
+                if ((this.FB_LIFE_SPANField.Equals(value) != true)) {
+                    this.FB_LIFE_SPANField = value;
+                    this.RaisePropertyChanged("FB_LIFE_SPAN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.Nullable<int> DEC_ITEM_ID {
+            get {
+                return this.DEC_ITEM_IDField;
+            }
+            set {
+                if ((this.DEC_ITEM_IDField.Equals(value) != true)) {
+                    this.DEC_ITEM_IDField = value;
+                    this.RaisePropertyChanged("DEC_ITEM_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -1703,6 +2546,18 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllVenues", ReplyAction="http://tempuri.org/IService1/GetAllVenuesResponse")]
         System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue[]> GetAllVenuesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDecorItems", ReplyAction="http://tempuri.org/IService1/GetAllDecorItemsResponse")]
+        Wedding_Project.ServiceReference1.Decor[] GetAllDecorItems();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDecorItems", ReplyAction="http://tempuri.org/IService1/GetAllDecorItemsResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Decor[]> GetAllDecorItemsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllFlowers", ReplyAction="http://tempuri.org/IService1/GetAllFlowersResponse")]
+        Wedding_Project.ServiceReference1.Flower_bouquet[] GetAllFlowers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllFlowers", ReplyAction="http://tempuri.org/IService1/GetAllFlowersResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Flower_bouquet[]> GetAllFlowersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1778,6 +2633,22 @@ namespace Wedding_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue[]> GetAllVenuesAsync() {
             return base.Channel.GetAllVenuesAsync();
+        }
+        
+        public Wedding_Project.ServiceReference1.Decor[] GetAllDecorItems() {
+            return base.Channel.GetAllDecorItems();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Decor[]> GetAllDecorItemsAsync() {
+            return base.Channel.GetAllDecorItemsAsync();
+        }
+        
+        public Wedding_Project.ServiceReference1.Flower_bouquet[] GetAllFlowers() {
+            return base.Channel.GetAllFlowers();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Flower_bouquet[]> GetAllFlowersAsync() {
+            return base.Channel.GetAllFlowersAsync();
         }
     }
 }

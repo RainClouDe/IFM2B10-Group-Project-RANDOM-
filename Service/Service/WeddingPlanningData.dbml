@@ -38,10 +38,10 @@
       <Column Name="DEC_IMAGE_PATH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Decor_Cutlery" Member="Cutleries" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Cutlery" />
       <Association Name="Decor_Decor_Invoice" Member="Decor_Invoices" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor_Invoice" />
-      <Association Name="Decor_Flower_bouquet" Member="Flower_bouquets" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Flower_bouquet" />
       <Association Name="Decor_Plate" Member="Plates" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Plate" />
       <Association Name="Decor_Special" Member="Specials" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Special" />
       <Association Name="Decor_Wedding_Welcome_Card" Member="Wedding_Welcome_Cards" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Wedding_Welcome_Card" />
+      <Association Name="Decor_Flower_bouquet" Member="Flower_bouquets" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Flower_bouquet" />
     </Type>
   </Table>
   <Table Name="dbo.Decor_Invoice" Member="Decor_Invoices">
@@ -59,15 +59,6 @@
       <Column Name="DJ_STAGENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="VNC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Venue_Contractor_Disc_Jockey" Member="Venue_Contractor" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Venue_Contractor" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Flower_bouquet" Member="Flower_bouquets">
-    <Type Name="Flower_bouquet">
-      <Column Name="FB_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="[FB_TYPE OF FLOWER]" Member="FB_TYPE_OF_FLOWER" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="[FB_LIFE SPAN]" Member="FB_LIFE_SPAN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Decor_Flower_bouquet" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Login_Details" Member="Login_Details">
@@ -229,6 +220,15 @@
       <Column Name="WPWL_PROVINCE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="WP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Wedding_Planner_WP_Working_Location" Member="Wedding_Planner" ThisKey="WP_ID" OtherKey="WP_ID" Type="Wedding_Planner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Flower_bouquet" Member="Flower_bouquets">
+    <Type Name="Flower_bouquet">
+      <Column Name="FB_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[FB_TYPE OF FLOWER]" Member="FB_TYPE_OF_FLOWER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[FB_LIFE SPAN]" Member="FB_LIFE_SPAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Decor_Flower_bouquet" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

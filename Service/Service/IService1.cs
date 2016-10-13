@@ -32,6 +32,12 @@ namespace Service
 
         [OperationContract]
         List<Venue> GetAllVenues();
+
+        [OperationContract]
+        List<Decor> GetAllDecorItems();
+
+        [OperationContract]
+        List<Flower_bouquet> GetAllFlowers();
     }
    
   

@@ -313,4 +313,163 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Venue_Location_and_Contact_Detail" nillable="true" type="tns:Venue_Location_and_Contact_Detail" />
+  <xs:complexType name="ArrayOfDecor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Decor" nillable="true" type="tns:Decor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDecor" nillable="true" type="tns:ArrayOfDecor" />
+  <xs:complexType name="Decor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEC_ITEM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DEC_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEC_PRICE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DEC_MAKE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEC_COLOUR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEC_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEC_IMAGE_PATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cutleries" nillable="true" type="tns:ArrayOfCutlery">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Decor_Invoices" nillable="true" type="tns:ArrayOfDecor_Invoice">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Plates" nillable="true" type="tns:ArrayOfPlate">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Specials" nillable="true" type="tns:ArrayOfSpecial">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Wedding_Welcome_Cards" nillable="true" type="tns:ArrayOfWedding_Welcome_Card">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Flower_bouquets" nillable="true" type="tns:ArrayOfFlower_bouquet">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Decor" nillable="true" type="tns:Decor" />
+  <xs:complexType name="ArrayOfCutlery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cutlery" nillable="true" type="tns:Cutlery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCutlery" nillable="true" type="tns:ArrayOfCutlery" />
+  <xs:complexType name="Cutlery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CUT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_DESIGN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_MATERIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEC_ITEM_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cutlery" nillable="true" type="tns:Cutlery" />
+  <xs:complexType name="ArrayOfDecor_Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Decor_Invoice" nillable="true" type="tns:Decor_Invoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDecor_Invoice" nillable="true" type="tns:ArrayOfDecor_Invoice" />
+  <xs:complexType name="Decor_Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEC_INV_DECORINVOICE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DEC_INV_TOTAL_COST" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DEC_ITEM_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Venue_Decor_Invoices" nillable="true" type="tns:ArrayOfVenue_Decor_Invoice">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Decor_Invoice" nillable="true" type="tns:Decor_Invoice" />
+  <xs:complexType name="ArrayOfPlate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Plate" nillable="true" type="tns:Plate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlate" nillable="true" type="tns:ArrayOfPlate" />
+  <xs:complexType name="Plate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PL_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_DESIGN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_MATERIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_SHAPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEC_ITEM_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Plate" nillable="true" type="tns:Plate" />
+  <xs:complexType name="ArrayOfSpecial">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Special" nillable="true" type="tns:Special" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpecial" nillable="true" type="tns:ArrayOfSpecial" />
+  <xs:complexType name="Special">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SPE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="SPE_START_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SPE_END_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SPE_SHORT_DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPE_DISCOUNT_PERCENTAGE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DEC_ITEM_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Special" nillable="true" type="tns:Special" />
+  <xs:complexType name="ArrayOfWedding_Welcome_Card">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Wedding_Welcome_Card" nillable="true" type="tns:Wedding_Welcome_Card" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWedding_Welcome_Card" nillable="true" type="tns:ArrayOfWedding_Welcome_Card" />
+  <xs:complexType name="Wedding_Welcome_Card">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PC_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PC_TYPE_OF_MATERIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PC_PATTERN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEC_ITEM_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Wedding_Welcome_Card" nillable="true" type="tns:Wedding_Welcome_Card" />
+  <xs:complexType name="ArrayOfFlower_bouquet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Flower_bouquet" nillable="true" type="tns:Flower_bouquet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlower_bouquet" nillable="true" type="tns:ArrayOfFlower_bouquet" />
+  <xs:complexType name="Flower_bouquet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FB_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FB_TYPE_OF_FLOWER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FB_LIFE_SPAN" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DEC_ITEM_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Flower_bouquet" nillable="true" type="tns:Flower_bouquet" />
 </xs:schema>

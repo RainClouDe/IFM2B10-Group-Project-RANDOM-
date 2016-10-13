@@ -97,5 +97,29 @@ namespace Service
 
 
         }
+
+        public List<Decor> GetAllDecorItems()
+        {
+            var query = from s in db.Decors
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+        public List<Flower_bouquet> GetAllFlowers()
+        {
+            var query = from s in db.Flower_bouquets
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
     }
 }   
