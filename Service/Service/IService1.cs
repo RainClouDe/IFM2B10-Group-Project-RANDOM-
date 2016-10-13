@@ -38,6 +38,10 @@ namespace Service
 
         [OperationContract]
         List<Flower_bouquet> GetAllFlowers();
+
+        [OperationContract]
+        List<Cutlery> GetAllCutlery();
+
     }
    
   

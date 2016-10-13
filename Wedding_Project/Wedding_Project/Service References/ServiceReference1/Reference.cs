@@ -2558,6 +2558,12 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllFlowers", ReplyAction="http://tempuri.org/IService1/GetAllFlowersResponse")]
         System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Flower_bouquet[]> GetAllFlowersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllCutlery", ReplyAction="http://tempuri.org/IService1/GetAllCutleryResponse")]
+        Wedding_Project.ServiceReference1.Cutlery[] GetAllCutlery();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllCutlery", ReplyAction="http://tempuri.org/IService1/GetAllCutleryResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Cutlery[]> GetAllCutleryAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2649,6 +2655,14 @@ namespace Wedding_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Flower_bouquet[]> GetAllFlowersAsync() {
             return base.Channel.GetAllFlowersAsync();
+        }
+        
+        public Wedding_Project.ServiceReference1.Cutlery[] GetAllCutlery() {
+            return base.Channel.GetAllCutlery();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Cutlery[]> GetAllCutleryAsync() {
+            return base.Channel.GetAllCutleryAsync();
         }
     }
 }

@@ -97,12 +97,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Media\Tres Jolie.jpg" />
+    <Content Include="App_Media\Flower_Decor\White Rose.jpg" />
+    <Content Include="App_Media\Venue\Tres Jolie.jpg" />
     <Content Include="App_Media\Wedding_Planner\Test.jpg" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="Cutlery_Page.aspx" />
     <Content Include="Decor_Flower_Page.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="js\bootstrap.js" />
@@ -167,6 +169,9 @@
     <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Flower_bouquet.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Cutlery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web References\localhost\Service1.wsdl" />
     <None Include="Web References\localhost\Service1.xsd">
       <SubType>Designer</SubType>
@@ -191,6 +196,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cutlery_Page.aspx.cs">
+      <DependentUpon>Cutlery_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cutlery_Page.aspx.designer.cs">
+      <DependentUpon>Cutlery_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Decor_Flower_Page.aspx.cs">
       <DependentUpon>Decor_Flower_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -260,7 +272,7 @@
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Media\Venue\" />
+    <Folder Include="App_Media\Cutlery\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

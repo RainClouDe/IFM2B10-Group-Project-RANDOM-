@@ -121,5 +121,18 @@ namespace Service
 
             return null;
         }
+
+        public List<Cutlery> GetAllCutlery()
+        {
+            var query = from s in db.Cutleries
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
     }
 }   
