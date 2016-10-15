@@ -2564,6 +2564,12 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllCutlery", ReplyAction="http://tempuri.org/IService1/GetAllCutleryResponse")]
         System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Cutlery[]> GetAllCutleryAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Authentication", ReplyAction="http://tempuri.org/IService1/AuthenticationResponse")]
+        bool Authentication(string Username, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Authentication", ReplyAction="http://tempuri.org/IService1/AuthenticationResponse")]
+        System.Threading.Tasks.Task<bool> AuthenticationAsync(string Username, string Password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2663,6 +2669,14 @@ namespace Wedding_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Cutlery[]> GetAllCutleryAsync() {
             return base.Channel.GetAllCutleryAsync();
+        }
+        
+        public bool Authentication(string Username, string Password) {
+            return base.Channel.Authentication(Username, Password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AuthenticationAsync(string Username, string Password) {
+            return base.Channel.AuthenticationAsync(Username, Password);
         }
     }
 }

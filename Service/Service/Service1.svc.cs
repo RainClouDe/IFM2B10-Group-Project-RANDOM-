@@ -134,5 +134,18 @@ namespace Service
             return null;
         }
 
+        public Boolean Authentication(String Username, String Password)
+        {
+            var query = from s in db.Login_Details
+                        where s.LOG_LOGIN_USERNAME == Username && s.LOG_LOGIN_PASSWORD == Password select s;
+            if (query != null)
+            {
+                return true;
+            }
+
+            return false;
+
+
+            }
     }
 }   
