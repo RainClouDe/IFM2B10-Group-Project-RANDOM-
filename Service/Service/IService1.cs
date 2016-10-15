@@ -42,6 +42,9 @@ namespace Service
         [OperationContract]
         List<Cutlery> GetAllCutlery();
 
+        [OperationContract]
+        Boolean Authentication(String Username, String Password);
+
     }
    
   
