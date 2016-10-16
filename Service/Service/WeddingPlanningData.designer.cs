@@ -55,9 +55,6 @@ namespace Service
     partial void InsertMaster_of_Ceremony(Master_of_Ceremony instance);
     partial void UpdateMaster_of_Ceremony(Master_of_Ceremony instance);
     partial void DeleteMaster_of_Ceremony(Master_of_Ceremony instance);
-    partial void InsertPerson(Person instance);
-    partial void UpdatePerson(Person instance);
-    partial void DeletePerson(Person instance);
     partial void InsertPhotographer(Photographer instance);
     partial void UpdatePhotographer(Photographer instance);
     partial void DeletePhotographer(Photographer instance);
@@ -97,6 +94,9 @@ namespace Service
     partial void InsertFlower_bouquet(Flower_bouquet instance);
     partial void UpdateFlower_bouquet(Flower_bouquet instance);
     partial void DeleteFlower_bouquet(Flower_bouquet instance);
+    partial void InsertPerson(Person instance);
+    partial void UpdatePerson(Person instance);
+    partial void DeletePerson(Person instance);
     #endregion
 		
 		public WeddingPlanningDataDataContext() : 
@@ -190,14 +190,6 @@ namespace Service
 			get
 			{
 				return this.GetTable<Master_of_Ceremony>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Person> Persons
-		{
-			get
-			{
-				return this.GetTable<Person>();
 			}
 		}
 		
@@ -302,6 +294,14 @@ namespace Service
 			get
 			{
 				return this.GetTable<Flower_bouquet>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Person> Persons
+		{
+			get
+			{
+				return this.GetTable<Person>();
 			}
 		}
 	}
@@ -2152,375 +2152,6 @@ namespace Service
 		public void OnDeserializing(StreamingContext context)
 		{
 			this.Initialize();
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Person")]
-	[global::System.Runtime.Serialization.DataContractAttribute()]
-	public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _P_ID;
-		
-		private string _P_NAME;
-		
-		private string _P_SURNAME;
-		
-		private string _P_PHONE_NUMBER;
-		
-		private string _P_EMAIL_ADDRESS;
-		
-		private string _P_STREET_ADDRESS;
-		
-		private string _P_USERNAME;
-		
-		private string _P_PASSWORD;
-		
-		private EntitySet<Adminstrator> _Adminstrators;
-		
-		private EntitySet<Client> _Clients;
-		
-		private EntitySet<Wedding_Planner> _Wedding_Planners;
-		
-		private bool serializing;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnP_IDChanging(int value);
-    partial void OnP_IDChanged();
-    partial void OnP_NAMEChanging(string value);
-    partial void OnP_NAMEChanged();
-    partial void OnP_SURNAMEChanging(string value);
-    partial void OnP_SURNAMEChanged();
-    partial void OnP_PHONE_NUMBERChanging(string value);
-    partial void OnP_PHONE_NUMBERChanged();
-    partial void OnP_EMAIL_ADDRESSChanging(string value);
-    partial void OnP_EMAIL_ADDRESSChanged();
-    partial void OnP_STREET_ADDRESSChanging(string value);
-    partial void OnP_STREET_ADDRESSChanged();
-    partial void OnP_USERNAMEChanging(string value);
-    partial void OnP_USERNAMEChanged();
-    partial void OnP_PASSWORDChanging(string value);
-    partial void OnP_PASSWORDChanged();
-    #endregion
-		
-		public Person()
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int P_ID
-		{
-			get
-			{
-				return this._P_ID;
-			}
-			set
-			{
-				if ((this._P_ID != value))
-				{
-					this.OnP_IDChanging(value);
-					this.SendPropertyChanging();
-					this._P_ID = value;
-					this.SendPropertyChanged("P_ID");
-					this.OnP_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_NAME", DbType="VarChar(30)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public string P_NAME
-		{
-			get
-			{
-				return this._P_NAME;
-			}
-			set
-			{
-				if ((this._P_NAME != value))
-				{
-					this.OnP_NAMEChanging(value);
-					this.SendPropertyChanging();
-					this._P_NAME = value;
-					this.SendPropertyChanged("P_NAME");
-					this.OnP_NAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_SURNAME", DbType="VarChar(30)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public string P_SURNAME
-		{
-			get
-			{
-				return this._P_SURNAME;
-			}
-			set
-			{
-				if ((this._P_SURNAME != value))
-				{
-					this.OnP_SURNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._P_SURNAME = value;
-					this.SendPropertyChanged("P_SURNAME");
-					this.OnP_SURNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[P_PHONE NUMBER]", Storage="_P_PHONE_NUMBER", DbType="VarChar(12)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-		public string P_PHONE_NUMBER
-		{
-			get
-			{
-				return this._P_PHONE_NUMBER;
-			}
-			set
-			{
-				if ((this._P_PHONE_NUMBER != value))
-				{
-					this.OnP_PHONE_NUMBERChanging(value);
-					this.SendPropertyChanging();
-					this._P_PHONE_NUMBER = value;
-					this.SendPropertyChanged("P_PHONE_NUMBER");
-					this.OnP_PHONE_NUMBERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[P_EMAIL ADDRESS]", Storage="_P_EMAIL_ADDRESS", DbType="VarChar(50)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-		public string P_EMAIL_ADDRESS
-		{
-			get
-			{
-				return this._P_EMAIL_ADDRESS;
-			}
-			set
-			{
-				if ((this._P_EMAIL_ADDRESS != value))
-				{
-					this.OnP_EMAIL_ADDRESSChanging(value);
-					this.SendPropertyChanging();
-					this._P_EMAIL_ADDRESS = value;
-					this.SendPropertyChanged("P_EMAIL_ADDRESS");
-					this.OnP_EMAIL_ADDRESSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[P_STREET ADDRESS]", Storage="_P_STREET_ADDRESS", DbType="VarChar(50)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-		public string P_STREET_ADDRESS
-		{
-			get
-			{
-				return this._P_STREET_ADDRESS;
-			}
-			set
-			{
-				if ((this._P_STREET_ADDRESS != value))
-				{
-					this.OnP_STREET_ADDRESSChanging(value);
-					this.SendPropertyChanging();
-					this._P_STREET_ADDRESS = value;
-					this.SendPropertyChanged("P_STREET_ADDRESS");
-					this.OnP_STREET_ADDRESSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_USERNAME", DbType="VarChar(30)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-		public string P_USERNAME
-		{
-			get
-			{
-				return this._P_USERNAME;
-			}
-			set
-			{
-				if ((this._P_USERNAME != value))
-				{
-					this.OnP_USERNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._P_USERNAME = value;
-					this.SendPropertyChanged("P_USERNAME");
-					this.OnP_USERNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_PASSWORD", DbType="VarChar(30)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-		public string P_PASSWORD
-		{
-			get
-			{
-				return this._P_PASSWORD;
-			}
-			set
-			{
-				if ((this._P_PASSWORD != value))
-				{
-					this.OnP_PASSWORDChanging(value);
-					this.SendPropertyChanging();
-					this._P_PASSWORD = value;
-					this.SendPropertyChanged("P_PASSWORD");
-					this.OnP_PASSWORDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Person_Adminstrator", Storage="_Adminstrators", ThisKey="P_ID", OtherKey="P_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9, EmitDefaultValue=false)]
-		public EntitySet<Adminstrator> Adminstrators
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Adminstrators.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Adminstrators;
-			}
-			set
-			{
-				this._Adminstrators.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Person_Client", Storage="_Clients", ThisKey="P_ID", OtherKey="P_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10, EmitDefaultValue=false)]
-		public EntitySet<Client> Clients
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Clients.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Clients;
-			}
-			set
-			{
-				this._Clients.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Person_Wedding_Planner", Storage="_Wedding_Planners", ThisKey="P_ID", OtherKey="P_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11, EmitDefaultValue=false)]
-		public EntitySet<Wedding_Planner> Wedding_Planners
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Wedding_Planners.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Wedding_Planners;
-			}
-			set
-			{
-				this._Wedding_Planners.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Adminstrators(Adminstrator entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = this;
-		}
-		
-		private void detach_Adminstrators(Adminstrator entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = null;
-		}
-		
-		private void attach_Clients(Client entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = this;
-		}
-		
-		private void detach_Clients(Client entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = null;
-		}
-		
-		private void attach_Wedding_Planners(Wedding_Planner entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = this;
-		}
-		
-		private void detach_Wedding_Planners(Wedding_Planner entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = null;
-		}
-		
-		private void Initialize()
-		{
-			this._Adminstrators = new EntitySet<Adminstrator>(new Action<Adminstrator>(this.attach_Adminstrators), new Action<Adminstrator>(this.detach_Adminstrators));
-			this._Clients = new EntitySet<Client>(new Action<Client>(this.attach_Clients), new Action<Client>(this.detach_Clients));
-			this._Wedding_Planners = new EntitySet<Wedding_Planner>(new Action<Wedding_Planner>(this.attach_Wedding_Planners), new Action<Wedding_Planner>(this.detach_Wedding_Planners));
-			OnCreated();
-		}
-		
-		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnDeserializing(StreamingContext context)
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Runtime.Serialization.OnSerializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnSerializing(StreamingContext context)
-		{
-			this.serializing = true;
-		}
-		
-		[global::System.Runtime.Serialization.OnSerializedAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnSerialized(StreamingContext context)
-		{
-			this.serializing = false;
 		}
 	}
 	
@@ -5687,6 +5318,325 @@ namespace Service
 		public void OnDeserializing(StreamingContext context)
 		{
 			this.Initialize();
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Person")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _P_ID;
+		
+		private string _P_NAME;
+		
+		private string _P_SURNAME;
+		
+		private string _P_PHONE_NUMBER;
+		
+		private string _P_EMAIL_ADDRESS;
+		
+		private string _P_STREET_ADDRESS;
+		
+		private EntitySet<Adminstrator> _Adminstrators;
+		
+		private EntitySet<Client> _Clients;
+		
+		private EntitySet<Wedding_Planner> _Wedding_Planners;
+		
+		private bool serializing;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnP_IDChanging(int value);
+    partial void OnP_IDChanged();
+    partial void OnP_NAMEChanging(string value);
+    partial void OnP_NAMEChanged();
+    partial void OnP_SURNAMEChanging(string value);
+    partial void OnP_SURNAMEChanged();
+    partial void OnP_PHONE_NUMBERChanging(string value);
+    partial void OnP_PHONE_NUMBERChanged();
+    partial void OnP_EMAIL_ADDRESSChanging(string value);
+    partial void OnP_EMAIL_ADDRESSChanged();
+    partial void OnP_STREET_ADDRESSChanging(string value);
+    partial void OnP_STREET_ADDRESSChanged();
+    #endregion
+		
+		public Person()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int P_ID
+		{
+			get
+			{
+				return this._P_ID;
+			}
+			set
+			{
+				if ((this._P_ID != value))
+				{
+					this.OnP_IDChanging(value);
+					this.SendPropertyChanging();
+					this._P_ID = value;
+					this.SendPropertyChanged("P_ID");
+					this.OnP_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_NAME", DbType="VarChar(30)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public string P_NAME
+		{
+			get
+			{
+				return this._P_NAME;
+			}
+			set
+			{
+				if ((this._P_NAME != value))
+				{
+					this.OnP_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._P_NAME = value;
+					this.SendPropertyChanged("P_NAME");
+					this.OnP_NAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_SURNAME", DbType="VarChar(30)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public string P_SURNAME
+		{
+			get
+			{
+				return this._P_SURNAME;
+			}
+			set
+			{
+				if ((this._P_SURNAME != value))
+				{
+					this.OnP_SURNAMEChanging(value);
+					this.SendPropertyChanging();
+					this._P_SURNAME = value;
+					this.SendPropertyChanged("P_SURNAME");
+					this.OnP_SURNAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[P_PHONE NUMBER]", Storage="_P_PHONE_NUMBER", DbType="VarChar(12)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public string P_PHONE_NUMBER
+		{
+			get
+			{
+				return this._P_PHONE_NUMBER;
+			}
+			set
+			{
+				if ((this._P_PHONE_NUMBER != value))
+				{
+					this.OnP_PHONE_NUMBERChanging(value);
+					this.SendPropertyChanging();
+					this._P_PHONE_NUMBER = value;
+					this.SendPropertyChanged("P_PHONE_NUMBER");
+					this.OnP_PHONE_NUMBERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[P_EMAIL ADDRESS]", Storage="_P_EMAIL_ADDRESS", DbType="VarChar(50)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public string P_EMAIL_ADDRESS
+		{
+			get
+			{
+				return this._P_EMAIL_ADDRESS;
+			}
+			set
+			{
+				if ((this._P_EMAIL_ADDRESS != value))
+				{
+					this.OnP_EMAIL_ADDRESSChanging(value);
+					this.SendPropertyChanging();
+					this._P_EMAIL_ADDRESS = value;
+					this.SendPropertyChanged("P_EMAIL_ADDRESS");
+					this.OnP_EMAIL_ADDRESSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[P_STREET ADDRESS]", Storage="_P_STREET_ADDRESS", DbType="VarChar(50)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public string P_STREET_ADDRESS
+		{
+			get
+			{
+				return this._P_STREET_ADDRESS;
+			}
+			set
+			{
+				if ((this._P_STREET_ADDRESS != value))
+				{
+					this.OnP_STREET_ADDRESSChanging(value);
+					this.SendPropertyChanging();
+					this._P_STREET_ADDRESS = value;
+					this.SendPropertyChanged("P_STREET_ADDRESS");
+					this.OnP_STREET_ADDRESSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Person_Adminstrator", Storage="_Adminstrators", ThisKey="P_ID", OtherKey="P_ID")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7, EmitDefaultValue=false)]
+		public EntitySet<Adminstrator> Adminstrators
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Adminstrators.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Adminstrators;
+			}
+			set
+			{
+				this._Adminstrators.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Person_Client", Storage="_Clients", ThisKey="P_ID", OtherKey="P_ID")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8, EmitDefaultValue=false)]
+		public EntitySet<Client> Clients
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Clients.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Clients;
+			}
+			set
+			{
+				this._Clients.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Person_Wedding_Planner", Storage="_Wedding_Planners", ThisKey="P_ID", OtherKey="P_ID")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9, EmitDefaultValue=false)]
+		public EntitySet<Wedding_Planner> Wedding_Planners
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Wedding_Planners.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Wedding_Planners;
+			}
+			set
+			{
+				this._Wedding_Planners.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Adminstrators(Adminstrator entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = this;
+		}
+		
+		private void detach_Adminstrators(Adminstrator entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = null;
+		}
+		
+		private void attach_Clients(Client entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = this;
+		}
+		
+		private void detach_Clients(Client entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = null;
+		}
+		
+		private void attach_Wedding_Planners(Wedding_Planner entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = this;
+		}
+		
+		private void detach_Wedding_Planners(Wedding_Planner entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = null;
+		}
+		
+		private void Initialize()
+		{
+			this._Adminstrators = new EntitySet<Adminstrator>(new Action<Adminstrator>(this.attach_Adminstrators), new Action<Adminstrator>(this.detach_Adminstrators));
+			this._Clients = new EntitySet<Client>(new Action<Client>(this.attach_Clients), new Action<Client>(this.detach_Clients));
+			this._Wedding_Planners = new EntitySet<Wedding_Planner>(new Action<Wedding_Planner>(this.attach_Wedding_Planners), new Action<Wedding_Planner>(this.detach_Wedding_Planners));
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerializing(StreamingContext context)
+		{
+			this.serializing = true;
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializedAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerialized(StreamingContext context)
+		{
+			this.serializing = false;
 		}
 	}
 }

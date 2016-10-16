@@ -102,12 +102,6 @@ namespace Wedding_Project.ServiceReference1 {
         private string P_STREET_ADDRESSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string P_USERNAMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string P_PASSWORDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Wedding_Project.ServiceReference1.Adminstrator[] AdminstratorsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -204,33 +198,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public string P_USERNAME {
-            get {
-                return this.P_USERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.P_USERNAMEField, value) != true)) {
-                    this.P_USERNAMEField = value;
-                    this.RaisePropertyChanged("P_USERNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public string P_PASSWORD {
-            get {
-                return this.P_PASSWORDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.P_PASSWORDField, value) != true)) {
-                    this.P_PASSWORDField = value;
-                    this.RaisePropertyChanged("P_PASSWORD");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public Wedding_Project.ServiceReference1.Adminstrator[] Adminstrators {
             get {
                 return this.AdminstratorsField;
@@ -243,7 +211,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public Wedding_Project.ServiceReference1.Client[] Clients {
             get {
                 return this.ClientsField;
@@ -256,7 +224,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public Wedding_Project.ServiceReference1.Wedding_Planner[] Wedding_Planners {
             get {
                 return this.Wedding_PlannersField;
