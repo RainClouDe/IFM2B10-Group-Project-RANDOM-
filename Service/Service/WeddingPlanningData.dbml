@@ -79,21 +79,6 @@
       <Association Name="Venue_Contractor_Master_of_Ceremony" Member="Venue_Contractor" ThisKey="VNC_ID" OtherKey="VNC_ID" Type="Venue_Contractor" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Person" Member="Persons">
-    <Type Name="Person">
-      <Column Name="P_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="P_NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="P_SURNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="[P_PHONE NUMBER]" Member="P_PHONE_NUMBER" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="[P_EMAIL ADDRESS]" Member="P_EMAIL_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="[P_STREET ADDRESS]" Member="P_STREET_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="P_USERNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="P_PASSWORD" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Association Name="Person_Adminstrator" Member="Adminstrators" ThisKey="P_ID" OtherKey="P_ID" Type="Adminstrator" />
-      <Association Name="Person_Client" Member="Clients" ThisKey="P_ID" OtherKey="P_ID" Type="Client" />
-      <Association Name="Person_Wedding_Planner" Member="Wedding_Planners" ThisKey="P_ID" OtherKey="P_ID" Type="Wedding_Planner" />
-    </Type>
-  </Table>
   <Table Name="dbo.Photographer" Member="Photographers">
     <Type Name="Photographer">
       <Column Name="PHO_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -229,6 +214,19 @@
       <Column Name="[FB_LIFE SPAN]" Member="FB_LIFE_SPAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Decor_Flower_bouquet" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="P_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="P_NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="P_SURNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="[P_PHONE NUMBER]" Member="P_PHONE_NUMBER" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="[P_EMAIL ADDRESS]" Member="P_EMAIL_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[P_STREET ADDRESS]" Member="P_STREET_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Person_Adminstrator" Member="Adminstrators" ThisKey="P_ID" OtherKey="P_ID" Type="Adminstrator" />
+      <Association Name="Person_Client" Member="Clients" ThisKey="P_ID" OtherKey="P_ID" Type="Client" />
+      <Association Name="Person_Wedding_Planner" Member="Wedding_Planners" ThisKey="P_ID" OtherKey="P_ID" Type="Wedding_Planner" />
     </Type>
   </Table>
 </Database>

@@ -38,6 +38,13 @@ namespace Service
 
         [OperationContract]
         List<Flower_bouquet> GetAllFlowers();
+
+        [OperationContract]
+        List<Cutlery> GetAllCutlery();
+
+        [OperationContract]
+        Boolean Authentication(String Username, String Password);
+
     }
    
   

@@ -93,9 +93,6 @@ namespace Service
 
             return p.P_NAME;
 
-
-
-
         }
 
         public List<Decor> GetAllDecorItems()
@@ -121,5 +118,60 @@ namespace Service
 
             return null;
         }
+
+        public List<Cutlery> GetAllCutlery()
+        {
+            var query = from s in db.Cutleries
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+        public Boolean Authentication(String Username, String Password)
+        {
+            var query = from s in db.Login_Details
+                        where s.LOG_LOGIN_USERNAME == Username && s.LOG_LOGIN_PASSWORD == Password select s;
+            if (query != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public void addClient(String Name, String Surname, String Phonenumber, String Email, String Streetaddress, String Username, String Password)
+        {
+            Person objperson = new Person();
+
+            objperson.P_NAME = Name;
+            objperson.P_SURNAME = Surname;
+            objperson.P_PHONE_NUMBER = Phonenumber;
+            objperson.P_EMAIL_ADDRESS = Email;
+            objperson.P_STREET_ADDRESS = Streetaddress;
+
+            db.Persons.InsertOnSubmit(objperson);
+          
+
+            Login_Detail objlogin = new Login_Detail();
+            objlogin.LOG_LOGIN_USERNAME = Username;
+            objlogin.LOG_LOGIN_PASSWORD = Password;
+
+            db.Login_Details.InsertOnSubmit(objlogin);
+
+            db.SubmitChanges();
+
+            Client objclient = new Client();
+            objclient.P_ID = objperson.P_ID;
+            objclient.LOGIN_ID = objlogin.LOGIN_ID;
+
+            db.Clients.InsertOnSubmit(objclient);
+
+            db.SubmitChanges();
+        }
+
     }
 }   
