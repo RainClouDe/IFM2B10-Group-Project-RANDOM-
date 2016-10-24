@@ -6,16 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 
-public static class MessageBox
-{
-    public static void show(this Page Page, String message)
-    {
-        Page.ClientScript.RegisterStartupScript(Page.GetType(),
-            "MessageBox",
-            "<script language='javascript'>alert('" + message + "');</script>");
-    }
 
-}
 
 
 

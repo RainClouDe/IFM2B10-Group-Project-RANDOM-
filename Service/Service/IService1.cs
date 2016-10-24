@@ -45,6 +45,9 @@ namespace Service
         [OperationContract]
         Boolean Authentication(String Username, String Password);
 
+        [OperationContract]
+        void addClient(String Name, String Surname, String Phonenumber, String Email, String Streetaddress, String Username, String Password);
+
     }
    
   

@@ -2538,6 +2538,12 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Authentication", ReplyAction="http://tempuri.org/IService1/AuthenticationResponse")]
         System.Threading.Tasks.Task<bool> AuthenticationAsync(string Username, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addClient", ReplyAction="http://tempuri.org/IService1/addClientResponse")]
+        void addClient(string Name, string Surname, string Phonenumber, string Email, string Streetaddress, string Username, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addClient", ReplyAction="http://tempuri.org/IService1/addClientResponse")]
+        System.Threading.Tasks.Task addClientAsync(string Name, string Surname, string Phonenumber, string Email, string Streetaddress, string Username, string Password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2645,6 +2651,14 @@ namespace Wedding_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> AuthenticationAsync(string Username, string Password) {
             return base.Channel.AuthenticationAsync(Username, Password);
+        }
+        
+        public void addClient(string Name, string Surname, string Phonenumber, string Email, string Streetaddress, string Username, string Password) {
+            base.Channel.addClient(Name, Surname, Phonenumber, Email, Streetaddress, Username, Password);
+        }
+        
+        public System.Threading.Tasks.Task addClientAsync(string Name, string Surname, string Phonenumber, string Email, string Streetaddress, string Username, string Password) {
+            return base.Channel.addClientAsync(Name, Surname, Phonenumber, Email, Streetaddress, Username, Password);
         }
     }
 }
