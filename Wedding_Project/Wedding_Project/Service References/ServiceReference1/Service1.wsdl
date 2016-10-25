@@ -67,6 +67,12 @@
   <wsdl:message name="IService1_Authentication_OutputMessage">
     <wsdl:part name="parameters" element="tns:AuthenticationResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:addClient" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addClientResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -107,6 +113,10 @@
     <wsdl:operation name="Authentication">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Authentication" message="tns:IService1_Authentication_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AuthenticationResponse" message="tns:IService1_Authentication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addClient" message="tns:IService1_addClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addClientResponse" message="tns:IService1_addClient_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -194,6 +204,15 @@
     </wsdl:operation>
     <wsdl:operation name="Authentication">
       <soap:operation soapAction="http://tempuri.org/IService1/Authentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addClient">
+      <soap:operation soapAction="http://tempuri.org/IService1/addClient" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

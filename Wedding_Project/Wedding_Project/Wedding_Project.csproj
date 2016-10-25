@@ -97,6 +97,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Add_Client_Page.aspx" />
     <Content Include="App_Media\Flower_Decor\White Rose.jpg" />
     <Content Include="App_Media\Venue\Tres Jolie.jpg" />
     <Content Include="App_Media\Wedding_Planner\Test.jpg" />
@@ -194,9 +195,17 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <None Include="Web References\localhost\Service1.disco" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_Client_Page.aspx.cs">
+      <DependentUpon>Add_Client_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Client_Page.aspx.designer.cs">
+      <DependentUpon>Add_Client_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cutlery_Page.aspx.cs">
       <DependentUpon>Cutlery_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,6 +247,7 @@
     </Compile>
     <Compile Include="Venue_Page.aspx.cs">
       <DependentUpon>Venue_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Venue_Page.aspx.designer.cs">
       <DependentUpon>Venue_Page.aspx</DependentUpon>
