@@ -19,6 +19,10 @@
     <br />
     <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
     <br />
+    <asp:Label ID="Label7" runat="server" Text="Street address"></asp:Label>
+    <br />
+    <asp:TextBox ID="txtstreetaddress" runat="server"></asp:TextBox>
+    <br />
     <asp:Label ID="Label4" runat="server" Text="Choose your username"></asp:Label>
     <br />
     <asp:TextBox ID="txtusername" runat="server"></asp:TextBox>
