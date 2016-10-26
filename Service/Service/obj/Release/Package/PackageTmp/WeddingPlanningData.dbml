@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Wedding" Class="WeddingPlanningDataDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-9KPGMTV;Initial Catalog=Wedding;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="WeddingConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Wedding.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="WeddingConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Adminstrator" Member="Adminstrators">
     <Type Name="Adminstrator">
       <Column Name="ADM_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -207,15 +207,6 @@
       <Association Name="Wedding_Planner_WP_Working_Location" Member="Wedding_Planner" ThisKey="WP_ID" OtherKey="WP_ID" Type="Wedding_Planner" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Flower_bouquet" Member="Flower_bouquets">
-    <Type Name="Flower_bouquet">
-      <Column Name="FB_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="[FB_TYPE OF FLOWER]" Member="FB_TYPE_OF_FLOWER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="[FB_LIFE SPAN]" Member="FB_LIFE_SPAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Decor_Flower_bouquet" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Person" Member="Persons">
     <Type Name="Person">
       <Column Name="P_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -227,6 +218,24 @@
       <Association Name="Person_Adminstrator" Member="Adminstrators" ThisKey="P_ID" OtherKey="P_ID" Type="Adminstrator" />
       <Association Name="Person_Client" Member="Clients" ThisKey="P_ID" OtherKey="P_ID" Type="Client" />
       <Association Name="Person_Wedding_Planner" Member="Wedding_Planners" ThisKey="P_ID" OtherKey="P_ID" Type="Wedding_Planner" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Flower_bouquet" Member="Flower_bouquets">
+    <Type Name="Flower_bouquet">
+      <Column Name="FB_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[FB_TYPE OF FLOWER]" Member="FB_TYPE_OF_FLOWER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[FB_LIFE SPAN]" Member="FB_LIFE_SPAN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Decor_Flower_bouquet" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cart_Table" Member="Cart_Tables">
+    <Type Name="Cart_Table">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[DEC ITEM ID]" Member="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[VN ID]" Member="VN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Venue Booking]" Member="Venue_Booking" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -47,8 +47,6 @@ namespace Service
             }
          
                 return null;
-            
-           
         }
 
         public List<Wedding_Planner> GetAllWeddingPlanners()
@@ -172,6 +170,19 @@ namespace Service
 
             db.SubmitChanges();
         }
+        public void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, DateTime VenueBooking)// Date time example new Datetime(2015, 1, 18)
+        {
 
+            Cart_Table itemToAddToCart = new Cart_Table();
+
+            itemToAddToCart.DEC_ITEM_ID = DecorItemID;
+            itemToAddToCart.VN_ID = VenueID;
+            itemToAddToCart.Quantity = quantity;
+            itemToAddToCart.Venue_Booking = VenueBooking;
+
+            db.Cart_Tables.InsertOnSubmit(itemToAddToCart);
+            db.SubmitChanges();
+
+        }
     }
 }   

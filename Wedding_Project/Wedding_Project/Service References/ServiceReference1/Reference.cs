@@ -2398,10 +2398,10 @@ namespace Wedding_Project.ServiceReference1 {
         private string FB_TYPE_OF_FLOWERField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> FB_LIFE_SPANField;
+        private string FB_LIFE_SPANField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> DEC_ITEM_IDField;
+        private int DEC_ITEM_IDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2440,12 +2440,12 @@ namespace Wedding_Project.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public System.Nullable<int> FB_LIFE_SPAN {
+        public string FB_LIFE_SPAN {
             get {
                 return this.FB_LIFE_SPANField;
             }
             set {
-                if ((this.FB_LIFE_SPANField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.FB_LIFE_SPANField, value) != true)) {
                     this.FB_LIFE_SPANField = value;
                     this.RaisePropertyChanged("FB_LIFE_SPAN");
                 }
@@ -2453,7 +2453,7 @@ namespace Wedding_Project.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public System.Nullable<int> DEC_ITEM_ID {
+        public int DEC_ITEM_ID {
             get {
                 return this.DEC_ITEM_IDField;
             }
@@ -2544,6 +2544,12 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addClient", ReplyAction="http://tempuri.org/IService1/addClientResponse")]
         System.Threading.Tasks.Task addClientAsync(string Name, string Surname, string Phonenumber, string Email, string Streetaddress, string Username, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addToCartTable", ReplyAction="http://tempuri.org/IService1/addToCartTableResponse")]
+        void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, System.DateTime VenueBooking);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addToCartTable", ReplyAction="http://tempuri.org/IService1/addToCartTableResponse")]
+        System.Threading.Tasks.Task addToCartTableAsync(int UserID, int DecorItemID, int VenueID, int quantity, System.DateTime VenueBooking);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2659,6 +2665,14 @@ namespace Wedding_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task addClientAsync(string Name, string Surname, string Phonenumber, string Email, string Streetaddress, string Username, string Password) {
             return base.Channel.addClientAsync(Name, Surname, Phonenumber, Email, Streetaddress, Username, Password);
+        }
+        
+        public void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, System.DateTime VenueBooking) {
+            base.Channel.addToCartTable(UserID, DecorItemID, VenueID, quantity, VenueBooking);
+        }
+        
+        public System.Threading.Tasks.Task addToCartTableAsync(int UserID, int DecorItemID, int VenueID, int quantity, System.DateTime VenueBooking) {
+            return base.Channel.addToCartTableAsync(UserID, DecorItemID, VenueID, quantity, VenueBooking);
         }
     }
 }

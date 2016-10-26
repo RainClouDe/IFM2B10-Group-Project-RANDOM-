@@ -48,6 +48,9 @@ namespace Service
         [OperationContract]
         void addClient(String Name, String Surname, String Phonenumber, String Email, String Streetaddress, String Username, String Password);
 
+        [OperationContract]
+        void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, DateTime VenueBooking);
+
     }
    
   

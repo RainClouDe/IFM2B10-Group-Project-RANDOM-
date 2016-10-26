@@ -24,7 +24,8 @@ namespace Wedding_Project
 
             if (proxy.Authentication(username, password))
             {
-                testdiv.InnerHtml = "You have been logged in";
+                HttpContext.Current.Session["ClientLoggedIn"] = true;
+                Response.Redirect("Decor_Flower_Page.aspx");
                 //Redirect 
             }
             else

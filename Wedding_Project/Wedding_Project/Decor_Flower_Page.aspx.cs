@@ -31,10 +31,13 @@ namespace Wedding_Project
                         testdiv.InnerHtml += "<br>" + "Type of Decor: " + decorlist[k].DEC_TYPE;
                         testdiv.InnerHtml += "<br>" + "Manufaturer: " + decorlist[k].DEC_MAKE;
                         testdiv.InnerHtml += "<br>" + "Type of Flower: " + flowerbouquetlist[i].FB_TYPE_OF_FLOWER;
-                        testdiv.InnerHtml += "<br>" + "Estimated life span: " + flowerbouquetlist[i].FB_LIFE_SPAN + " days";
+                        testdiv.InnerHtml += "<br>" + "Estimated life span: " + flowerbouquetlist[i].FB_LIFE_SPAN + " days" + "<br>";
+                        testdiv.InnerHtml += "<a href='WhiteRose_Checkout.aspx?DecID= " +decorlist[k].DEC_ITEM_ID.ToString()+ " '>" + " Shop now " + "</a>";
                     }
                 }
             }
         }
+
+      
     }
 }

@@ -465,8 +465,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="FB_ID" type="xs:int" />
       <xs:element minOccurs="0" name="FB_TYPE_OF_FLOWER" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FB_LIFE_SPAN" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="DEC_ITEM_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FB_LIFE_SPAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEC_ITEM_ID" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Flower_bouquet" nillable="true" type="tns:Flower_bouquet" />
