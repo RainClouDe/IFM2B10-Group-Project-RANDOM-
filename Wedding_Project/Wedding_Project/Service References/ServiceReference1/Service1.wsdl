@@ -73,6 +73,36 @@
   <wsdl:message name="IService1_addClient_OutputMessage">
     <wsdl:part name="parameters" element="tns:addClientResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addToCartTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:addToCartTable" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addToCartTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addToCartTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_returnLoginID_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnLoginID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_returnLoginID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnLoginIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_returnSpecificDecorItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnSpecificDecorItem" />
+  </wsdl:message>
+  <wsdl:message name="IService1_returnSpecificDecorItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnSpecificDecorItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_returnClientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnClientId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_returnClientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnClientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListOfCartItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfCartItems" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListOfCartItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfCartItemsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -117,6 +147,26 @@
     <wsdl:operation name="addClient">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addClient" message="tns:IService1_addClient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addClientResponse" message="tns:IService1_addClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addToCartTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addToCartTable" message="tns:IService1_addToCartTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addToCartTableResponse" message="tns:IService1_addToCartTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="returnLoginID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/returnLoginID" message="tns:IService1_returnLoginID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/returnLoginIDResponse" message="tns:IService1_returnLoginID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="returnSpecificDecorItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/returnSpecificDecorItem" message="tns:IService1_returnSpecificDecorItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/returnSpecificDecorItemResponse" message="tns:IService1_returnSpecificDecorItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="returnClientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/returnClientId" message="tns:IService1_returnClientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/returnClientIdResponse" message="tns:IService1_returnClientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfCartItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListOfCartItems" message="tns:IService1_GetListOfCartItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListOfCartItemsResponse" message="tns:IService1_GetListOfCartItems_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -213,6 +263,51 @@
     </wsdl:operation>
     <wsdl:operation name="addClient">
       <soap:operation soapAction="http://tempuri.org/IService1/addClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addToCartTable">
+      <soap:operation soapAction="http://tempuri.org/IService1/addToCartTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returnLoginID">
+      <soap:operation soapAction="http://tempuri.org/IService1/returnLoginID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returnSpecificDecorItem">
+      <soap:operation soapAction="http://tempuri.org/IService1/returnSpecificDecorItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returnClientId">
+      <soap:operation soapAction="http://tempuri.org/IService1/returnClientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfCartItems">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListOfCartItems" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

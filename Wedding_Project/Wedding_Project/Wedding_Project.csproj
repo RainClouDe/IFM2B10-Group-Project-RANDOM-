@@ -122,6 +122,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Shopping_Cart_Page.aspx" />
     <Content Include="Venue_Page.aspx" />
     <Content Include="Wedding_Planner_Page.aspx" />
     <None Include="Properties\PublishProfiles\Website.pubxml" />
@@ -172,6 +173,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Cutlery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Cart_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Web References\localhost\Service1.wsdl" />
@@ -245,6 +249,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Shopping_Cart_Page.aspx.cs">
+      <DependentUpon>Shopping_Cart_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shopping_Cart_Page.aspx.designer.cs">
+      <DependentUpon>Shopping_Cart_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Venue_Page.aspx.cs">
       <DependentUpon>Venue_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -259,6 +269,7 @@
     </Compile>
     <Compile Include="Wedding_Planner_Page.aspx.cs">
       <DependentUpon>Wedding_Planner_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Wedding_Planner_Page.aspx.designer.cs">
       <DependentUpon>Wedding_Planner_Page.aspx</DependentUpon>
