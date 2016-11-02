@@ -21,6 +21,8 @@
       <xs:element minOccurs="0" name="P_PHONE_NUMBER" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="P_EMAIL_ADDRESS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="P_STREET_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_USERNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_PASSWORD" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Adminstrators" nillable="true" type="tns:ArrayOfAdminstrator">
         <xs:annotation>
           <xs:appinfo>
@@ -125,6 +127,8 @@
       <xs:element minOccurs="0" name="VN_PRICE" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="VN_COORDINATES" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VN_IMAGE_PATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VN_TABLECAPACITY" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VN_TABLEDESCRIPTION" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Venue_Booking_Schedules" nillable="true" type="tns:ArrayOfVenue_Booking_Schedule">
         <xs:annotation>
           <xs:appinfo>
@@ -340,6 +344,13 @@
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
+      <xs:element minOccurs="0" name="Flower_bouquets" nillable="true" type="tns:ArrayOfFlower_bouquet">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" name="Plates" nillable="true" type="tns:ArrayOfPlate">
         <xs:annotation>
           <xs:appinfo>
@@ -355,13 +366,6 @@
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" name="Wedding_Welcome_Cards" nillable="true" type="tns:ArrayOfWedding_Welcome_Card">
-        <xs:annotation>
-          <xs:appinfo>
-            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="Flower_bouquets" nillable="true" type="tns:ArrayOfFlower_bouquet">
         <xs:annotation>
           <xs:appinfo>
             <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
@@ -407,6 +411,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Decor_Invoice" nillable="true" type="tns:Decor_Invoice" />
+  <xs:complexType name="ArrayOfFlower_bouquet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Flower_bouquet" nillable="true" type="tns:Flower_bouquet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlower_bouquet" nillable="true" type="tns:ArrayOfFlower_bouquet" />
+  <xs:complexType name="Flower_bouquet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FB_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FB_TYPE_OF_FLOWER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FB_LIFE_SPAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEC_ITEM_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Flower_bouquet" nillable="true" type="tns:Flower_bouquet" />
   <xs:complexType name="ArrayOfPlate">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Plate" nillable="true" type="tns:Plate" />
@@ -455,19 +474,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Wedding_Welcome_Card" nillable="true" type="tns:Wedding_Welcome_Card" />
-  <xs:complexType name="ArrayOfFlower_bouquet">
+  <xs:complexType name="ArrayOfCart_Table">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Flower_bouquet" nillable="true" type="tns:Flower_bouquet" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cart_Table" nillable="true" type="tns:Cart_Table" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfFlower_bouquet" nillable="true" type="tns:ArrayOfFlower_bouquet" />
-  <xs:complexType name="Flower_bouquet">
+  <xs:element name="ArrayOfCart_Table" nillable="true" type="tns:ArrayOfCart_Table" />
+  <xs:complexType name="Cart_Table">
     <xs:sequence>
-      <xs:element minOccurs="0" name="FB_ID" type="xs:int" />
-      <xs:element minOccurs="0" name="FB_TYPE_OF_FLOWER" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FB_LIFE_SPAN" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DEC_ITEM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="CL_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DEC_ITEM_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VN_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Venue_Booking" nillable="true" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Flower_bouquet" nillable="true" type="tns:Flower_bouquet" />
+  <xs:element name="Cart_Table" nillable="true" type="tns:Cart_Table" />
 </xs:schema>

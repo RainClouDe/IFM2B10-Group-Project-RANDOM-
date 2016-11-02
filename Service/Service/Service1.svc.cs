@@ -35,7 +35,15 @@ namespace Service
             return composite;
         }
 
-        
+
+
+
+
+
+        /// <summary>
+        /// start of chunk of code that returns lists of objects from the database
+        /// </summary>
+        /// <returns> List<Object> </returns>
         public List<Person> GetPerson()
         {
            
@@ -129,6 +137,33 @@ namespace Service
             return null;
         }
 
+
+        public List<Cart_Table> GetListOfCartItems(int ClientID)
+        {
+            var query = from s in db.Cart_Tables
+                        where s.CL_ID == ClientID 
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// end of chunk of code that returns lists of objects from the database
+        /// </summary>
+        /// <returns> List<Object> </returns>
+
+
+
+
+
+
+
+
+
         public Boolean Authentication(String Username, String Password)
         {
             var query = from s in db.Login_Details
@@ -141,6 +176,17 @@ namespace Service
             return false;
         }
 
+
+
+
+
+
+
+
+        /// <summary>
+        /// Start of Funtions that add stuff to the database 
+        /// </summary>
+  
         public void addClient(String Name, String Surname, String Phonenumber, String Email, String Streetaddress, String Username, String Password)
         {
             Person objperson = new Person();
@@ -150,6 +196,7 @@ namespace Service
             objperson.P_PHONE_NUMBER = Phonenumber;
             objperson.P_EMAIL_ADDRESS = Email;
             objperson.P_STREET_ADDRESS = Streetaddress;
+            objperson.P_USERNAME = Username;
 
             db.Persons.InsertOnSubmit(objperson);
           
@@ -170,11 +217,11 @@ namespace Service
 
             db.SubmitChanges();
         }
-        public void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, DateTime VenueBooking)// Date time example new Datetime(2015, 1, 18)
+        public void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, DateTime? VenueBooking)// Date time example new Datetime(2015, 1, 18)
         {
 
             Cart_Table itemToAddToCart = new Cart_Table();
-
+            itemToAddToCart.CL_ID = UserID;
             itemToAddToCart.DEC_ITEM_ID = DecorItemID;
             itemToAddToCart.VN_ID = VenueID;
             itemToAddToCart.Quantity = quantity;
@@ -184,5 +231,70 @@ namespace Service
             db.SubmitChanges();
 
         }
+
+
+        /// <summary>
+        /// End of Funtions that add stuff to the database 
+        /// </summary>
+
+
+
+
+
+        /// <summary>
+        /// Start of functions that return specific items from tables
+        /// </summary>    
+        public int returnLoginID(string Username)
+        {
+            
+            var query = from s in db.Login_Details
+                        where s.LOG_LOGIN_USERNAME == Username 
+                        select s;
+            if (query != null)
+            {
+                return query.First().LOGIN_ID;
+            }
+            
+            return 0;
+        }
+
+        public Decor returnSpecificDecorItem(int DecorID)
+        {
+            var query = from s in db.Decors
+                        where s.DEC_ITEM_ID == DecorID
+                        select s;
+            if (query != null)
+            {
+                return query.First();
+            }
+
+            return null;
+        }
+
+        public int returnClientId(int LoginID)
+        {
+            var query = from s in db.Clients
+                        where s.LOGIN_ID == LoginID
+                        select s;
+            if (query != null)
+            {
+                return query.First().CL_ID;
+            }
+
+            return 0;
+        }
+
+        public int returnPersonID(string Username)
+        {
+       
+
+            return 0;
+        }
+
+      
+
+        /// <summary>
+        /// End of functions that return specific items from tables
+        /// </summary> 
     }
 }   
