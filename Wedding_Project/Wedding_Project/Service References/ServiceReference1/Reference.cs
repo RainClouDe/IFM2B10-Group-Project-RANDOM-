@@ -2753,6 +2753,12 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListOfPlates", ReplyAction="http://tempuri.org/IService1/GetListOfPlatesResponse")]
         System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Plate[]> GetListOfPlatesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllWelcomecards", ReplyAction="http://tempuri.org/IService1/GetAllWelcomecardsResponse")]
+        Wedding_Project.ServiceReference1.Wedding_Welcome_Card[] GetAllWelcomecards();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllWelcomecards", ReplyAction="http://tempuri.org/IService1/GetAllWelcomecardsResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Wedding_Welcome_Card[]> GetAllWelcomecardsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2916,6 +2922,14 @@ namespace Wedding_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Plate[]> GetListOfPlatesAsync() {
             return base.Channel.GetListOfPlatesAsync();
+        }
+        
+        public Wedding_Project.ServiceReference1.Wedding_Welcome_Card[] GetAllWelcomecards() {
+            return base.Channel.GetAllWelcomecards();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Wedding_Welcome_Card[]> GetAllWelcomecardsAsync() {
+            return base.Channel.GetAllWelcomecardsAsync();
         }
     }
 }

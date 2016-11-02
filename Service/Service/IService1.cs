@@ -66,6 +66,9 @@ namespace Service
 
         [OperationContract]
         List<Plate> GetListOfPlates();
+
+        [OperationContract]
+        List<Wedding_Welcome_Card> GetAllWelcomecards();
     }
    
   

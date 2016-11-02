@@ -163,6 +163,19 @@ namespace Service
             return null;
         }
 
+
+        public List<Wedding_Welcome_Card> GetAllWelcomecards()
+        {
+            var query = from s in db.Wedding_Welcome_Cards
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// end of chunk of code that returns lists of objects from the database
         /// </summary>
@@ -303,6 +316,7 @@ namespace Service
             return 0;
         }
 
+      
 
         /// <summary>
         /// End of functions that return specific items from tables

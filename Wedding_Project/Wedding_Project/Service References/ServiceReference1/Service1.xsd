@@ -230,4 +230,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllWelcomecards">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllWelcomecardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Service" minOccurs="0" name="GetAllWelcomecardsResult" nillable="true" type="q12:ArrayOfWedding_Welcome_Card" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
