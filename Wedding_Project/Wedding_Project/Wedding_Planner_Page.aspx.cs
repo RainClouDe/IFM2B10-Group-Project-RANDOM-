@@ -9,16 +9,7 @@ namespace Wedding_Project
 {
 
 
-    public static class MessageBox
-    {
-        public static void show(this Page Page, String message)
-        {
-            Page.ClientScript.RegisterStartupScript(Page.GetType(),
-                "MessageBox",
-                "<script language='javascript'>alert('" + message + "');</script>");
-        }
-
-    }
+  
 
 
     public partial class Wedding_Planner_Page : System.Web.UI.Page
@@ -36,7 +27,7 @@ namespace Wedding_Project
             {
 
                 MessageBox.show(this, weddingplannerlist[i].WP_IMAGELOCATION);
-                Testdiv.InnerHtml = "<br>" + weddingplannerlist[i].WP_HISTORYDESCRIPTION;
+                Testdiv.InnerHtml += "<br>" + weddingplannerlist[i].WP_HISTORYDESCRIPTION;
                 Testdiv.InnerHtml += "<IMG SRC='App_Media\\Wedding_Planner\\" +weddingplannerlist[i].WP_IMAGELOCATION+"'/>";
 
             }

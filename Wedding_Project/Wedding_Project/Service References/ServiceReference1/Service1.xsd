@@ -153,13 +153,69 @@
         <xs:element minOccurs="0" name="DecorItemID" type="xs:int" />
         <xs:element minOccurs="0" name="VenueID" type="xs:int" />
         <xs:element minOccurs="0" name="quantity" type="xs:int" />
-        <xs:element minOccurs="0" name="VenueBooking" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="VenueBooking" nillable="true" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="addToCartTableResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnLoginID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnLoginIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="returnLoginIDResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnSpecificDecorItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DecorID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnSpecificDecorItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Service" minOccurs="0" name="returnSpecificDecorItemResult" nillable="true" type="q9:Decor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnClientId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoginID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnClientIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="returnClientIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfCartItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ClientID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfCartItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Service" minOccurs="0" name="GetListOfCartItemsResult" nillable="true" type="q10:ArrayOfCart_Table" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>
