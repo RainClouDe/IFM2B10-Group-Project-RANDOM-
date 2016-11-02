@@ -26,7 +26,7 @@ namespace Wedding_Project
         {
             ServiceReference1.Service1Client proxy = new ServiceReference1.Service1Client();
             ServiceReference1.Cart_Table[] tableCartList;
-            int loggedInClientID = 0;
+            int loggedInClientID;
 
             if (HttpContext.Current.Session["ClientLoggedIn"] != null)
             {
@@ -36,13 +36,11 @@ namespace Wedding_Project
 
                     loggedInClientID = (int)HttpContext.Current.Session["ClientId"];
 
-                    //MessageBox.show(this, loggedInClientID.ToString());
-
                     proxy.addToCartTable(loggedInClientID, decorID, 0, 5, null);
 
                 }
-
-                tableCartList = proxy.GetListOfCartItems(loggedInClientID);
+                
+                tableCartList = proxy.GetListOfCartItems((int)HttpContext.Current.Session["ClientId"]);
 
                 for (int i = 0; i < tableCartList.Length; i++)
                 {
