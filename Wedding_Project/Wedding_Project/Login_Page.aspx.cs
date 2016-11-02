@@ -31,7 +31,7 @@ namespace Wedding_Project
                 int clientID = proxy.returnClientId(loginID);
 
                 HttpContext.Current.Session["ClientId"] = clientID;
-                Response.Redirect("Decor_Flower_Page.aspx");
+                Response.Redirect("Cutlery_Page.aspx");
                 //Redirect 
             }
             else

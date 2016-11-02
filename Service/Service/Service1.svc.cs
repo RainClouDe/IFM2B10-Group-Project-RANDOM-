@@ -151,6 +151,18 @@ namespace Service
             return null;
         }
 
+        public List<Plate> GetListOfPlates()
+        {
+            var query = from s in db.Plates
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// end of chunk of code that returns lists of objects from the database
         /// </summary>
@@ -291,7 +303,6 @@ namespace Service
             return 0;
         }
 
-      
 
         /// <summary>
         /// End of functions that return specific items from tables
