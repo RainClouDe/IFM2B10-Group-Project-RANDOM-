@@ -22,7 +22,6 @@
       <xs:element minOccurs="0" name="P_EMAIL_ADDRESS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="P_STREET_ADDRESS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="P_USERNAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="P_PASSWORD" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Adminstrators" nillable="true" type="tns:ArrayOfAdminstrator">
         <xs:annotation>
           <xs:appinfo>

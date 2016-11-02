@@ -36,7 +36,7 @@ namespace Wedding_Project
 
                     loggedInClientID = (int)HttpContext.Current.Session["ClientId"];
 
-                    MessageBox.show(this, loggedInClientID.ToString());
+                    //MessageBox.show(this, loggedInClientID.ToString());
 
                     proxy.addToCartTable(loggedInClientID, decorID, 0, 5, null);
 
@@ -47,9 +47,10 @@ namespace Wedding_Project
                 for (int i = 0; i < tableCartList.Length; i++)
                 {
 
-                    ServiceReference1.Decor DecorItemFromCart = proxy.returnSpecificDecorItem(1);
+                    ServiceReference1.Decor DecorItemFromCart = proxy.returnSpecificDecorItem((int) tableCartList[i].DEC_ITEM_ID);
 
-                    testdiv.InnerHtml += "<IMG SRC='App_Media\\Flower_Decor\\" + DecorItemFromCart.DEC_IMAGE_PATH + "'/>";
+                    testdiv.InnerHtml += "<IMG SRC='App_Media\\" + DecorItemFromCart.DEC_IMAGE_PATH + "'/>";
+                   
                     testdiv.InnerHtml += "<br>" + "Name: " + DecorItemFromCart.DEC_NAME;
                     testdiv.InnerHtml += "<br>" + "Quantity: " + tableCartList[i].Quantity;
                     testdiv.InnerHtml += "<br>" + "Price: R" + DecorItemFromCart.DEC_PRICE;

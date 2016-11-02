@@ -105,9 +105,6 @@ namespace Wedding_Project.ServiceReference1 {
         private string P_USERNAMEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string P_PASSWORDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Wedding_Project.ServiceReference1.Adminstrator[] AdminstratorsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -217,20 +214,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public string P_PASSWORD {
-            get {
-                return this.P_PASSWORDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.P_PASSWORDField, value) != true)) {
-                    this.P_PASSWORDField = value;
-                    this.RaisePropertyChanged("P_PASSWORD");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public Wedding_Project.ServiceReference1.Adminstrator[] Adminstrators {
             get {
                 return this.AdminstratorsField;
@@ -243,7 +227,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public Wedding_Project.ServiceReference1.Client[] Clients {
             get {
                 return this.ClientsField;
@@ -256,7 +240,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public Wedding_Project.ServiceReference1.Wedding_Planner[] Wedding_Planners {
             get {
                 return this.Wedding_PlannersField;
@@ -2763,6 +2747,12 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListOfCartItems", ReplyAction="http://tempuri.org/IService1/GetListOfCartItemsResponse")]
         System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Cart_Table[]> GetListOfCartItemsAsync(int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListOfPlates", ReplyAction="http://tempuri.org/IService1/GetListOfPlatesResponse")]
+        Wedding_Project.ServiceReference1.Plate[] GetListOfPlates();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListOfPlates", ReplyAction="http://tempuri.org/IService1/GetListOfPlatesResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Plate[]> GetListOfPlatesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2918,6 +2908,14 @@ namespace Wedding_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Cart_Table[]> GetListOfCartItemsAsync(int ClientID) {
             return base.Channel.GetListOfCartItemsAsync(ClientID);
+        }
+        
+        public Wedding_Project.ServiceReference1.Plate[] GetListOfPlates() {
+            return base.Channel.GetListOfPlates();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Plate[]> GetListOfPlatesAsync() {
+            return base.Channel.GetListOfPlatesAsync();
         }
     }
 }

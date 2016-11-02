@@ -218,4 +218,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetListOfPlates">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfPlatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Service" minOccurs="0" name="GetListOfPlatesResult" nillable="true" type="q11:ArrayOfPlate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

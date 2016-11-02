@@ -98,9 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Add_Client_Page.aspx" />
-    <Content Include="App_Media\Flower_Decor\White Rose.jpg" />
-    <Content Include="App_Media\Venue\Tres Jolie.jpg" />
-    <Content Include="App_Media\Wedding_Planner\Test.jpg" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -122,6 +119,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Plate_Page.aspx" />
     <Content Include="Shopping_Cart_Page.aspx" />
     <Content Include="Venue_Page.aspx" />
     <Content Include="Wedding_Planner_Page.aspx" />
@@ -176,6 +174,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Cart_Table.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Plate.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Web References\localhost\Service1.wsdl" />
@@ -237,6 +238,13 @@
     </Compile>
     <Compile Include="Master_Page.Master.designer.cs">
       <DependentUpon>Master_Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Plate_Page.aspx.cs">
+      <DependentUpon>Plate_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Plate_Page.aspx.designer.cs">
+      <DependentUpon>Plate_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -301,7 +309,7 @@
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Media\Cutlery\" />
+    <Folder Include="App_Media\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
