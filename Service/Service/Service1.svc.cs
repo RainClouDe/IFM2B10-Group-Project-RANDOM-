@@ -151,6 +151,31 @@ namespace Service
             return null;
         }
 
+        public List<Plate> GetListOfPlates()
+        {
+            var query = from s in db.Plates
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+
+        public List<Wedding_Welcome_Card> GetAllWelcomecards()
+        {
+            var query = from s in db.Wedding_Welcome_Cards
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// end of chunk of code that returns lists of objects from the database
         /// </summary>

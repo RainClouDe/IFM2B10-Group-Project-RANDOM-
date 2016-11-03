@@ -63,6 +63,12 @@ namespace Service
 
         [OperationContract]
         List<Cart_Table> GetListOfCartItems(int ClientID);
+
+        [OperationContract]
+        List<Plate> GetListOfPlates();
+
+        [OperationContract]
+        List<Wedding_Welcome_Card> GetAllWelcomecards();
     }
    
   

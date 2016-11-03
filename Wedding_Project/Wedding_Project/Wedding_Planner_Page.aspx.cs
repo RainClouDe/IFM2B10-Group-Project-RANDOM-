@@ -28,7 +28,7 @@ namespace Wedding_Project
 
                 MessageBox.show(this, weddingplannerlist[i].WP_IMAGELOCATION);
                 Testdiv.InnerHtml += "<br>" + weddingplannerlist[i].WP_HISTORYDESCRIPTION;
-                Testdiv.InnerHtml += "<IMG SRC='App_Media\\Wedding_Planner\\" +weddingplannerlist[i].WP_IMAGELOCATION+"'/>";
+                Testdiv.InnerHtml += "<IMG SRC='App_Media\\" +weddingplannerlist[i].WP_IMAGELOCATION+"'/>";
 
             }
         }

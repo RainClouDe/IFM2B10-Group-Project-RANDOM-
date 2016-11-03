@@ -98,9 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Add_Client_Page.aspx" />
-    <Content Include="App_Media\Flower_Decor\White Rose.jpg" />
-    <Content Include="App_Media\Venue\Tres Jolie.jpg" />
-    <Content Include="App_Media\Wedding_Planner\Test.jpg" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -108,6 +105,7 @@
     <Content Include="Cutlery_Page.aspx" />
     <Content Include="Decor_Flower_Page.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Home_Page.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\npm.js" />
@@ -122,9 +120,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Plate_Page.aspx" />
     <Content Include="Shopping_Cart_Page.aspx" />
     <Content Include="Venue_Page.aspx" />
     <Content Include="Wedding_Planner_Page.aspx" />
+    <Content Include="Wedding_Welcome_Card.aspx" />
     <None Include="Properties\PublishProfiles\Website.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -178,6 +178,12 @@
     <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Cart_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Plate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Wedding_Welcome_Card.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web References\localhost\Service1.wsdl" />
     <None Include="Web References\localhost\Service1.xsd">
       <SubType>Designer</SubType>
@@ -224,6 +230,13 @@
     <Compile Include="Decor_Flower_Page.aspx.designer.cs">
       <DependentUpon>Decor_Flower_Page.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home_Page.aspx.cs">
+      <DependentUpon>Home_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home_Page.aspx.designer.cs">
+      <DependentUpon>Home_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login_Page.aspx.cs">
       <DependentUpon>Login_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -237,6 +250,13 @@
     </Compile>
     <Compile Include="Master_Page.Master.designer.cs">
       <DependentUpon>Master_Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Plate_Page.aspx.cs">
+      <DependentUpon>Plate_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Plate_Page.aspx.designer.cs">
+      <DependentUpon>Plate_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -274,6 +294,13 @@
     <Compile Include="Wedding_Planner_Page.aspx.designer.cs">
       <DependentUpon>Wedding_Planner_Page.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Wedding_Welcome_Card.aspx.cs">
+      <DependentUpon>Wedding_Welcome_Card.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wedding_Welcome_Card.aspx.designer.cs">
+      <DependentUpon>Wedding_Welcome_Card.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -301,7 +328,7 @@
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Media\Cutlery\" />
+    <Folder Include="App_Media\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
