@@ -3634,10 +3634,11 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   .navbar-right .dropdown-menu {
-    right: 0;
-    left: auto;
+    right: auto;
+    left: 0;
   }
   .navbar-right .dropdown-menu-left {
+      text-align: right;
     right: auto;
     left: 0;
   }
@@ -4215,7 +4216,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-fixed-top .navbar-collapse,
-.navbar-fixed-bottom .navbar-collapse {
+.navbar-fixed-bottom .navbar-collapse 
+{
+  text-align:right;
   max-height: 340px;
 }
 @media (max-device-width: 480px) and (orientation: landscape) {
@@ -4485,6 +4488,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left !important;
   }
   .navbar-right {
+      text-align:right;
     float: right !important;
     margin-right: -15px;
   }
@@ -4493,8 +4497,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+ 
+  background-color: aqua;
+  border-color: cornflowerblue;
+  color: white;
+  width: 100%;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4508,7 +4515,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+    float: right;
+    color: #777;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -4959,8 +4967,10 @@ a.badge:focus {
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;
-  color: inherit;
-  background-color: #eee;
+  color: white;
+  background-color: aqua;
+  width:100%;
+  height: 100px;
 }
 .jumbotron h1,
 .jumbotron .h1 {
