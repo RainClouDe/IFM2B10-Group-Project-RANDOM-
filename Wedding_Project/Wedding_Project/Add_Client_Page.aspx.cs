@@ -29,6 +29,8 @@ namespace Wedding_Project
 
         protected void btncreate_Click(object sender, EventArgs e)
         {
+            ServiceReference1.Service1Client proxy = new ServiceReference1.Service1Client();
+
             String name = txtname.Text;
             String surname = txtsurname.Text;
             String phonenumber = txtphonenumber.Text;
@@ -37,7 +39,7 @@ namespace Wedding_Project
             String password = txtpassword.Text;
             String streetaddress = txtstreetaddress.Text;
 
-            ServiceReference1.Service1Client proxy = new ServiceReference1.Service1Client();
+         
 
             //validation checks
             proxy.addClient(name, surname, phonenumber, email, streetaddress, username, password);

@@ -29,6 +29,7 @@
     </style>
 </head>
 <body>
+    <a href='Home_Page.aspx'> HOME </a>
     <form id="form1" runat="server">
     <div>
          <div class="container">

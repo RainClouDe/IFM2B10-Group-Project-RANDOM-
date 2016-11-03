@@ -33,7 +33,7 @@ namespace Wedding_Project
             for (int i = 0; i < venuelist.Length; i++)
             {
                 MessageBox.show(this, venuelist[i].VN_IMAGE_PATH);
-                test.InnerHtml = "<IMG SRC='App_Media\\Venue\\" +venuelist[i].VN_IMAGE_PATH+ "'/>";
+                test.InnerHtml = "<IMG SRC='App_Media\\" +venuelist[i].VN_IMAGE_PATH+ "'/>";
                 test.InnerHtml += "<br>" + "Name:" + venuelist[i].VN_NAME;
                 test.InnerHtml += "<br>" + "Price:" + venuelist[i].VN_PRICE;
                 test.InnerHtml += "<br>" + "Street Address:" + venuelist[i].VN_STREET_ADDRESS;

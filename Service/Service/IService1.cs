@@ -49,8 +49,26 @@ namespace Service
         void addClient(String Name, String Surname, String Phonenumber, String Email, String Streetaddress, String Username, String Password);
 
         [OperationContract]
-        void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, DateTime VenueBooking);
+        void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, DateTime? VenueBooking);
 
+        [OperationContract]
+        int returnLoginID(string Username);
+        
+
+        [OperationContract]
+        Decor returnSpecificDecorItem(int DecorID);
+
+        [OperationContract]
+        int returnClientId(int LoginID);
+
+        [OperationContract]
+        List<Cart_Table> GetListOfCartItems(int ClientID);
+
+        [OperationContract]
+        List<Plate> GetListOfPlates();
+
+        [OperationContract]
+        List<Wedding_Welcome_Card> GetAllWelcomecards();
     }
    
   

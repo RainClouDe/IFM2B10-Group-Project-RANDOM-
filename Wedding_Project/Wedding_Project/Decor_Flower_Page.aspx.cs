@@ -24,7 +24,7 @@ namespace Wedding_Project
                 {
                     if(decorlist[k].DEC_ITEM_ID == flowerbouquetlist[i].DEC_ITEM_ID)
                     {
-                        testdiv.InnerHtml = "<IMG SRC='App_Media\\Flower_Decor\\" + decorlist[k].DEC_IMAGE_PATH + "'/>";
+                        testdiv.InnerHtml += "<IMG SRC='App_Media\\" + decorlist[k].DEC_IMAGE_PATH + "'/>";
                         testdiv.InnerHtml += "<br>" + "Flower Name: " + decorlist[k].DEC_NAME;
                         testdiv.InnerHtml += "<br>" + "Flower Colour: " + decorlist[k].DEC_COLOUR;
                         testdiv.InnerHtml += "<br>" + "Price : R" + decorlist[k].DEC_PRICE;
@@ -32,7 +32,7 @@ namespace Wedding_Project
                         testdiv.InnerHtml += "<br>" + "Manufaturer: " + decorlist[k].DEC_MAKE;
                         testdiv.InnerHtml += "<br>" + "Type of Flower: " + flowerbouquetlist[i].FB_TYPE_OF_FLOWER;
                         testdiv.InnerHtml += "<br>" + "Estimated life span: " + flowerbouquetlist[i].FB_LIFE_SPAN + " days" + "<br>";
-                        testdiv.InnerHtml += "<a href='WhiteRose_Checkout.aspx?DecID= " +decorlist[k].DEC_ITEM_ID.ToString()+ " '>" + " Shop now " + "</a>";
+                        testdiv.InnerHtml += "<a href='Shopping_Cart_Page.aspx?DecID= " + decorlist[k].DEC_ITEM_ID.ToString()+ " '>" + " Shop now " + "</a>";
                     }
                 }
             }
