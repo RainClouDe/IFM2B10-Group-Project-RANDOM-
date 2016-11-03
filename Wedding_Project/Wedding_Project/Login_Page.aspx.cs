@@ -28,10 +28,10 @@ namespace Wedding_Project
                 Response.Redirect("Decor_Flower_Page.aspx");
                 //Redirect 
             }
-            else
+           /* else
             {
                 testdiv.InnerHtml = "Incorrect password or username";
-            }
+            }*/
         }
     }
 }
