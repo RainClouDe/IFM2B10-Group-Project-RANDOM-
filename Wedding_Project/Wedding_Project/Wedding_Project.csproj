@@ -99,6 +99,7 @@
   <ItemGroup>
     <Content Include="Add_Client_Page.aspx" />
     <Content Include="App_Media\Flower_Decor\White Rose.jpg" />
+    <Content Include="App_Media\Page_Images\page logo.jpg" />
     <Content Include="App_Media\Venue\Tres Jolie.jpg" />
     <Content Include="App_Media\Wedding_Planner\Test.jpg" />
     <Content Include="css\bootstrap-theme.css" />
