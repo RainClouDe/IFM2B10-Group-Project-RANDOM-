@@ -261,13 +261,13 @@
     </Compile>
     <Compile Include="Wedding_Planner_Page.aspx.cs">
       <DependentUpon>Wedding_Planner_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Wedding_Planner_Page.aspx.designer.cs">
       <DependentUpon>Wedding_Planner_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="WhiteRose_Checkout.aspx.cs">
       <DependentUpon>WhiteRose_Checkout.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WhiteRose_Checkout.aspx.designer.cs">
       <DependentUpon>WhiteRose_Checkout.aspx</DependentUpon>
