@@ -9,8 +9,8 @@
     <meta name="viewport" content="width = device-width, initial-scale=1" /> <!-- allows web page size to change ccording to screen size-->
     <title></title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="styles.css" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet"/>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -20,11 +20,13 @@
         }
         .auto-style6 {
             width: 745px;
+            height: 124px;
         }
         .auto-style7 {
             font-family: 'Great Vibes', cursive;
             font-size: 65px;
             width: 1919px;
+            height: 124px;
         }
         .auto-style8 {
             background-color: skyblue;
@@ -35,9 +37,11 @@
             width: 15px;
             border-color: white;
             border-width: 2px;
+            height: 124px;
         }
-        .auto-style10 {
-            height: 94px;
+        .auto-style11 {
+            font-size: 25px;
+            font-family: 'Great Vibes', cursive;
         }
         </style>
 </head>
@@ -46,11 +50,13 @@
     
         <table class="auto-style8">
             <tr>
-                <td class="auto-style10">
+                <td>
                     <table class="title-table">
                         <tr>
                                 <td class="auto-style9"><img src="App_Media/Page_Images/page logo.jpg" class="auto-style5" /></td>
-                                <td class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp; Bride&#39;s Helper</td>
+                                <td class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp; Bride&#39;s Helper<br />
+                                    <span class="auto-style11">All Your Wedding Needs in one place</span><br />
+                                </td>
                                 <td class="auto-style6"> 
                                     <!--nav navbar-nav -->
                                     <nav class="login-nav">

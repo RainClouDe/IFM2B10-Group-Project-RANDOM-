@@ -6836,3 +6836,12 @@ button.close {
     border-top-style: solid;
     text-align:center;
 }
+
+/*Pages Styling*/
+.container-pages
+{
+    text-align:left;
+    border-style: solid;
+    border-color:white;
+    border-width: 1.5px;
+}
