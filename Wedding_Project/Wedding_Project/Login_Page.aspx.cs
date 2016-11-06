@@ -34,10 +34,10 @@ namespace Wedding_Project
                 Response.Redirect("Home_Page.aspx");
                 //Redirect 
             }
-            else
+           /* else
             {
                 testdiv.InnerHtml = "Incorrect password or username";
-            }
+            }*/
         }
     }
 }
