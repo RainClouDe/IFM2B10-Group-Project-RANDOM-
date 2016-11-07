@@ -49,7 +49,7 @@ namespace Service
         void addClient(String Name, String Surname, String Phonenumber, String Email, String Streetaddress, String Username, String Password);
 
         [OperationContract]
-        void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, DateTime? VenueBooking);
+        void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, DateTime? VenueBookingStart, DateTime? VenueBookingEnd);
 
         [OperationContract]
         int returnLoginID(string Username);
@@ -69,6 +69,15 @@ namespace Service
 
         [OperationContract]
         List<Wedding_Welcome_Card> GetAllWelcomecards();
+
+        [OperationContract]
+        void addbooking(DateTime startdate, DateTime enddate, int VenueID, int ClientID);
+
+        [OperationContract]
+        Boolean Checkavailability(DateTime startdate, DateTime enddate);
+
+        [OperationContract]
+        Venue returnSpecificVenueItem(int? VenueID);
     }
    
   

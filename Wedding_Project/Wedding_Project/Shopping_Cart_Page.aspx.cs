@@ -34,9 +34,9 @@ namespace Wedding_Project
                 {
                     int decorID = Int32.Parse(Request.QueryString["DecID"]);
 
-                    loggedInClientID = (int)HttpContext.Current.Session["ClientId"];
+                    loggedInClientID = (int) HttpContext.Current.Session["ClientId"];
 
-                    proxy.addToCartTable(loggedInClientID, decorID, 0, 5, null);
+                    proxy.addToCartTable(loggedInClientID, decorID, 0, 5, null, null);
 
                 }
                 
@@ -44,14 +44,31 @@ namespace Wedding_Project
 
                 for (int i = 0; i < tableCartList.Length; i++)
                 {
+                    if(tableCartList[i].DEC_ITEM_ID != 0)
+                    {
+                        ServiceReference1.Decor DecorItemFromCart = proxy.returnSpecificDecorItem((int)tableCartList[i].DEC_ITEM_ID);
 
-                    ServiceReference1.Decor DecorItemFromCart = proxy.returnSpecificDecorItem((int) tableCartList[i].DEC_ITEM_ID);
 
-                    testdiv.InnerHtml += "<IMG SRC='App_Media\\" + DecorItemFromCart.DEC_IMAGE_PATH + "'/>";
-                   
-                    testdiv.InnerHtml += "<br>" + "Name: " + DecorItemFromCart.DEC_NAME;
-                    testdiv.InnerHtml += "<br>" + "Quantity: " + tableCartList[i].Quantity;
-                    testdiv.InnerHtml += "<br>" + "Price: R" + DecorItemFromCart.DEC_PRICE;
+                        testdiv.InnerHtml += "<IMG SRC='App_Media\\" + DecorItemFromCart.DEC_IMAGE_PATH + "'/>";
+
+                        testdiv.InnerHtml += "<br>" + "Name: " + DecorItemFromCart.DEC_NAME;
+                        testdiv.InnerHtml += "<br>" + "Quantity: " + tableCartList[i].Quantity;
+                        testdiv.InnerHtml += "<br>" + "Price: R" + DecorItemFromCart.DEC_PRICE * tableCartList[i].Quantity;
+                    }
+                    else if (tableCartList[i].DEC_ITEM_ID == 0)
+                    {
+                        ServiceReference1.Venue VenueItemFromCart = proxy.returnSpecificVenueItem(tableCartList[i].VN_ID);
+
+                        testdiv.InnerHtml += "<IMG SRC='App_Media\\" + VenueItemFromCart.VN_IMAGE_PATH + "'/>";
+
+                        testdiv.InnerHtml += "<br>" + "Name of the venue: " + VenueItemFromCart.VN_NAME;
+                        testdiv.InnerHtml += "<br>" + "From: " + tableCartList[i].Venue_Booking_Start;
+                        testdiv.InnerHtml += "<br>" + "To: " + tableCartList[i].Venue_Booking_End;
+                        testdiv.InnerHtml += "<br>" + "Deposit: R" + VenueItemFromCart.VN_DEPOSIT;
+
+                    }
+
+
 
                 }
             }

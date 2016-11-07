@@ -19,6 +19,7 @@ namespace Wedding_Project
             testdiv.InnerHtml += "<br> <a href='Venue_Page.aspx'>" + " Wedding Venues " + "</a>";
             testdiv.InnerHtml += "<br> <a href='Wedding_Planner_Page.aspx'>" + " Wedding Planners " + "</a>";
             testdiv.InnerHtml += "<br> <a href='Wedding_Welcome_Card.aspx'>" + " Table Welcome Cards " + "</a>";
+            testdiv.InnerHtml += "<br> <a href='Plate_Page.aspx'>" + " Plates " + "</a>";
         }
     }
 }

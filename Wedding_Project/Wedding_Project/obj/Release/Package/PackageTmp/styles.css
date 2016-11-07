@@ -1,0 +1,60 @@
+﻿.navigation
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Add Client and Login pages*/
+.user_tables
+{
+     width: 100%;
+     background-color: white;
+     color: blue;
+ }
+
+.table_header_row
+        {
+            width: 100%;
+            font-size: 60px;
+            text-align: center;
+            color: blue;
+        }
+ 
+  .auto-style4
+   {
+         width: 100%;
+         font-size: 60px;
+         text-align: center;
+         color: blue;
+         height: 86px;
+   }
+        
+  .auto-style5 
+  {
+       text-align: center;
+        width: 893px;
+
+  }
+
+   .auto-style6
+  {
+       text-align: center;
+       width: 657px;
+  }
+      
+  .auto-style7 
+  {
+      height: 20px;
+  }
+   
+ .auto-style8
+  {
+        text-align: center;
+        width: 657px;
+        height: 20px;
+  } 
+ 
+ .auto-style9
+  {
+     text-align: center;
+  } 
