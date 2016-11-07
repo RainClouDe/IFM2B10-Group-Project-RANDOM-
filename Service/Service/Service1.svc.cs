@@ -186,7 +186,9 @@ namespace Service
 
 
 
-
+        /// <summary>
+        /// Start of Funtions that check the database for validation 
+        /// </summary>
 
 
         public Boolean Authentication(String Username, String Password)
@@ -202,6 +204,23 @@ namespace Service
         }
 
 
+        public Boolean Checkavailability(DateTime startdate, DateTime enddate)
+        {
+            var query = from s in db.Venue_Booking_Schedules
+                        where ((startdate >= s.VBS_START_DATE) && (startdate <= s.VBS_END_DATE)) || ((enddate >= s.VBS_START_DATE) && (enddate <= s.VBS_END_DATE))
+                        select s;
+            if (query != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Start of Funtions that check the database for validation
+        /// </summary>
+
 
 
 
@@ -211,7 +230,7 @@ namespace Service
         /// <summary>
         /// Start of Funtions that add stuff to the database 
         /// </summary>
-  
+
         public void addClient(String Name, String Surname, String Phonenumber, String Email, String Streetaddress, String Username, String Password)
         {
             Person objperson = new Person();
@@ -242,7 +261,7 @@ namespace Service
 
             db.SubmitChanges();
         }
-        public void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, DateTime? VenueBooking)// Date time example new Datetime(2015, 1, 18)
+        public void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, DateTime? VenueBookingStart, DateTime? VenueBookingEnd)// Date time example new Datetime(2015, 1, 18)
         {
 
             Cart_Table itemToAddToCart = new Cart_Table();
@@ -250,13 +269,25 @@ namespace Service
             itemToAddToCart.DEC_ITEM_ID = DecorItemID;
             itemToAddToCart.VN_ID = VenueID;
             itemToAddToCart.Quantity = quantity;
-            itemToAddToCart.Venue_Booking = VenueBooking;
+            itemToAddToCart.Venue_Booking_Start = VenueBookingStart;
+            itemToAddToCart.Venue_Booking_End = VenueBookingEnd;
 
             db.Cart_Tables.InsertOnSubmit(itemToAddToCart);
             db.SubmitChanges();
 
         }
+        public void addbooking(DateTime startdate, DateTime enddate, int VenueID, int ClientID)
+        {
+            Venue_Booking_Schedule bookingtoaddtoschedule = new Venue_Booking_Schedule();
+            bookingtoaddtoschedule.VBS_START_DATE = startdate;
+            bookingtoaddtoschedule.VBS_END_DATE = enddate;
+            bookingtoaddtoschedule.VN_ID = VenueID;
+            bookingtoaddtoschedule.CL_ID = ClientID;
 
+            db.Venue_Booking_Schedules.InsertOnSubmit(bookingtoaddtoschedule);
+            db.SubmitChanges();
+
+        }
 
         /// <summary>
         /// End of Funtions that add stuff to the database 
@@ -316,7 +347,18 @@ namespace Service
             return 0;
         }
 
-      
+        public Venue returnSpecificVenueItem(int? VenueID)
+        {
+            var query = from s in db.Venues
+                        where s.VN_ID == VenueID
+                        select s;
+            if (query != null)
+            {
+                return query.First();
+            }
+
+            return null;
+        }
 
         /// <summary>
         /// End of functions that return specific items from tables

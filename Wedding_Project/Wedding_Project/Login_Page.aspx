@@ -49,7 +49,7 @@
         <tr>
             <td>&nbsp;</td>
             <td class="auto-style9">
-                <asp:Button ID="btnlogin" runat="server" BackColor="White" BorderColor="Blue" Height="35px" Text="Login" Width="150px" />
+                <asp:Button ID="btnlogin" runat="server" BackColor="White" BorderColor="Blue" Height="35px" Text="Login" Width="150px" OnClick="btnlogin_Click"/>
             </td>
             <td>&nbsp;</td>
         </tr>

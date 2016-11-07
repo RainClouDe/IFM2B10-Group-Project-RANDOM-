@@ -1,65 +1,3 @@
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\ApplicationInsights.config
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\csc.exe
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\vbc.exe
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\VBCSCompiler.exe
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.Web.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.Web.xml
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.csprojResolveAssemblyReference.cache
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.dll
-C:\Users\Ivans-PC\Documents\Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.pdb
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\csc.exe
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\vbc.exe
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\VBCSCompiler.exe
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.Web.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.Web.xml
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.pdb
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.dll.config
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.dll
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.pdb
-C:\Users\Ivans-PC\Documents\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.csprojResolveAssemblyReference.cache
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\csc.exe
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -75,20 +13,5 @@ D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Weddi
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.dll.config
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.dll
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.pdb
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.Agent.Intercept.dll
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.DependencyCollector.dll
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.PerfCounterCollector.dll
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.ServerTelemetryChannel.dll
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.Web.dll
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.WindowsServer.dll
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.ApplicationInsights.dll
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.DependencyCollector.xml
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.ServerTelemetryChannel.xml
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.Web.xml
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.AI.WindowsServer.xml
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.ApplicationInsights.xml
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.csprojResolveAssemblyReference.cache
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.dll
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.pdb

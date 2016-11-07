@@ -67,12 +67,6 @@ namespace Service
     partial void InsertSpecial(Special instance);
     partial void UpdateSpecial(Special instance);
     partial void DeleteSpecial(Special instance);
-    partial void InsertVenue(Venue instance);
-    partial void UpdateVenue(Venue instance);
-    partial void DeleteVenue(Venue instance);
-    partial void InsertVenue_Booking_Schedule(Venue_Booking_Schedule instance);
-    partial void UpdateVenue_Booking_Schedule(Venue_Booking_Schedule instance);
-    partial void DeleteVenue_Booking_Schedule(Venue_Booking_Schedule instance);
     partial void InsertVenue_Contractor(Venue_Contractor instance);
     partial void UpdateVenue_Contractor(Venue_Contractor instance);
     partial void DeleteVenue_Contractor(Venue_Contractor instance);
@@ -94,12 +88,18 @@ namespace Service
     partial void InsertWP_Working_Location(WP_Working_Location instance);
     partial void UpdateWP_Working_Location(WP_Working_Location instance);
     partial void DeleteWP_Working_Location(WP_Working_Location instance);
-    partial void InsertCart_Table(Cart_Table instance);
-    partial void UpdateCart_Table(Cart_Table instance);
-    partial void DeleteCart_Table(Cart_Table instance);
     partial void InsertPerson(Person instance);
     partial void UpdatePerson(Person instance);
     partial void DeletePerson(Person instance);
+    partial void InsertVenue_Booking_Schedule(Venue_Booking_Schedule instance);
+    partial void UpdateVenue_Booking_Schedule(Venue_Booking_Schedule instance);
+    partial void DeleteVenue_Booking_Schedule(Venue_Booking_Schedule instance);
+    partial void InsertCart_Table(Cart_Table instance);
+    partial void UpdateCart_Table(Cart_Table instance);
+    partial void DeleteCart_Table(Cart_Table instance);
+    partial void InsertVenue(Venue instance);
+    partial void UpdateVenue(Venue instance);
+    partial void DeleteVenue(Venue instance);
     #endregion
 		
 		public WeddingPlanningDataDataContext() : 
@@ -228,22 +228,6 @@ namespace Service
 			}
 		}
 		
-		public System.Data.Linq.Table<Venue> Venues
-		{
-			get
-			{
-				return this.GetTable<Venue>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Venue_Booking_Schedule> Venue_Booking_Schedules
-		{
-			get
-			{
-				return this.GetTable<Venue_Booking_Schedule>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Venue_Contractor> Venue_Contractors
 		{
 			get
@@ -300,6 +284,22 @@ namespace Service
 			}
 		}
 		
+		public System.Data.Linq.Table<Person> Persons
+		{
+			get
+			{
+				return this.GetTable<Person>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Venue_Booking_Schedule> Venue_Booking_Schedules
+		{
+			get
+			{
+				return this.GetTable<Venue_Booking_Schedule>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Cart_Table> Cart_Tables
 		{
 			get
@@ -308,11 +308,11 @@ namespace Service
 			}
 		}
 		
-		public System.Data.Linq.Table<Person> Persons
+		public System.Data.Linq.Table<Venue> Venues
 		{
 			get
 			{
-				return this.GetTable<Person>();
+				return this.GetTable<Venue>();
 			}
 		}
 	}
@@ -2959,660 +2959,6 @@ namespace Service
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Venue")]
-	[global::System.Runtime.Serialization.DataContractAttribute()]
-	public partial class Venue : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _VN_ID;
-		
-		private string _VN_NAME;
-		
-		private string _VN_STREET_ADDRESS;
-		
-		private System.Nullable<int> _VN_CAPACITY;
-		
-		private System.Nullable<decimal> _VN_PRICE;
-		
-		private string _VN_COORDINATES;
-		
-		private string _VN_IMAGE_PATH;
-		
-		private System.Nullable<int> _VN_TABLECAPACITY;
-		
-		private string _VN_TABLEDESCRIPTION;
-		
-		private EntitySet<Venue_Booking_Schedule> _Venue_Booking_Schedules;
-		
-		private EntitySet<Venue_Contractor> _Venue_Contractors;
-		
-		private EntitySet<Venue_Decor_Invoice> _Venue_Decor_Invoices;
-		
-		private EntitySet<Venue_Decor_Invoice> _Venue_Decor_Invoices1;
-		
-		private EntitySet<Venue_Location_and_Contact_Detail> _Venue_Location_and_Contact_Details;
-		
-		private bool serializing;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnVN_IDChanging(int value);
-    partial void OnVN_IDChanged();
-    partial void OnVN_NAMEChanging(string value);
-    partial void OnVN_NAMEChanged();
-    partial void OnVN_STREET_ADDRESSChanging(string value);
-    partial void OnVN_STREET_ADDRESSChanged();
-    partial void OnVN_CAPACITYChanging(System.Nullable<int> value);
-    partial void OnVN_CAPACITYChanged();
-    partial void OnVN_PRICEChanging(System.Nullable<decimal> value);
-    partial void OnVN_PRICEChanged();
-    partial void OnVN_COORDINATESChanging(string value);
-    partial void OnVN_COORDINATESChanged();
-    partial void OnVN_IMAGE_PATHChanging(string value);
-    partial void OnVN_IMAGE_PATHChanged();
-    partial void OnVN_TABLECAPACITYChanging(System.Nullable<int> value);
-    partial void OnVN_TABLECAPACITYChanged();
-    partial void OnVN_TABLEDESCRIPTIONChanging(string value);
-    partial void OnVN_TABLEDESCRIPTIONChanged();
-    #endregion
-		
-		public Venue()
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int VN_ID
-		{
-			get
-			{
-				return this._VN_ID;
-			}
-			set
-			{
-				if ((this._VN_ID != value))
-				{
-					this.OnVN_IDChanging(value);
-					this.SendPropertyChanging();
-					this._VN_ID = value;
-					this.SendPropertyChanged("VN_ID");
-					this.OnVN_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_NAME", DbType="VarChar(50)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public string VN_NAME
-		{
-			get
-			{
-				return this._VN_NAME;
-			}
-			set
-			{
-				if ((this._VN_NAME != value))
-				{
-					this.OnVN_NAMEChanging(value);
-					this.SendPropertyChanging();
-					this._VN_NAME = value;
-					this.SendPropertyChanged("VN_NAME");
-					this.OnVN_NAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[VN_STREET ADDRESS]", Storage="_VN_STREET_ADDRESS", DbType="VarChar(50)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public string VN_STREET_ADDRESS
-		{
-			get
-			{
-				return this._VN_STREET_ADDRESS;
-			}
-			set
-			{
-				if ((this._VN_STREET_ADDRESS != value))
-				{
-					this.OnVN_STREET_ADDRESSChanging(value);
-					this.SendPropertyChanging();
-					this._VN_STREET_ADDRESS = value;
-					this.SendPropertyChanged("VN_STREET_ADDRESS");
-					this.OnVN_STREET_ADDRESSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_CAPACITY", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-		public System.Nullable<int> VN_CAPACITY
-		{
-			get
-			{
-				return this._VN_CAPACITY;
-			}
-			set
-			{
-				if ((this._VN_CAPACITY != value))
-				{
-					this.OnVN_CAPACITYChanging(value);
-					this.SendPropertyChanging();
-					this._VN_CAPACITY = value;
-					this.SendPropertyChanged("VN_CAPACITY");
-					this.OnVN_CAPACITYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_PRICE", DbType="Decimal(19,4)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-		public System.Nullable<decimal> VN_PRICE
-		{
-			get
-			{
-				return this._VN_PRICE;
-			}
-			set
-			{
-				if ((this._VN_PRICE != value))
-				{
-					this.OnVN_PRICEChanging(value);
-					this.SendPropertyChanging();
-					this._VN_PRICE = value;
-					this.SendPropertyChanged("VN_PRICE");
-					this.OnVN_PRICEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_COORDINATES", DbType="VarChar(20)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-		public string VN_COORDINATES
-		{
-			get
-			{
-				return this._VN_COORDINATES;
-			}
-			set
-			{
-				if ((this._VN_COORDINATES != value))
-				{
-					this.OnVN_COORDINATESChanging(value);
-					this.SendPropertyChanging();
-					this._VN_COORDINATES = value;
-					this.SendPropertyChanged("VN_COORDINATES");
-					this.OnVN_COORDINATESChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_IMAGE_PATH", DbType="VarChar(50)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-		public string VN_IMAGE_PATH
-		{
-			get
-			{
-				return this._VN_IMAGE_PATH;
-			}
-			set
-			{
-				if ((this._VN_IMAGE_PATH != value))
-				{
-					this.OnVN_IMAGE_PATHChanging(value);
-					this.SendPropertyChanging();
-					this._VN_IMAGE_PATH = value;
-					this.SendPropertyChanged("VN_IMAGE_PATH");
-					this.OnVN_IMAGE_PATHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_TABLECAPACITY", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-		public System.Nullable<int> VN_TABLECAPACITY
-		{
-			get
-			{
-				return this._VN_TABLECAPACITY;
-			}
-			set
-			{
-				if ((this._VN_TABLECAPACITY != value))
-				{
-					this.OnVN_TABLECAPACITYChanging(value);
-					this.SendPropertyChanging();
-					this._VN_TABLECAPACITY = value;
-					this.SendPropertyChanged("VN_TABLECAPACITY");
-					this.OnVN_TABLECAPACITYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_TABLEDESCRIPTION", DbType="VarChar(50)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-		public string VN_TABLEDESCRIPTION
-		{
-			get
-			{
-				return this._VN_TABLEDESCRIPTION;
-			}
-			set
-			{
-				if ((this._VN_TABLEDESCRIPTION != value))
-				{
-					this.OnVN_TABLEDESCRIPTIONChanging(value);
-					this.SendPropertyChanging();
-					this._VN_TABLEDESCRIPTION = value;
-					this.SendPropertyChanged("VN_TABLEDESCRIPTION");
-					this.OnVN_TABLEDESCRIPTIONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Booking_Schedule", Storage="_Venue_Booking_Schedules", ThisKey="VN_ID", OtherKey="VN_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10, EmitDefaultValue=false)]
-		public EntitySet<Venue_Booking_Schedule> Venue_Booking_Schedules
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Venue_Booking_Schedules.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Venue_Booking_Schedules;
-			}
-			set
-			{
-				this._Venue_Booking_Schedules.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Contractor", Storage="_Venue_Contractors", ThisKey="VN_ID", OtherKey="VN_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11, EmitDefaultValue=false)]
-		public EntitySet<Venue_Contractor> Venue_Contractors
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Venue_Contractors.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Venue_Contractors;
-			}
-			set
-			{
-				this._Venue_Contractors.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Decor_Invoice", Storage="_Venue_Decor_Invoices", ThisKey="VN_ID", OtherKey="DEC_VN_INV_VENUE")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12, EmitDefaultValue=false)]
-		public EntitySet<Venue_Decor_Invoice> Venue_Decor_Invoices
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Venue_Decor_Invoices.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Venue_Decor_Invoices;
-			}
-			set
-			{
-				this._Venue_Decor_Invoices.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Decor_Invoice1", Storage="_Venue_Decor_Invoices1", ThisKey="VN_ID", OtherKey="VN_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=13, EmitDefaultValue=false)]
-		public EntitySet<Venue_Decor_Invoice> Venue_Decor_Invoices1
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Venue_Decor_Invoices1.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Venue_Decor_Invoices1;
-			}
-			set
-			{
-				this._Venue_Decor_Invoices1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Location_and_Contact_Detail", Storage="_Venue_Location_and_Contact_Details", ThisKey="VN_ID", OtherKey="VN_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=14, EmitDefaultValue=false)]
-		public EntitySet<Venue_Location_and_Contact_Detail> Venue_Location_and_Contact_Details
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Venue_Location_and_Contact_Details.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Venue_Location_and_Contact_Details;
-			}
-			set
-			{
-				this._Venue_Location_and_Contact_Details.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Venue_Booking_Schedules(Venue_Booking_Schedule entity)
-		{
-			this.SendPropertyChanging();
-			entity.Venue = this;
-		}
-		
-		private void detach_Venue_Booking_Schedules(Venue_Booking_Schedule entity)
-		{
-			this.SendPropertyChanging();
-			entity.Venue = null;
-		}
-		
-		private void attach_Venue_Contractors(Venue_Contractor entity)
-		{
-			this.SendPropertyChanging();
-			entity.Venue = this;
-		}
-		
-		private void detach_Venue_Contractors(Venue_Contractor entity)
-		{
-			this.SendPropertyChanging();
-			entity.Venue = null;
-		}
-		
-		private void attach_Venue_Decor_Invoices(Venue_Decor_Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Venue = this;
-		}
-		
-		private void detach_Venue_Decor_Invoices(Venue_Decor_Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Venue = null;
-		}
-		
-		private void attach_Venue_Decor_Invoices1(Venue_Decor_Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Venue1 = this;
-		}
-		
-		private void detach_Venue_Decor_Invoices1(Venue_Decor_Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Venue1 = null;
-		}
-		
-		private void attach_Venue_Location_and_Contact_Details(Venue_Location_and_Contact_Detail entity)
-		{
-			this.SendPropertyChanging();
-			entity.Venue = this;
-		}
-		
-		private void detach_Venue_Location_and_Contact_Details(Venue_Location_and_Contact_Detail entity)
-		{
-			this.SendPropertyChanging();
-			entity.Venue = null;
-		}
-		
-		private void Initialize()
-		{
-			this._Venue_Booking_Schedules = new EntitySet<Venue_Booking_Schedule>(new Action<Venue_Booking_Schedule>(this.attach_Venue_Booking_Schedules), new Action<Venue_Booking_Schedule>(this.detach_Venue_Booking_Schedules));
-			this._Venue_Contractors = new EntitySet<Venue_Contractor>(new Action<Venue_Contractor>(this.attach_Venue_Contractors), new Action<Venue_Contractor>(this.detach_Venue_Contractors));
-			this._Venue_Decor_Invoices = new EntitySet<Venue_Decor_Invoice>(new Action<Venue_Decor_Invoice>(this.attach_Venue_Decor_Invoices), new Action<Venue_Decor_Invoice>(this.detach_Venue_Decor_Invoices));
-			this._Venue_Decor_Invoices1 = new EntitySet<Venue_Decor_Invoice>(new Action<Venue_Decor_Invoice>(this.attach_Venue_Decor_Invoices1), new Action<Venue_Decor_Invoice>(this.detach_Venue_Decor_Invoices1));
-			this._Venue_Location_and_Contact_Details = new EntitySet<Venue_Location_and_Contact_Detail>(new Action<Venue_Location_and_Contact_Detail>(this.attach_Venue_Location_and_Contact_Details), new Action<Venue_Location_and_Contact_Detail>(this.detach_Venue_Location_and_Contact_Details));
-			OnCreated();
-		}
-		
-		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnDeserializing(StreamingContext context)
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Runtime.Serialization.OnSerializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnSerializing(StreamingContext context)
-		{
-			this.serializing = true;
-		}
-		
-		[global::System.Runtime.Serialization.OnSerializedAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnSerialized(StreamingContext context)
-		{
-			this.serializing = false;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Venue_Booking_Schedule")]
-	[global::System.Runtime.Serialization.DataContractAttribute()]
-	public partial class Venue_Booking_Schedule : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _VBS_ID;
-		
-		private System.Nullable<System.DateTime> _VBS_START_DATE;
-		
-		private System.Nullable<System.DateTime> _VBS_END_DATE;
-		
-		private System.Nullable<int> _VN_ID;
-		
-		private EntityRef<Venue> _Venue;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnVBS_IDChanging(int value);
-    partial void OnVBS_IDChanged();
-    partial void OnVBS_START_DATEChanging(System.Nullable<System.DateTime> value);
-    partial void OnVBS_START_DATEChanged();
-    partial void OnVBS_END_DATEChanging(System.Nullable<System.DateTime> value);
-    partial void OnVBS_END_DATEChanged();
-    partial void OnVN_IDChanging(System.Nullable<int> value);
-    partial void OnVN_IDChanged();
-    #endregion
-		
-		public Venue_Booking_Schedule()
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VBS_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int VBS_ID
-		{
-			get
-			{
-				return this._VBS_ID;
-			}
-			set
-			{
-				if ((this._VBS_ID != value))
-				{
-					this.OnVBS_IDChanging(value);
-					this.SendPropertyChanging();
-					this._VBS_ID = value;
-					this.SendPropertyChanged("VBS_ID");
-					this.OnVBS_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VBS_START_DATE", DbType="Date")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public System.Nullable<System.DateTime> VBS_START_DATE
-		{
-			get
-			{
-				return this._VBS_START_DATE;
-			}
-			set
-			{
-				if ((this._VBS_START_DATE != value))
-				{
-					this.OnVBS_START_DATEChanging(value);
-					this.SendPropertyChanging();
-					this._VBS_START_DATE = value;
-					this.SendPropertyChanged("VBS_START_DATE");
-					this.OnVBS_START_DATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VBS_END_DATE", DbType="Date")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public System.Nullable<System.DateTime> VBS_END_DATE
-		{
-			get
-			{
-				return this._VBS_END_DATE;
-			}
-			set
-			{
-				if ((this._VBS_END_DATE != value))
-				{
-					this.OnVBS_END_DATEChanging(value);
-					this.SendPropertyChanging();
-					this._VBS_END_DATE = value;
-					this.SendPropertyChanged("VBS_END_DATE");
-					this.OnVBS_END_DATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_ID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-		public System.Nullable<int> VN_ID
-		{
-			get
-			{
-				return this._VN_ID;
-			}
-			set
-			{
-				if ((this._VN_ID != value))
-				{
-					if (this._Venue.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnVN_IDChanging(value);
-					this.SendPropertyChanging();
-					this._VN_ID = value;
-					this.SendPropertyChanged("VN_ID");
-					this.OnVN_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Booking_Schedule", Storage="_Venue", ThisKey="VN_ID", OtherKey="VN_ID", IsForeignKey=true)]
-		public Venue Venue
-		{
-			get
-			{
-				return this._Venue.Entity;
-			}
-			set
-			{
-				Venue previousValue = this._Venue.Entity;
-				if (((previousValue != value) 
-							|| (this._Venue.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Venue.Entity = null;
-						previousValue.Venue_Booking_Schedules.Remove(this);
-					}
-					this._Venue.Entity = value;
-					if ((value != null))
-					{
-						value.Venue_Booking_Schedules.Add(this);
-						this._VN_ID = value.VN_ID;
-					}
-					else
-					{
-						this._VN_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Venue");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void Initialize()
-		{
-			this._Venue = default(EntityRef<Venue>);
-			OnCreated();
-		}
-		
-		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnDeserializing(StreamingContext context)
-		{
-			this.Initialize();
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Venue_Contractor")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Venue_Contractor : INotifyPropertyChanging, INotifyPropertyChanged
@@ -5382,207 +4728,6 @@ namespace Service
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cart_Table")]
-	[global::System.Runtime.Serialization.DataContractAttribute()]
-	public partial class Cart_Table : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private int _CL_ID;
-		
-		private System.Nullable<int> _DEC_ITEM_ID;
-		
-		private System.Nullable<int> _VN_ID;
-		
-		private System.Nullable<int> _Quantity;
-		
-		private System.Nullable<System.DateTime> _Venue_Booking;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnCL_IDChanging(int value);
-    partial void OnCL_IDChanged();
-    partial void OnDEC_ITEM_IDChanging(System.Nullable<int> value);
-    partial void OnDEC_ITEM_IDChanged();
-    partial void OnVN_IDChanging(System.Nullable<int> value);
-    partial void OnVN_IDChanged();
-    partial void OnQuantityChanging(System.Nullable<int> value);
-    partial void OnQuantityChanged();
-    partial void OnVenue_BookingChanging(System.Nullable<System.DateTime> value);
-    partial void OnVenue_BookingChanged();
-    #endregion
-		
-		public Cart_Table()
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CL_ID", DbType="Int NOT NULL")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public int CL_ID
-		{
-			get
-			{
-				return this._CL_ID;
-			}
-			set
-			{
-				if ((this._CL_ID != value))
-				{
-					this.OnCL_IDChanging(value);
-					this.SendPropertyChanging();
-					this._CL_ID = value;
-					this.SendPropertyChanged("CL_ID");
-					this.OnCL_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[DEC ITEM ID]", Storage="_DEC_ITEM_ID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public System.Nullable<int> DEC_ITEM_ID
-		{
-			get
-			{
-				return this._DEC_ITEM_ID;
-			}
-			set
-			{
-				if ((this._DEC_ITEM_ID != value))
-				{
-					this.OnDEC_ITEM_IDChanging(value);
-					this.SendPropertyChanging();
-					this._DEC_ITEM_ID = value;
-					this.SendPropertyChanged("DEC_ITEM_ID");
-					this.OnDEC_ITEM_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[VN ID]", Storage="_VN_ID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-		public System.Nullable<int> VN_ID
-		{
-			get
-			{
-				return this._VN_ID;
-			}
-			set
-			{
-				if ((this._VN_ID != value))
-				{
-					this.OnVN_IDChanging(value);
-					this.SendPropertyChanging();
-					this._VN_ID = value;
-					this.SendPropertyChanged("VN_ID");
-					this.OnVN_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-		public System.Nullable<int> Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this.OnQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Venue Booking]", Storage="_Venue_Booking", DbType="Date")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-		public System.Nullable<System.DateTime> Venue_Booking
-		{
-			get
-			{
-				return this._Venue_Booking;
-			}
-			set
-			{
-				if ((this._Venue_Booking != value))
-				{
-					this.OnVenue_BookingChanging(value);
-					this.SendPropertyChanging();
-					this._Venue_Booking = value;
-					this.SendPropertyChanged("Venue_Booking");
-					this.OnVenue_BookingChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void Initialize()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnDeserializing(StreamingContext context)
-		{
-			this.Initialize();
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Person")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged
@@ -5902,6 +5047,936 @@ namespace Service
 			this._Adminstrators = new EntitySet<Adminstrator>(new Action<Adminstrator>(this.attach_Adminstrators), new Action<Adminstrator>(this.detach_Adminstrators));
 			this._Clients = new EntitySet<Client>(new Action<Client>(this.attach_Clients), new Action<Client>(this.detach_Clients));
 			this._Wedding_Planners = new EntitySet<Wedding_Planner>(new Action<Wedding_Planner>(this.attach_Wedding_Planners), new Action<Wedding_Planner>(this.detach_Wedding_Planners));
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerializing(StreamingContext context)
+		{
+			this.serializing = true;
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializedAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerialized(StreamingContext context)
+		{
+			this.serializing = false;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Venue_Booking_Schedule")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Venue_Booking_Schedule : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _VBS_ID;
+		
+		private System.Nullable<System.DateTime> _VBS_START_DATE;
+		
+		private System.Nullable<System.DateTime> _VBS_END_DATE;
+		
+		private System.Nullable<int> _VN_ID;
+		
+		private System.Nullable<int> _CL_ID;
+		
+		private EntityRef<Venue> _Venue;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnVBS_IDChanging(int value);
+    partial void OnVBS_IDChanged();
+    partial void OnVBS_START_DATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnVBS_START_DATEChanged();
+    partial void OnVBS_END_DATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnVBS_END_DATEChanged();
+    partial void OnVN_IDChanging(System.Nullable<int> value);
+    partial void OnVN_IDChanged();
+    partial void OnCL_IDChanging(System.Nullable<int> value);
+    partial void OnCL_IDChanged();
+    #endregion
+		
+		public Venue_Booking_Schedule()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VBS_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int VBS_ID
+		{
+			get
+			{
+				return this._VBS_ID;
+			}
+			set
+			{
+				if ((this._VBS_ID != value))
+				{
+					this.OnVBS_IDChanging(value);
+					this.SendPropertyChanging();
+					this._VBS_ID = value;
+					this.SendPropertyChanged("VBS_ID");
+					this.OnVBS_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VBS_START_DATE", DbType="Date")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public System.Nullable<System.DateTime> VBS_START_DATE
+		{
+			get
+			{
+				return this._VBS_START_DATE;
+			}
+			set
+			{
+				if ((this._VBS_START_DATE != value))
+				{
+					this.OnVBS_START_DATEChanging(value);
+					this.SendPropertyChanging();
+					this._VBS_START_DATE = value;
+					this.SendPropertyChanged("VBS_START_DATE");
+					this.OnVBS_START_DATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VBS_END_DATE", DbType="Date")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public System.Nullable<System.DateTime> VBS_END_DATE
+		{
+			get
+			{
+				return this._VBS_END_DATE;
+			}
+			set
+			{
+				if ((this._VBS_END_DATE != value))
+				{
+					this.OnVBS_END_DATEChanging(value);
+					this.SendPropertyChanging();
+					this._VBS_END_DATE = value;
+					this.SendPropertyChanged("VBS_END_DATE");
+					this.OnVBS_END_DATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_ID", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public System.Nullable<int> VN_ID
+		{
+			get
+			{
+				return this._VN_ID;
+			}
+			set
+			{
+				if ((this._VN_ID != value))
+				{
+					if (this._Venue.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnVN_IDChanging(value);
+					this.SendPropertyChanging();
+					this._VN_ID = value;
+					this.SendPropertyChanged("VN_ID");
+					this.OnVN_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CL_ID", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public System.Nullable<int> CL_ID
+		{
+			get
+			{
+				return this._CL_ID;
+			}
+			set
+			{
+				if ((this._CL_ID != value))
+				{
+					this.OnCL_IDChanging(value);
+					this.SendPropertyChanging();
+					this._CL_ID = value;
+					this.SendPropertyChanged("CL_ID");
+					this.OnCL_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Booking_Schedule", Storage="_Venue", ThisKey="VN_ID", OtherKey="VN_ID", IsForeignKey=true)]
+		public Venue Venue
+		{
+			get
+			{
+				return this._Venue.Entity;
+			}
+			set
+			{
+				Venue previousValue = this._Venue.Entity;
+				if (((previousValue != value) 
+							|| (this._Venue.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Venue.Entity = null;
+						previousValue.Venue_Booking_Schedules.Remove(this);
+					}
+					this._Venue.Entity = value;
+					if ((value != null))
+					{
+						value.Venue_Booking_Schedules.Add(this);
+						this._VN_ID = value.VN_ID;
+					}
+					else
+					{
+						this._VN_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Venue");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void Initialize()
+		{
+			this._Venue = default(EntityRef<Venue>);
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cart_Table")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Cart_Table : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _CL_ID;
+		
+		private System.Nullable<int> _DEC_ITEM_ID;
+		
+		private System.Nullable<int> _VN_ID;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<System.DateTime> _Venue_Booking_Start;
+		
+		private System.Nullable<System.DateTime> _Venue_Booking_End;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCL_IDChanging(int value);
+    partial void OnCL_IDChanged();
+    partial void OnDEC_ITEM_IDChanging(System.Nullable<int> value);
+    partial void OnDEC_ITEM_IDChanged();
+    partial void OnVN_IDChanging(System.Nullable<int> value);
+    partial void OnVN_IDChanged();
+    partial void OnQuantityChanging(System.Nullable<int> value);
+    partial void OnQuantityChanged();
+    partial void OnVenue_Booking_StartChanging(System.Nullable<System.DateTime> value);
+    partial void OnVenue_Booking_StartChanged();
+    partial void OnVenue_Booking_EndChanging(System.Nullable<System.DateTime> value);
+    partial void OnVenue_Booking_EndChanged();
+    #endregion
+		
+		public Cart_Table()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CL_ID", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public int CL_ID
+		{
+			get
+			{
+				return this._CL_ID;
+			}
+			set
+			{
+				if ((this._CL_ID != value))
+				{
+					this.OnCL_IDChanging(value);
+					this.SendPropertyChanging();
+					this._CL_ID = value;
+					this.SendPropertyChanged("CL_ID");
+					this.OnCL_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[DEC ITEM ID]", Storage="_DEC_ITEM_ID", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public System.Nullable<int> DEC_ITEM_ID
+		{
+			get
+			{
+				return this._DEC_ITEM_ID;
+			}
+			set
+			{
+				if ((this._DEC_ITEM_ID != value))
+				{
+					this.OnDEC_ITEM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._DEC_ITEM_ID = value;
+					this.SendPropertyChanged("DEC_ITEM_ID");
+					this.OnDEC_ITEM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[VN ID]", Storage="_VN_ID", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public System.Nullable<int> VN_ID
+		{
+			get
+			{
+				return this._VN_ID;
+			}
+			set
+			{
+				if ((this._VN_ID != value))
+				{
+					this.OnVN_IDChanging(value);
+					this.SendPropertyChanging();
+					this._VN_ID = value;
+					this.SendPropertyChanged("VN_ID");
+					this.OnVN_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Venue Booking Start]", Storage="_Venue_Booking_Start", DbType="Date")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public System.Nullable<System.DateTime> Venue_Booking_Start
+		{
+			get
+			{
+				return this._Venue_Booking_Start;
+			}
+			set
+			{
+				if ((this._Venue_Booking_Start != value))
+				{
+					this.OnVenue_Booking_StartChanging(value);
+					this.SendPropertyChanging();
+					this._Venue_Booking_Start = value;
+					this.SendPropertyChanged("Venue_Booking_Start");
+					this.OnVenue_Booking_StartChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Venue Booking End]", Storage="_Venue_Booking_End", DbType="Date")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+		public System.Nullable<System.DateTime> Venue_Booking_End
+		{
+			get
+			{
+				return this._Venue_Booking_End;
+			}
+			set
+			{
+				if ((this._Venue_Booking_End != value))
+				{
+					this.OnVenue_Booking_EndChanging(value);
+					this.SendPropertyChanging();
+					this._Venue_Booking_End = value;
+					this.SendPropertyChanged("Venue_Booking_End");
+					this.OnVenue_Booking_EndChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void Initialize()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Venue")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Venue : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _VN_ID;
+		
+		private string _VN_NAME;
+		
+		private string _VN_STREET_ADDRESS;
+		
+		private System.Nullable<int> _VN_CAPACITY;
+		
+		private System.Nullable<decimal> _VN_PRICE;
+		
+		private string _VN_COORDINATES;
+		
+		private string _VN_IMAGE_PATH;
+		
+		private System.Nullable<int> _VN_TABLECAPACITY;
+		
+		private string _VN_TABLEDESCRIPTION;
+		
+		private System.Nullable<decimal> _VN_DEPOSIT;
+		
+		private EntitySet<Venue_Contractor> _Venue_Contractors;
+		
+		private EntitySet<Venue_Decor_Invoice> _Venue_Decor_Invoices;
+		
+		private EntitySet<Venue_Decor_Invoice> _Venue_Decor_Invoices1;
+		
+		private EntitySet<Venue_Location_and_Contact_Detail> _Venue_Location_and_Contact_Details;
+		
+		private EntitySet<Venue_Booking_Schedule> _Venue_Booking_Schedules;
+		
+		private bool serializing;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnVN_IDChanging(int value);
+    partial void OnVN_IDChanged();
+    partial void OnVN_NAMEChanging(string value);
+    partial void OnVN_NAMEChanged();
+    partial void OnVN_STREET_ADDRESSChanging(string value);
+    partial void OnVN_STREET_ADDRESSChanged();
+    partial void OnVN_CAPACITYChanging(System.Nullable<int> value);
+    partial void OnVN_CAPACITYChanged();
+    partial void OnVN_PRICEChanging(System.Nullable<decimal> value);
+    partial void OnVN_PRICEChanged();
+    partial void OnVN_COORDINATESChanging(string value);
+    partial void OnVN_COORDINATESChanged();
+    partial void OnVN_IMAGE_PATHChanging(string value);
+    partial void OnVN_IMAGE_PATHChanged();
+    partial void OnVN_TABLECAPACITYChanging(System.Nullable<int> value);
+    partial void OnVN_TABLECAPACITYChanged();
+    partial void OnVN_TABLEDESCRIPTIONChanging(string value);
+    partial void OnVN_TABLEDESCRIPTIONChanged();
+    partial void OnVN_DEPOSITChanging(System.Nullable<decimal> value);
+    partial void OnVN_DEPOSITChanged();
+    #endregion
+		
+		public Venue()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int VN_ID
+		{
+			get
+			{
+				return this._VN_ID;
+			}
+			set
+			{
+				if ((this._VN_ID != value))
+				{
+					this.OnVN_IDChanging(value);
+					this.SendPropertyChanging();
+					this._VN_ID = value;
+					this.SendPropertyChanged("VN_ID");
+					this.OnVN_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_NAME", DbType="VarChar(50)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public string VN_NAME
+		{
+			get
+			{
+				return this._VN_NAME;
+			}
+			set
+			{
+				if ((this._VN_NAME != value))
+				{
+					this.OnVN_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._VN_NAME = value;
+					this.SendPropertyChanged("VN_NAME");
+					this.OnVN_NAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[VN_STREET ADDRESS]", Storage="_VN_STREET_ADDRESS", DbType="VarChar(50)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public string VN_STREET_ADDRESS
+		{
+			get
+			{
+				return this._VN_STREET_ADDRESS;
+			}
+			set
+			{
+				if ((this._VN_STREET_ADDRESS != value))
+				{
+					this.OnVN_STREET_ADDRESSChanging(value);
+					this.SendPropertyChanging();
+					this._VN_STREET_ADDRESS = value;
+					this.SendPropertyChanged("VN_STREET_ADDRESS");
+					this.OnVN_STREET_ADDRESSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_CAPACITY", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public System.Nullable<int> VN_CAPACITY
+		{
+			get
+			{
+				return this._VN_CAPACITY;
+			}
+			set
+			{
+				if ((this._VN_CAPACITY != value))
+				{
+					this.OnVN_CAPACITYChanging(value);
+					this.SendPropertyChanging();
+					this._VN_CAPACITY = value;
+					this.SendPropertyChanged("VN_CAPACITY");
+					this.OnVN_CAPACITYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_PRICE", DbType="Decimal(19,4)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public System.Nullable<decimal> VN_PRICE
+		{
+			get
+			{
+				return this._VN_PRICE;
+			}
+			set
+			{
+				if ((this._VN_PRICE != value))
+				{
+					this.OnVN_PRICEChanging(value);
+					this.SendPropertyChanging();
+					this._VN_PRICE = value;
+					this.SendPropertyChanged("VN_PRICE");
+					this.OnVN_PRICEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_COORDINATES", DbType="VarChar(20)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public string VN_COORDINATES
+		{
+			get
+			{
+				return this._VN_COORDINATES;
+			}
+			set
+			{
+				if ((this._VN_COORDINATES != value))
+				{
+					this.OnVN_COORDINATESChanging(value);
+					this.SendPropertyChanging();
+					this._VN_COORDINATES = value;
+					this.SendPropertyChanged("VN_COORDINATES");
+					this.OnVN_COORDINATESChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_IMAGE_PATH", DbType="VarChar(50)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+		public string VN_IMAGE_PATH
+		{
+			get
+			{
+				return this._VN_IMAGE_PATH;
+			}
+			set
+			{
+				if ((this._VN_IMAGE_PATH != value))
+				{
+					this.OnVN_IMAGE_PATHChanging(value);
+					this.SendPropertyChanging();
+					this._VN_IMAGE_PATH = value;
+					this.SendPropertyChanged("VN_IMAGE_PATH");
+					this.OnVN_IMAGE_PATHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_TABLECAPACITY", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+		public System.Nullable<int> VN_TABLECAPACITY
+		{
+			get
+			{
+				return this._VN_TABLECAPACITY;
+			}
+			set
+			{
+				if ((this._VN_TABLECAPACITY != value))
+				{
+					this.OnVN_TABLECAPACITYChanging(value);
+					this.SendPropertyChanging();
+					this._VN_TABLECAPACITY = value;
+					this.SendPropertyChanged("VN_TABLECAPACITY");
+					this.OnVN_TABLECAPACITYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_TABLEDESCRIPTION", DbType="VarChar(50)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+		public string VN_TABLEDESCRIPTION
+		{
+			get
+			{
+				return this._VN_TABLEDESCRIPTION;
+			}
+			set
+			{
+				if ((this._VN_TABLEDESCRIPTION != value))
+				{
+					this.OnVN_TABLEDESCRIPTIONChanging(value);
+					this.SendPropertyChanging();
+					this._VN_TABLEDESCRIPTION = value;
+					this.SendPropertyChanged("VN_TABLEDESCRIPTION");
+					this.OnVN_TABLEDESCRIPTIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_DEPOSIT", DbType="Decimal(19,4)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+		public System.Nullable<decimal> VN_DEPOSIT
+		{
+			get
+			{
+				return this._VN_DEPOSIT;
+			}
+			set
+			{
+				if ((this._VN_DEPOSIT != value))
+				{
+					this.OnVN_DEPOSITChanging(value);
+					this.SendPropertyChanging();
+					this._VN_DEPOSIT = value;
+					this.SendPropertyChanged("VN_DEPOSIT");
+					this.OnVN_DEPOSITChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Contractor", Storage="_Venue_Contractors", ThisKey="VN_ID", OtherKey="VN_ID")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11, EmitDefaultValue=false)]
+		public EntitySet<Venue_Contractor> Venue_Contractors
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Venue_Contractors.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Venue_Contractors;
+			}
+			set
+			{
+				this._Venue_Contractors.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Decor_Invoice", Storage="_Venue_Decor_Invoices", ThisKey="VN_ID", OtherKey="DEC_VN_INV_VENUE")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12, EmitDefaultValue=false)]
+		public EntitySet<Venue_Decor_Invoice> Venue_Decor_Invoices
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Venue_Decor_Invoices.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Venue_Decor_Invoices;
+			}
+			set
+			{
+				this._Venue_Decor_Invoices.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Decor_Invoice1", Storage="_Venue_Decor_Invoices1", ThisKey="VN_ID", OtherKey="VN_ID")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=13, EmitDefaultValue=false)]
+		public EntitySet<Venue_Decor_Invoice> Venue_Decor_Invoices1
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Venue_Decor_Invoices1.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Venue_Decor_Invoices1;
+			}
+			set
+			{
+				this._Venue_Decor_Invoices1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Location_and_Contact_Detail", Storage="_Venue_Location_and_Contact_Details", ThisKey="VN_ID", OtherKey="VN_ID")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=14, EmitDefaultValue=false)]
+		public EntitySet<Venue_Location_and_Contact_Detail> Venue_Location_and_Contact_Details
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Venue_Location_and_Contact_Details.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Venue_Location_and_Contact_Details;
+			}
+			set
+			{
+				this._Venue_Location_and_Contact_Details.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Booking_Schedule", Storage="_Venue_Booking_Schedules", ThisKey="VN_ID", OtherKey="VN_ID")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=15, EmitDefaultValue=false)]
+		public EntitySet<Venue_Booking_Schedule> Venue_Booking_Schedules
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Venue_Booking_Schedules.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Venue_Booking_Schedules;
+			}
+			set
+			{
+				this._Venue_Booking_Schedules.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Venue_Contractors(Venue_Contractor entity)
+		{
+			this.SendPropertyChanging();
+			entity.Venue = this;
+		}
+		
+		private void detach_Venue_Contractors(Venue_Contractor entity)
+		{
+			this.SendPropertyChanging();
+			entity.Venue = null;
+		}
+		
+		private void attach_Venue_Decor_Invoices(Venue_Decor_Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Venue = this;
+		}
+		
+		private void detach_Venue_Decor_Invoices(Venue_Decor_Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Venue = null;
+		}
+		
+		private void attach_Venue_Decor_Invoices1(Venue_Decor_Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Venue1 = this;
+		}
+		
+		private void detach_Venue_Decor_Invoices1(Venue_Decor_Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Venue1 = null;
+		}
+		
+		private void attach_Venue_Location_and_Contact_Details(Venue_Location_and_Contact_Detail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Venue = this;
+		}
+		
+		private void detach_Venue_Location_and_Contact_Details(Venue_Location_and_Contact_Detail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Venue = null;
+		}
+		
+		private void attach_Venue_Booking_Schedules(Venue_Booking_Schedule entity)
+		{
+			this.SendPropertyChanging();
+			entity.Venue = this;
+		}
+		
+		private void detach_Venue_Booking_Schedules(Venue_Booking_Schedule entity)
+		{
+			this.SendPropertyChanging();
+			entity.Venue = null;
+		}
+		
+		private void Initialize()
+		{
+			this._Venue_Contractors = new EntitySet<Venue_Contractor>(new Action<Venue_Contractor>(this.attach_Venue_Contractors), new Action<Venue_Contractor>(this.detach_Venue_Contractors));
+			this._Venue_Decor_Invoices = new EntitySet<Venue_Decor_Invoice>(new Action<Venue_Decor_Invoice>(this.attach_Venue_Decor_Invoices), new Action<Venue_Decor_Invoice>(this.detach_Venue_Decor_Invoices));
+			this._Venue_Decor_Invoices1 = new EntitySet<Venue_Decor_Invoice>(new Action<Venue_Decor_Invoice>(this.attach_Venue_Decor_Invoices1), new Action<Venue_Decor_Invoice>(this.detach_Venue_Decor_Invoices1));
+			this._Venue_Location_and_Contact_Details = new EntitySet<Venue_Location_and_Contact_Detail>(new Action<Venue_Location_and_Contact_Detail>(this.attach_Venue_Location_and_Contact_Details), new Action<Venue_Location_and_Contact_Detail>(this.detach_Venue_Location_and_Contact_Details));
+			this._Venue_Booking_Schedules = new EntitySet<Venue_Booking_Schedule>(new Action<Venue_Booking_Schedule>(this.attach_Venue_Booking_Schedules), new Action<Venue_Booking_Schedule>(this.detach_Venue_Booking_Schedules));
 			OnCreated();
 		}
 		
