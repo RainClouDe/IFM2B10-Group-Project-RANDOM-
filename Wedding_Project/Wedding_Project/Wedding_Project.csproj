@@ -102,6 +102,26 @@
     <Content Include="App_Media\Page_Images\page logo.jpg" />
     <Content Include="App_Media\Venue\Tres Jolie.jpg" />
     <Content Include="App_Media\Wedding_Planner\Test.jpg" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -109,6 +129,8 @@
     <Content Include="Cutlery_Page.aspx" />
     <Content Include="Decor_Flower_Page.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Home.aspx" />
+    <Content Include="Home_Page.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\npm.js" />
@@ -123,9 +145,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Plate_Page.aspx" />
+    <None Include="Service References\ServiceReference1\Service11.wsdl" />
+    <None Include="Service References\ServiceReference1\Service13.disco" />
+    <None Include="Service References\ServiceReference1\Service11.disco" />
+    <None Include="Service References\ServiceReference1\Service12.disco" />
+    <Content Include="Shopping_Cart_Page.aspx" />
+    <Content Include="styles.css" />
+    <Content Include="Venue_Booking_Page.aspx" />
     <Content Include="Venue_Page.aspx" />
     <Content Include="Wedding_Planner_Page.aspx" />
-    <Content Include="WhiteRose_Checkout.aspx" />
+    <Content Include="Wedding_Welcome_Card.aspx" />
     <None Include="Properties\PublishProfiles\Website.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -152,6 +182,7 @@
     <None Include="Service References\ServiceReference1\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReference1\Service12.wsdl" />
     <None Include="Service References\ServiceReference1\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -176,6 +207,30 @@
     <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Cutlery.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\ServiceReference1\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Cart_Table.datasource" />
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Plate.datasource" />
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Wedding_Welcome_Card.datasource" />
     <None Include="Web References\localhost\Service1.wsdl" />
     <None Include="Web References\localhost\Service1.xsd">
       <SubType>Designer</SubType>
@@ -222,6 +277,20 @@
     <Compile Include="Decor_Flower_Page.aspx.designer.cs">
       <DependentUpon>Decor_Flower_Page.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home_Page.aspx.cs">
+      <DependentUpon>Home_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home_Page.aspx.designer.cs">
+      <DependentUpon>Home_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login_Page.aspx.cs">
       <DependentUpon>Login_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -236,6 +305,19 @@
     <Compile Include="Master_Page.Master.designer.cs">
       <DependentUpon>Master_Page.Master</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Plate_Page.aspx.cs">
+      <DependentUpon>Plate_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Plate_Page.aspx.designer.cs">
+      <DependentUpon>Plate_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -246,6 +328,19 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Shopping_Cart_Page.aspx.cs">
+      <DependentUpon>Shopping_Cart_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shopping_Cart_Page.aspx.designer.cs">
+      <DependentUpon>Shopping_Cart_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Venue_Booking_Page.aspx.cs">
+      <DependentUpon>Venue_Booking_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Venue_Booking_Page.aspx.designer.cs">
+      <DependentUpon>Venue_Booking_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Venue_Page.aspx.cs">
       <DependentUpon>Venue_Page.aspx</DependentUpon>
@@ -266,11 +361,12 @@
     <Compile Include="Wedding_Planner_Page.aspx.designer.cs">
       <DependentUpon>Wedding_Planner_Page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WhiteRose_Checkout.aspx.cs">
-      <DependentUpon>WhiteRose_Checkout.aspx</DependentUpon>
+    <Compile Include="Wedding_Welcome_Card.aspx.cs">
+      <DependentUpon>Wedding_Welcome_Card.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WhiteRose_Checkout.aspx.designer.cs">
-      <DependentUpon>WhiteRose_Checkout.aspx</DependentUpon>
+    <Compile Include="Wedding_Welcome_Card.aspx.designer.cs">
+      <DependentUpon>Wedding_Welcome_Card.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

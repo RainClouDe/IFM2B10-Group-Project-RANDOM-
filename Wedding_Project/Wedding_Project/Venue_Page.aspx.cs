@@ -36,8 +36,8 @@ namespace Wedding_Project
                 test.InnerHtml = "<IMG SRC='App_Media\\" +venuelist[i].VN_IMAGE_PATH+ "'/>";
                 test.InnerHtml += "<br>" + "Name:" + venuelist[i].VN_NAME;
                 test.InnerHtml += "<br>" + "Price:" + venuelist[i].VN_PRICE;
-                test.InnerHtml += "<br>" + "Street Address:" + venuelist[i].VN_STREET_ADDRESS;
-
+                test.InnerHtml += "<br>" + "Street Address:" + venuelist[i].VN_STREET_ADDRESS + "<br>";
+                test.InnerHtml += "<a href='Venue_Booking_Page.aspx?VnID= " + venuelist[i].VN_ID.ToString() + " '>" + " Book now " + "</a>";
             }
             }
     }
