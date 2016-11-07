@@ -5,14 +5,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>C:\inetpub\service</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\inetpub\Service</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Data/Wedding.mdf">
-      <publishTime>11/02/2016 22:36:05</publishTime>
+      <publishTime>11/07/2016 14:56:36</publishTime>
     </File>
     <File Include="App_Data/Wedding_log.ldf">
-      <publishTime>11/02/2016 22:36:05</publishTime>
+      <publishTime>11/07/2016 14:56:36</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>10/25/2016 21:54:35</publishTime>
@@ -36,7 +36,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/25/2016 21:54:35</publishTime>
     </File>
     <File Include="bin/Service.dll">
-      <publishTime>11/02/2016 22:36:05</publishTime>
+      <publishTime>11/07/2016 14:56:35</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>10/25/2016 21:54:35</publishTime>
@@ -57,7 +57,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2016 23:10:38</publishTime>
     </File>
     <File Include="WeddingPlanningData.dbml">
-      <publishTime>11/02/2016 19:54:45</publishTime>
+      <publishTime>11/07/2016 14:31:23</publishTime>
     </File>
     <File Include="WeddingPlanningData.dbml.layout">
       <publishTime>09/29/2016 19:53:23</publishTime>

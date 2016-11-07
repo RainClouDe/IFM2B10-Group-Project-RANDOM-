@@ -1582,10 +1582,12 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
+
   margin-right: auto;
   margin-left: auto;
+  text-align: center;
 }
 @media (min-width: 768px) {
   .container {
@@ -3076,8 +3078,9 @@ fieldset[disabled] a.btn {
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   color: #333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
+  background-color: skyblue;
+  border-color: white;
+  font-size: 20px;
 }
 .btn-default:active:hover,
 .btn-default.active:hover,
@@ -3518,7 +3521,7 @@ tbody.collapse.in {
   outline: 0;
 }
 .dropdown-menu {
-  position: absolute;
+  position:relative;
   top: 100%;
   left: 0;
   z-index: 1000;
@@ -3527,13 +3530,14 @@ tbody.collapse.in {
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0;
-  font-size: 14px;
-  text-align: left;
+  font-size: 20px;
+  text-align: match-parent;
   list-style: none;
-  background-color: #fff;
+  background-color: skyblue;
+  color: blue;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
-  border: 1px solid #ccc;
+  border: 1px solid skyblue;
   border: 1px solid rgba(0, 0, 0, .15);
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
@@ -4322,6 +4326,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-nav {
   margin: 7.5px -15px;
+  align-content:center;
 }
 .navbar-nav > li > a {
   padding-top: 10px;
@@ -4493,8 +4498,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  background-color: skyblue;
+  border-color:skyblue;
+  left: 18px; 
+    right: 0; 
+    top: 0; 
+    width: 98%;
+    color: dodgerblue;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4553,8 +4563,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333;
-    background-color: transparent;
+    color: dodgerblue;
+    background-color: skyblue;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
@@ -6755,3 +6765,74 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+/*Master Page Styling*/
+.main-master-table
+{
+    background-color:skyblue;
+    color: white;
+    width:100%;
+}
+
+.title-table
+{
+    align-content: center;
+    background-color:skyblue;
+}
+
+.logo-image
+{
+    width: 15px;
+    height:15px;
+    border-color:white;
+    border-width:2px;
+}
+
+.site-title
+{
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    text-align: center; 
+    border-bottom-style:double;
+    border-color: white;
+    border-bottom-width: 2.5px;
+}
+
+.login-nav
+{
+    align-content: center;
+    text-align: center;
+    width: 134px;
+    height: 108px;
+}
+
+.navigation
+{
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    width:100%;
+}
+
+.navbar-menu
+{
+
+
+}
+
+.menu-nav
+{
+    color:white;
+    font-size: 25px;
+    font-style: oblique;
+    padding: 15px;
+}
+
+.site-footer
+{
+    font-size: 20px;
+    border-top-width: 3px;
+    border-top-color: white;
+    border-top-style: solid;
+    text-align:center;
+}

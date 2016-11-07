@@ -656,7 +656,7 @@ namespace Wedding_Project.ServiceReference1 {
         private string VN_TABLEDESCRIPTIONField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Wedding_Project.ServiceReference1.Venue_Booking_Schedule[] Venue_Booking_SchedulesField;
+        private System.Nullable<decimal> VN_DEPOSITField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Wedding_Project.ServiceReference1.Venue_Contractor[] Venue_ContractorsField;
@@ -669,6 +669,9 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Wedding_Project.ServiceReference1.Venue_Location_and_Contact_Detail[] Venue_Location_and_Contact_DetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Venue_Booking_Schedule[] Venue_Booking_SchedulesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -797,15 +800,15 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public Wedding_Project.ServiceReference1.Venue_Booking_Schedule[] Venue_Booking_Schedules {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public System.Nullable<decimal> VN_DEPOSIT {
             get {
-                return this.Venue_Booking_SchedulesField;
+                return this.VN_DEPOSITField;
             }
             set {
-                if ((object.ReferenceEquals(this.Venue_Booking_SchedulesField, value) != true)) {
-                    this.Venue_Booking_SchedulesField = value;
-                    this.RaisePropertyChanged("Venue_Booking_Schedules");
+                if ((this.VN_DEPOSITField.Equals(value) != true)) {
+                    this.VN_DEPOSITField = value;
+                    this.RaisePropertyChanged("VN_DEPOSIT");
                 }
             }
         }
@@ -862,95 +865,15 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Venue_Booking_Schedule", Namespace="http://schemas.datacontract.org/2004/07/Service")]
-    [System.SerializableAttribute()]
-    public partial class Venue_Booking_Schedule : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VBS_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> VBS_START_DATEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> VBS_END_DATEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> VN_IDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public Wedding_Project.ServiceReference1.Venue_Booking_Schedule[] Venue_Booking_Schedules {
             get {
-                return this.extensionDataField;
+                return this.Venue_Booking_SchedulesField;
             }
             set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VBS_ID {
-            get {
-                return this.VBS_IDField;
-            }
-            set {
-                if ((this.VBS_IDField.Equals(value) != true)) {
-                    this.VBS_IDField = value;
-                    this.RaisePropertyChanged("VBS_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> VBS_START_DATE {
-            get {
-                return this.VBS_START_DATEField;
-            }
-            set {
-                if ((this.VBS_START_DATEField.Equals(value) != true)) {
-                    this.VBS_START_DATEField = value;
-                    this.RaisePropertyChanged("VBS_START_DATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public System.Nullable<System.DateTime> VBS_END_DATE {
-            get {
-                return this.VBS_END_DATEField;
-            }
-            set {
-                if ((this.VBS_END_DATEField.Equals(value) != true)) {
-                    this.VBS_END_DATEField = value;
-                    this.RaisePropertyChanged("VBS_END_DATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public System.Nullable<int> VN_ID {
-            get {
-                return this.VN_IDField;
-            }
-            set {
-                if ((this.VN_IDField.Equals(value) != true)) {
-                    this.VN_IDField = value;
-                    this.RaisePropertyChanged("VN_ID");
+                if ((object.ReferenceEquals(this.Venue_Booking_SchedulesField, value) != true)) {
+                    this.Venue_Booking_SchedulesField = value;
+                    this.RaisePropertyChanged("Venue_Booking_Schedules");
                 }
             }
         }
@@ -1390,6 +1313,115 @@ namespace Wedding_Project.ServiceReference1 {
                 if ((this.VN_IDField.Equals(value) != true)) {
                     this.VN_IDField = value;
                     this.RaisePropertyChanged("VN_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Venue_Booking_Schedule", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Venue_Booking_Schedule : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int VBS_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> VBS_START_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> VBS_END_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> VN_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CL_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int VBS_ID {
+            get {
+                return this.VBS_IDField;
+            }
+            set {
+                if ((this.VBS_IDField.Equals(value) != true)) {
+                    this.VBS_IDField = value;
+                    this.RaisePropertyChanged("VBS_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> VBS_START_DATE {
+            get {
+                return this.VBS_START_DATEField;
+            }
+            set {
+                if ((this.VBS_START_DATEField.Equals(value) != true)) {
+                    this.VBS_START_DATEField = value;
+                    this.RaisePropertyChanged("VBS_START_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.Nullable<System.DateTime> VBS_END_DATE {
+            get {
+                return this.VBS_END_DATEField;
+            }
+            set {
+                if ((this.VBS_END_DATEField.Equals(value) != true)) {
+                    this.VBS_END_DATEField = value;
+                    this.RaisePropertyChanged("VBS_END_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.Nullable<int> VN_ID {
+            get {
+                return this.VN_IDField;
+            }
+            set {
+                if ((this.VN_IDField.Equals(value) != true)) {
+                    this.VN_IDField = value;
+                    this.RaisePropertyChanged("VN_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.Nullable<int> CL_ID {
+            get {
+                return this.CL_IDField;
+            }
+            set {
+                if ((this.CL_IDField.Equals(value) != true)) {
+                    this.CL_IDField = value;
+                    this.RaisePropertyChanged("CL_ID");
                 }
             }
         }
@@ -2548,7 +2580,10 @@ namespace Wedding_Project.ServiceReference1 {
         private System.Nullable<int> QuantityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> Venue_BookingField;
+        private System.Nullable<System.DateTime> Venue_Booking_StartField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> Venue_Booking_EndField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2626,14 +2661,27 @@ namespace Wedding_Project.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public System.Nullable<System.DateTime> Venue_Booking {
+        public System.Nullable<System.DateTime> Venue_Booking_Start {
             get {
-                return this.Venue_BookingField;
+                return this.Venue_Booking_StartField;
             }
             set {
-                if ((this.Venue_BookingField.Equals(value) != true)) {
-                    this.Venue_BookingField = value;
-                    this.RaisePropertyChanged("Venue_Booking");
+                if ((this.Venue_Booking_StartField.Equals(value) != true)) {
+                    this.Venue_Booking_StartField = value;
+                    this.RaisePropertyChanged("Venue_Booking_Start");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public System.Nullable<System.DateTime> Venue_Booking_End {
+            get {
+                return this.Venue_Booking_EndField;
+            }
+            set {
+                if ((this.Venue_Booking_EndField.Equals(value) != true)) {
+                    this.Venue_Booking_EndField = value;
+                    this.RaisePropertyChanged("Venue_Booking_End");
                 }
             }
         }
@@ -2719,10 +2767,10 @@ namespace Wedding_Project.ServiceReference1 {
         System.Threading.Tasks.Task addClientAsync(string Name, string Surname, string Phonenumber, string Email, string Streetaddress, string Username, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addToCartTable", ReplyAction="http://tempuri.org/IService1/addToCartTableResponse")]
-        void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, System.Nullable<System.DateTime> VenueBooking);
+        void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, System.Nullable<System.DateTime> VenueBookingStart, System.Nullable<System.DateTime> VenueBookingEnd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addToCartTable", ReplyAction="http://tempuri.org/IService1/addToCartTableResponse")]
-        System.Threading.Tasks.Task addToCartTableAsync(int UserID, int DecorItemID, int VenueID, int quantity, System.Nullable<System.DateTime> VenueBooking);
+        System.Threading.Tasks.Task addToCartTableAsync(int UserID, int DecorItemID, int VenueID, int quantity, System.Nullable<System.DateTime> VenueBookingStart, System.Nullable<System.DateTime> VenueBookingEnd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/returnLoginID", ReplyAction="http://tempuri.org/IService1/returnLoginIDResponse")]
         int returnLoginID(string Username);
@@ -2759,6 +2807,24 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllWelcomecards", ReplyAction="http://tempuri.org/IService1/GetAllWelcomecardsResponse")]
         System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Wedding_Welcome_Card[]> GetAllWelcomecardsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addbooking", ReplyAction="http://tempuri.org/IService1/addbookingResponse")]
+        void addbooking(System.DateTime startdate, System.DateTime enddate, int VenueID, int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addbooking", ReplyAction="http://tempuri.org/IService1/addbookingResponse")]
+        System.Threading.Tasks.Task addbookingAsync(System.DateTime startdate, System.DateTime enddate, int VenueID, int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Checkavailability", ReplyAction="http://tempuri.org/IService1/CheckavailabilityResponse")]
+        bool Checkavailability(System.DateTime startdate, System.DateTime enddate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Checkavailability", ReplyAction="http://tempuri.org/IService1/CheckavailabilityResponse")]
+        System.Threading.Tasks.Task<bool> CheckavailabilityAsync(System.DateTime startdate, System.DateTime enddate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/returnSpecificVenueItem", ReplyAction="http://tempuri.org/IService1/returnSpecificVenueItemResponse")]
+        Wedding_Project.ServiceReference1.Venue returnSpecificVenueItem(System.Nullable<int> VenueID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/returnSpecificVenueItem", ReplyAction="http://tempuri.org/IService1/returnSpecificVenueItemResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue> returnSpecificVenueItemAsync(System.Nullable<int> VenueID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2876,12 +2942,12 @@ namespace Wedding_Project.ServiceReference1 {
             return base.Channel.addClientAsync(Name, Surname, Phonenumber, Email, Streetaddress, Username, Password);
         }
         
-        public void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, System.Nullable<System.DateTime> VenueBooking) {
-            base.Channel.addToCartTable(UserID, DecorItemID, VenueID, quantity, VenueBooking);
+        public void addToCartTable(int UserID, int DecorItemID, int VenueID, int quantity, System.Nullable<System.DateTime> VenueBookingStart, System.Nullable<System.DateTime> VenueBookingEnd) {
+            base.Channel.addToCartTable(UserID, DecorItemID, VenueID, quantity, VenueBookingStart, VenueBookingEnd);
         }
         
-        public System.Threading.Tasks.Task addToCartTableAsync(int UserID, int DecorItemID, int VenueID, int quantity, System.Nullable<System.DateTime> VenueBooking) {
-            return base.Channel.addToCartTableAsync(UserID, DecorItemID, VenueID, quantity, VenueBooking);
+        public System.Threading.Tasks.Task addToCartTableAsync(int UserID, int DecorItemID, int VenueID, int quantity, System.Nullable<System.DateTime> VenueBookingStart, System.Nullable<System.DateTime> VenueBookingEnd) {
+            return base.Channel.addToCartTableAsync(UserID, DecorItemID, VenueID, quantity, VenueBookingStart, VenueBookingEnd);
         }
         
         public int returnLoginID(string Username) {
@@ -2930,6 +2996,30 @@ namespace Wedding_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Wedding_Welcome_Card[]> GetAllWelcomecardsAsync() {
             return base.Channel.GetAllWelcomecardsAsync();
+        }
+        
+        public void addbooking(System.DateTime startdate, System.DateTime enddate, int VenueID, int ClientID) {
+            base.Channel.addbooking(startdate, enddate, VenueID, ClientID);
+        }
+        
+        public System.Threading.Tasks.Task addbookingAsync(System.DateTime startdate, System.DateTime enddate, int VenueID, int ClientID) {
+            return base.Channel.addbookingAsync(startdate, enddate, VenueID, ClientID);
+        }
+        
+        public bool Checkavailability(System.DateTime startdate, System.DateTime enddate) {
+            return base.Channel.Checkavailability(startdate, enddate);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckavailabilityAsync(System.DateTime startdate, System.DateTime enddate) {
+            return base.Channel.CheckavailabilityAsync(startdate, enddate);
+        }
+        
+        public Wedding_Project.ServiceReference1.Venue returnSpecificVenueItem(System.Nullable<int> VenueID) {
+            return base.Channel.returnSpecificVenueItem(VenueID);
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue> returnSpecificVenueItemAsync(System.Nullable<int> VenueID) {
+            return base.Channel.returnSpecificVenueItemAsync(VenueID);
         }
     }
 }
