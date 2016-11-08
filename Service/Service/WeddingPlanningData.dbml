@@ -14,6 +14,7 @@
       <Column Name="CL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LOGIN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Client_Decor_Invoice" Member="Decor_Invoices" ThisKey="CL_ID" OtherKey="CL_ID" Type="Decor_Invoice" />
       <Association Name="Login_Detail_Client" Member="Login_Detail" ThisKey="LOGIN_ID" OtherKey="LOGIN_ID" Type="Login_Detail" IsForeignKey="true" />
       <Association Name="Person_Client" Member="Person" ThisKey="P_ID" OtherKey="P_ID" Type="Person" IsForeignKey="true" />
     </Type>
@@ -37,20 +38,10 @@
       <Column Name="DEC_TYPE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="DEC_IMAGE_PATH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Decor_Cutlery" Member="Cutleries" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Cutlery" />
-      <Association Name="Decor_Decor_Invoice" Member="Decor_Invoices" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor_Invoice" />
       <Association Name="Decor_Flower_bouquet" Member="Flower_bouquets" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Flower_bouquet" />
       <Association Name="Decor_Plate" Member="Plates" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Plate" />
       <Association Name="Decor_Special" Member="Specials" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Special" />
       <Association Name="Decor_Wedding_Welcome_Card" Member="Wedding_Welcome_Cards" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Wedding_Welcome_Card" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Decor_Invoice" Member="Decor_Invoices">
-    <Type Name="Decor_Invoice">
-      <Column Name="DEC_INV_DECORINVOICE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="[DEC_INV_TOTAL COST]" Member="DEC_INV_TOTAL_COST" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
-      <Column Name="DEC_ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Decor_Invoice_Venue_Decor_Invoice" Member="Venue_Decor_Invoices" ThisKey="DEC_INV_DECORINVOICE_ID" OtherKey="DEC_VN_INV_DECORINVOICE" Type="Venue_Decor_Invoice" />
-      <Association Name="Decor_Decor_Invoice" Member="Decor" ThisKey="DEC_ITEM_ID" OtherKey="DEC_ITEM_ID" Type="Decor" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Disc_Jockey" Member="Disc_Jockeys">
@@ -138,9 +129,9 @@
       <Column Name="DEC_VN_INV_DECORINVOICE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DEC_VN_INV_VENUE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="VN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Decor_Invoice_Venue_Decor_Invoice" Member="Decor_Invoice" ThisKey="DEC_VN_INV_DECORINVOICE" OtherKey="DEC_INV_DECORINVOICE_ID" Type="Decor_Invoice" IsForeignKey="true" />
       <Association Name="Venue_Venue_Decor_Invoice" Member="Venue" ThisKey="DEC_VN_INV_VENUE" OtherKey="VN_ID" Type="Venue" IsForeignKey="true" />
       <Association Name="Venue_Venue_Decor_Invoice1" Member="Venue1" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue" IsForeignKey="true" />
+      <Association Name="Decor_Invoice_Venue_Decor_Invoice" Member="Decor_Invoice" ThisKey="DEC_VN_INV_DECORINVOICE" OtherKey="DEC_INV_DECORINVOICE_ID" Type="Decor_Invoice" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Venue_Location_and_Contact_Details" Member="Venue_Location_and_Contact_Details">
@@ -243,6 +234,29 @@
       <Association Name="Venue_Venue_Decor_Invoice1" Member="Venue_Decor_Invoices1" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue_Decor_Invoice" />
       <Association Name="Venue_Venue_Location_and_Contact_Detail" Member="Venue_Location_and_Contact_Details" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue_Location_and_Contact_Detail" />
       <Association Name="Venue_Venue_Booking_Schedule" Member="Venue_Booking_Schedules" ThisKey="VN_ID" OtherKey="VN_ID" Type="Venue_Booking_Schedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Decor_Invoice" Member="Decor_Invoices">
+    <Type Name="Decor_Invoice">
+      <Column Name="DEC_INV_DECORINVOICE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="QUANTITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_OF_DECOR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Decor_Invoice_Venue_Decor_Invoice" Member="Venue_Decor_Invoices" ThisKey="DEC_INV_DECORINVOICE_ID" OtherKey="DEC_VN_INV_DECORINVOICE" Type="Venue_Decor_Invoice" />
+      <Association Name="Client_Decor_Invoice" Member="Client" ThisKey="CL_ID" OtherKey="CL_ID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venue_Invoice" Member="Venue_Invoices">
+    <Type Name="Venue_Invoice">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VENUE_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="START_BOOKING_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="END_BOOKING_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DEPOSIT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

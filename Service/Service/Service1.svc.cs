@@ -176,6 +176,33 @@ namespace Service
             return null;
         }
 
+        public List<Decor_Invoice> GetListofDecorInvoice(int ClientID)
+        {
+            var query = from s in db.Decor_Invoices
+                        where s.CL_ID == ClientID
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+
+        public List<Venue_Invoice> GetListofVenueInvoice(int ClientID)
+        {
+            var query = from s in db.Venue_Invoices
+                        where s.CL_ID == ClientID
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// end of chunk of code that returns lists of objects from the database
         /// </summary>
@@ -207,7 +234,7 @@ namespace Service
         public Boolean Checkavailability(DateTime startdate, DateTime enddate)
         {
             var query = from s in db.Venue_Booking_Schedules
-                        where ((startdate >= s.VBS_START_DATE) && (startdate <= s.VBS_END_DATE)) || ((enddate >= s.VBS_START_DATE) && (enddate <= s.VBS_END_DATE))
+                        where  ((startdate >= s.VBS_START_DATE) && (startdate <= s.VBS_END_DATE)) || ((enddate >= s.VBS_START_DATE) && (enddate <= s.VBS_END_DATE)) 
                         select s;
             if (query != null)
             {
@@ -279,6 +306,7 @@ namespace Service
         public void addbooking(DateTime startdate, DateTime enddate, int VenueID, int ClientID)
         {
             Venue_Booking_Schedule bookingtoaddtoschedule = new Venue_Booking_Schedule();
+
             bookingtoaddtoschedule.VBS_START_DATE = startdate;
             bookingtoaddtoschedule.VBS_END_DATE = enddate;
             bookingtoaddtoschedule.VN_ID = VenueID;
@@ -288,6 +316,38 @@ namespace Service
             db.SubmitChanges();
 
         }
+
+
+        public void addDecorInvoice(int ClientID, string ClientName, decimal Price, int quantity, string typeOfDecor)
+        {
+            Decor_Invoice decorinvoicetoaddtotable = new Decor_Invoice();
+
+            decorinvoicetoaddtotable.CL_ID = ClientID;
+            decorinvoicetoaddtotable.NAME = ClientName;
+            decorinvoicetoaddtotable.PRICE = Price;
+            decorinvoicetoaddtotable.QUANTITY = quantity;
+            decorinvoicetoaddtotable.TYPE_OF_DECOR = typeOfDecor;
+
+            db.Decor_Invoices.InsertOnSubmit(decorinvoicetoaddtotable);
+            db.SubmitChanges();
+
+        }
+
+        public void addVenueInvoice(int ClientID, int VenueID, string VenueName, DateTime? Startdate, DateTime? enddate, decimal deposit)
+        {
+            Venue_Invoice venueinvoicetoaddtotable = new Venue_Invoice();
+
+            venueinvoicetoaddtotable.CL_ID = ClientID;
+            venueinvoicetoaddtotable.VN_ID = VenueID;
+            venueinvoicetoaddtotable.START_BOOKING_DATE = Startdate;
+            venueinvoicetoaddtotable.END_BOOKING_DATE = enddate;
+            venueinvoicetoaddtotable.DEPOSIT = deposit;
+
+            db.Venue_Invoices.InsertOnSubmit(venueinvoicetoaddtotable);
+            db.SubmitChanges();
+
+        }
+
 
         /// <summary>
         /// End of Funtions that add stuff to the database 
@@ -347,7 +407,7 @@ namespace Service
             return 0;
         }
 
-        public Venue returnSpecificVenueItem(int? VenueID)
+        public Venue returnSpecificVenueItem(int VenueID)
         {
             var query = from s in db.Venues
                         where s.VN_ID == VenueID
@@ -360,8 +420,65 @@ namespace Service
             return null;
         }
 
+        public Client returnspecificclient(int ClientID)
+        {
+            var query = from s in db.Clients
+                        where s.CL_ID == ClientID
+                        select s;
+            if (query != null)
+            {
+                return query.First();
+            }
+
+            return null;
+        }
+
+        public Person returnspecificperson(int PersonID)
+        {
+            var query = from s in db.Persons
+                        where s.P_ID == PersonID
+                        select s;
+            if (query != null)
+            {
+                return query.First();
+            }
+
+            return null;
+        }
+
+
+
         /// <summary>
         /// End of functions that return specific items from tables
         /// </summary> 
+
+
+
+
+        /// <summary>
+        /// Start of functions that remove stuff from the database
+        /// </summary> 
+        public void removeFromCartable(int ClientID)
+        {
+            var s = from Cart_Table in db.Cart_Tables
+                    where Cart_Table.CL_ID == ClientID
+                    select Cart_Table;
+
+            foreach (var item in s)
+            {
+                db.Cart_Tables.DeleteOnSubmit(item);
+            }
+
+
+            db.SubmitChanges();
+        }
+
+       
+
+        /// <summary>
+        /// End of functions that remove stuff from the database
+        /// </summary> 
+
+
     }
 }   

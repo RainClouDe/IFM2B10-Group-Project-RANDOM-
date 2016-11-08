@@ -15,3 +15,4 @@ D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Weddi
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.pdb
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.dll
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.pdb
+D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.csprojResolveAssemblyReference.cache

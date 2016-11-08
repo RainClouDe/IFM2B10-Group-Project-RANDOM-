@@ -6,5 +6,6 @@
      <div id="testdiv" runat="server">
 
     </div>
-
+    <br>
+    <asp:Button ID="btncheckout" runat="server" Text="Check out" OnClick="btncheckout_Click" />
 </asp:Content>
