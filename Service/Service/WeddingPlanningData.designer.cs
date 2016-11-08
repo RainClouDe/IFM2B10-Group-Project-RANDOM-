@@ -43,9 +43,6 @@ namespace Service
     partial void InsertDecor(Decor instance);
     partial void UpdateDecor(Decor instance);
     partial void DeleteDecor(Decor instance);
-    partial void InsertDecor_Invoice(Decor_Invoice instance);
-    partial void UpdateDecor_Invoice(Decor_Invoice instance);
-    partial void DeleteDecor_Invoice(Decor_Invoice instance);
     partial void InsertDisc_Jockey(Disc_Jockey instance);
     partial void UpdateDisc_Jockey(Disc_Jockey instance);
     partial void DeleteDisc_Jockey(Disc_Jockey instance);
@@ -100,6 +97,12 @@ namespace Service
     partial void InsertVenue(Venue instance);
     partial void UpdateVenue(Venue instance);
     partial void DeleteVenue(Venue instance);
+    partial void InsertDecor_Invoice(Decor_Invoice instance);
+    partial void UpdateDecor_Invoice(Decor_Invoice instance);
+    partial void DeleteDecor_Invoice(Decor_Invoice instance);
+    partial void InsertVenue_Invoice(Venue_Invoice instance);
+    partial void UpdateVenue_Invoice(Venue_Invoice instance);
+    partial void DeleteVenue_Invoice(Venue_Invoice instance);
     #endregion
 		
 		public WeddingPlanningDataDataContext() : 
@@ -161,14 +164,6 @@ namespace Service
 			get
 			{
 				return this.GetTable<Decor>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Decor_Invoice> Decor_Invoices
-		{
-			get
-			{
-				return this.GetTable<Decor_Invoice>();
 			}
 		}
 		
@@ -313,6 +308,22 @@ namespace Service
 			get
 			{
 				return this.GetTable<Venue>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Decor_Invoice> Decor_Invoices
+		{
+			get
+			{
+				return this.GetTable<Decor_Invoice>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Venue_Invoice> Venue_Invoices
+		{
+			get
+			{
+				return this.GetTable<Venue_Invoice>();
 			}
 		}
 	}
@@ -538,9 +549,13 @@ namespace Service
 		
 		private System.Nullable<int> _LOGIN_ID;
 		
+		private EntitySet<Decor_Invoice> _Decor_Invoices;
+		
 		private EntityRef<Login_Detail> _Login_Detail;
 		
 		private EntityRef<Person> _Person;
+		
+		private bool serializing;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -627,6 +642,25 @@ namespace Service
 					this.SendPropertyChanged("LOGIN_ID");
 					this.OnLOGIN_IDChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_Decor_Invoice", Storage="_Decor_Invoices", ThisKey="CL_ID", OtherKey="CL_ID")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4, EmitDefaultValue=false)]
+		public EntitySet<Decor_Invoice> Decor_Invoices
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Decor_Invoices.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Decor_Invoices;
+			}
+			set
+			{
+				this._Decor_Invoices.Assign(value);
 			}
 		}
 		
@@ -718,8 +752,21 @@ namespace Service
 			}
 		}
 		
+		private void attach_Decor_Invoices(Decor_Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Client = this;
+		}
+		
+		private void detach_Decor_Invoices(Decor_Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Client = null;
+		}
+		
 		private void Initialize()
 		{
+			this._Decor_Invoices = new EntitySet<Decor_Invoice>(new Action<Decor_Invoice>(this.attach_Decor_Invoices), new Action<Decor_Invoice>(this.detach_Decor_Invoices));
 			this._Login_Detail = default(EntityRef<Login_Detail>);
 			this._Person = default(EntityRef<Person>);
 			OnCreated();
@@ -730,6 +777,20 @@ namespace Service
 		public void OnDeserializing(StreamingContext context)
 		{
 			this.Initialize();
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerializing(StreamingContext context)
+		{
+			this.serializing = true;
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializedAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerialized(StreamingContext context)
+		{
+			this.serializing = false;
 		}
 	}
 	
@@ -948,8 +1009,6 @@ namespace Service
 		
 		private EntitySet<Cutlery> _Cutleries;
 		
-		private EntitySet<Decor_Invoice> _Decor_Invoices;
-		
 		private EntitySet<Flower_bouquet> _Flower_bouquets;
 		
 		private EntitySet<Plate> _Plates;
@@ -1151,27 +1210,8 @@ namespace Service
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Decor_Invoice", Storage="_Decor_Invoices", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9, EmitDefaultValue=false)]
-		public EntitySet<Decor_Invoice> Decor_Invoices
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Decor_Invoices.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Decor_Invoices;
-			}
-			set
-			{
-				this._Decor_Invoices.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Flower_bouquet", Storage="_Flower_bouquets", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9, EmitDefaultValue=false)]
 		public EntitySet<Flower_bouquet> Flower_bouquets
 		{
 			get
@@ -1190,7 +1230,7 @@ namespace Service
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Plate", Storage="_Plates", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10, EmitDefaultValue=false)]
 		public EntitySet<Plate> Plates
 		{
 			get
@@ -1209,7 +1249,7 @@ namespace Service
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Special", Storage="_Specials", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11, EmitDefaultValue=false)]
 		public EntitySet<Special> Specials
 		{
 			get
@@ -1228,7 +1268,7 @@ namespace Service
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Wedding_Welcome_Card", Storage="_Wedding_Welcome_Cards", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=13, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12, EmitDefaultValue=false)]
 		public EntitySet<Wedding_Welcome_Card> Wedding_Welcome_Cards
 		{
 			get
@@ -1273,18 +1313,6 @@ namespace Service
 		}
 		
 		private void detach_Cutleries(Cutlery entity)
-		{
-			this.SendPropertyChanging();
-			entity.Decor = null;
-		}
-		
-		private void attach_Decor_Invoices(Decor_Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Decor = this;
-		}
-		
-		private void detach_Decor_Invoices(Decor_Invoice entity)
 		{
 			this.SendPropertyChanging();
 			entity.Decor = null;
@@ -1341,228 +1369,10 @@ namespace Service
 		private void Initialize()
 		{
 			this._Cutleries = new EntitySet<Cutlery>(new Action<Cutlery>(this.attach_Cutleries), new Action<Cutlery>(this.detach_Cutleries));
-			this._Decor_Invoices = new EntitySet<Decor_Invoice>(new Action<Decor_Invoice>(this.attach_Decor_Invoices), new Action<Decor_Invoice>(this.detach_Decor_Invoices));
 			this._Flower_bouquets = new EntitySet<Flower_bouquet>(new Action<Flower_bouquet>(this.attach_Flower_bouquets), new Action<Flower_bouquet>(this.detach_Flower_bouquets));
 			this._Plates = new EntitySet<Plate>(new Action<Plate>(this.attach_Plates), new Action<Plate>(this.detach_Plates));
 			this._Specials = new EntitySet<Special>(new Action<Special>(this.attach_Specials), new Action<Special>(this.detach_Specials));
 			this._Wedding_Welcome_Cards = new EntitySet<Wedding_Welcome_Card>(new Action<Wedding_Welcome_Card>(this.attach_Wedding_Welcome_Cards), new Action<Wedding_Welcome_Card>(this.detach_Wedding_Welcome_Cards));
-			OnCreated();
-		}
-		
-		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnDeserializing(StreamingContext context)
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Runtime.Serialization.OnSerializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnSerializing(StreamingContext context)
-		{
-			this.serializing = true;
-		}
-		
-		[global::System.Runtime.Serialization.OnSerializedAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnSerialized(StreamingContext context)
-		{
-			this.serializing = false;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Decor_Invoice")]
-	[global::System.Runtime.Serialization.DataContractAttribute()]
-	public partial class Decor_Invoice : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _DEC_INV_DECORINVOICE_ID;
-		
-		private System.Nullable<decimal> _DEC_INV_TOTAL_COST;
-		
-		private System.Nullable<int> _DEC_ITEM_ID;
-		
-		private EntitySet<Venue_Decor_Invoice> _Venue_Decor_Invoices;
-		
-		private EntityRef<Decor> _Decor;
-		
-		private bool serializing;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDEC_INV_DECORINVOICE_IDChanging(int value);
-    partial void OnDEC_INV_DECORINVOICE_IDChanged();
-    partial void OnDEC_INV_TOTAL_COSTChanging(System.Nullable<decimal> value);
-    partial void OnDEC_INV_TOTAL_COSTChanged();
-    partial void OnDEC_ITEM_IDChanging(System.Nullable<int> value);
-    partial void OnDEC_ITEM_IDChanged();
-    #endregion
-		
-		public Decor_Invoice()
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEC_INV_DECORINVOICE_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int DEC_INV_DECORINVOICE_ID
-		{
-			get
-			{
-				return this._DEC_INV_DECORINVOICE_ID;
-			}
-			set
-			{
-				if ((this._DEC_INV_DECORINVOICE_ID != value))
-				{
-					this.OnDEC_INV_DECORINVOICE_IDChanging(value);
-					this.SendPropertyChanging();
-					this._DEC_INV_DECORINVOICE_ID = value;
-					this.SendPropertyChanged("DEC_INV_DECORINVOICE_ID");
-					this.OnDEC_INV_DECORINVOICE_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[DEC_INV_TOTAL COST]", Storage="_DEC_INV_TOTAL_COST", DbType="Decimal(19,4)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public System.Nullable<decimal> DEC_INV_TOTAL_COST
-		{
-			get
-			{
-				return this._DEC_INV_TOTAL_COST;
-			}
-			set
-			{
-				if ((this._DEC_INV_TOTAL_COST != value))
-				{
-					this.OnDEC_INV_TOTAL_COSTChanging(value);
-					this.SendPropertyChanging();
-					this._DEC_INV_TOTAL_COST = value;
-					this.SendPropertyChanged("DEC_INV_TOTAL_COST");
-					this.OnDEC_INV_TOTAL_COSTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEC_ITEM_ID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public System.Nullable<int> DEC_ITEM_ID
-		{
-			get
-			{
-				return this._DEC_ITEM_ID;
-			}
-			set
-			{
-				if ((this._DEC_ITEM_ID != value))
-				{
-					if (this._Decor.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnDEC_ITEM_IDChanging(value);
-					this.SendPropertyChanging();
-					this._DEC_ITEM_ID = value;
-					this.SendPropertyChanged("DEC_ITEM_ID");
-					this.OnDEC_ITEM_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Invoice_Venue_Decor_Invoice", Storage="_Venue_Decor_Invoices", ThisKey="DEC_INV_DECORINVOICE_ID", OtherKey="DEC_VN_INV_DECORINVOICE")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4, EmitDefaultValue=false)]
-		public EntitySet<Venue_Decor_Invoice> Venue_Decor_Invoices
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Venue_Decor_Invoices.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._Venue_Decor_Invoices;
-			}
-			set
-			{
-				this._Venue_Decor_Invoices.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Decor_Invoice", Storage="_Decor", ThisKey="DEC_ITEM_ID", OtherKey="DEC_ITEM_ID", IsForeignKey=true)]
-		public Decor Decor
-		{
-			get
-			{
-				return this._Decor.Entity;
-			}
-			set
-			{
-				Decor previousValue = this._Decor.Entity;
-				if (((previousValue != value) 
-							|| (this._Decor.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Decor.Entity = null;
-						previousValue.Decor_Invoices.Remove(this);
-					}
-					this._Decor.Entity = value;
-					if ((value != null))
-					{
-						value.Decor_Invoices.Add(this);
-						this._DEC_ITEM_ID = value.DEC_ITEM_ID;
-					}
-					else
-					{
-						this._DEC_ITEM_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Decor");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Venue_Decor_Invoices(Venue_Decor_Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Decor_Invoice = this;
-		}
-		
-		private void detach_Venue_Decor_Invoices(Venue_Decor_Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Decor_Invoice = null;
-		}
-		
-		private void Initialize()
-		{
-			this._Venue_Decor_Invoices = new EntitySet<Venue_Decor_Invoice>(new Action<Venue_Decor_Invoice>(this.attach_Venue_Decor_Invoices), new Action<Venue_Decor_Invoice>(this.detach_Venue_Decor_Invoices));
-			this._Decor = default(EntityRef<Decor>);
 			OnCreated();
 		}
 		
@@ -3393,11 +3203,11 @@ namespace Service
 		
 		private System.Nullable<int> _VN_ID;
 		
-		private EntityRef<Decor_Invoice> _Decor_Invoice;
-		
 		private EntityRef<Venue> _Venue;
 		
 		private EntityRef<Venue> _Venue1;
+		
+		private EntityRef<Decor_Invoice> _Decor_Invoice;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3514,40 +3324,6 @@ namespace Service
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Invoice_Venue_Decor_Invoice", Storage="_Decor_Invoice", ThisKey="DEC_VN_INV_DECORINVOICE", OtherKey="DEC_INV_DECORINVOICE_ID", IsForeignKey=true)]
-		public Decor_Invoice Decor_Invoice
-		{
-			get
-			{
-				return this._Decor_Invoice.Entity;
-			}
-			set
-			{
-				Decor_Invoice previousValue = this._Decor_Invoice.Entity;
-				if (((previousValue != value) 
-							|| (this._Decor_Invoice.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Decor_Invoice.Entity = null;
-						previousValue.Venue_Decor_Invoices.Remove(this);
-					}
-					this._Decor_Invoice.Entity = value;
-					if ((value != null))
-					{
-						value.Venue_Decor_Invoices.Add(this);
-						this._DEC_VN_INV_DECORINVOICE = value.DEC_INV_DECORINVOICE_ID;
-					}
-					else
-					{
-						this._DEC_VN_INV_DECORINVOICE = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Decor_Invoice");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Venue_Venue_Decor_Invoice", Storage="_Venue", ThisKey="DEC_VN_INV_VENUE", OtherKey="VN_ID", IsForeignKey=true)]
 		public Venue Venue
 		{
@@ -3616,6 +3392,40 @@ namespace Service
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Invoice_Venue_Decor_Invoice", Storage="_Decor_Invoice", ThisKey="DEC_VN_INV_DECORINVOICE", OtherKey="DEC_INV_DECORINVOICE_ID", IsForeignKey=true)]
+		public Decor_Invoice Decor_Invoice
+		{
+			get
+			{
+				return this._Decor_Invoice.Entity;
+			}
+			set
+			{
+				Decor_Invoice previousValue = this._Decor_Invoice.Entity;
+				if (((previousValue != value) 
+							|| (this._Decor_Invoice.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Decor_Invoice.Entity = null;
+						previousValue.Venue_Decor_Invoices.Remove(this);
+					}
+					this._Decor_Invoice.Entity = value;
+					if ((value != null))
+					{
+						value.Venue_Decor_Invoices.Add(this);
+						this._DEC_VN_INV_DECORINVOICE = value.DEC_INV_DECORINVOICE_ID;
+					}
+					else
+					{
+						this._DEC_VN_INV_DECORINVOICE = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Decor_Invoice");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3638,9 +3448,9 @@ namespace Service
 		
 		private void Initialize()
 		{
-			this._Decor_Invoice = default(EntityRef<Decor_Invoice>);
 			this._Venue = default(EntityRef<Venue>);
 			this._Venue1 = default(EntityRef<Venue>);
+			this._Decor_Invoice = default(EntityRef<Decor_Invoice>);
 			OnCreated();
 		}
 		
@@ -5999,6 +5809,524 @@ namespace Service
 		public void OnSerialized(StreamingContext context)
 		{
 			this.serializing = false;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Decor_Invoice")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Decor_Invoice : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DEC_INV_DECORINVOICE_ID;
+		
+		private int _CL_ID;
+		
+		private string _NAME;
+		
+		private System.Nullable<decimal> _PRICE;
+		
+		private System.Nullable<int> _QUANTITY;
+		
+		private string _TYPE_OF_DECOR;
+		
+		private EntitySet<Venue_Decor_Invoice> _Venue_Decor_Invoices;
+		
+		private EntityRef<Client> _Client;
+		
+		private bool serializing;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDEC_INV_DECORINVOICE_IDChanging(int value);
+    partial void OnDEC_INV_DECORINVOICE_IDChanged();
+    partial void OnCL_IDChanging(int value);
+    partial void OnCL_IDChanged();
+    partial void OnNAMEChanging(string value);
+    partial void OnNAMEChanged();
+    partial void OnPRICEChanging(System.Nullable<decimal> value);
+    partial void OnPRICEChanged();
+    partial void OnQUANTITYChanging(System.Nullable<int> value);
+    partial void OnQUANTITYChanged();
+    partial void OnTYPE_OF_DECORChanging(string value);
+    partial void OnTYPE_OF_DECORChanged();
+    #endregion
+		
+		public Decor_Invoice()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEC_INV_DECORINVOICE_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int DEC_INV_DECORINVOICE_ID
+		{
+			get
+			{
+				return this._DEC_INV_DECORINVOICE_ID;
+			}
+			set
+			{
+				if ((this._DEC_INV_DECORINVOICE_ID != value))
+				{
+					this.OnDEC_INV_DECORINVOICE_IDChanging(value);
+					this.SendPropertyChanging();
+					this._DEC_INV_DECORINVOICE_ID = value;
+					this.SendPropertyChanged("DEC_INV_DECORINVOICE_ID");
+					this.OnDEC_INV_DECORINVOICE_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CL_ID", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public int CL_ID
+		{
+			get
+			{
+				return this._CL_ID;
+			}
+			set
+			{
+				if ((this._CL_ID != value))
+				{
+					if (this._Client.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCL_IDChanging(value);
+					this.SendPropertyChanging();
+					this._CL_ID = value;
+					this.SendPropertyChanged("CL_ID");
+					this.OnCL_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(50)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public string NAME
+		{
+			get
+			{
+				return this._NAME;
+			}
+			set
+			{
+				if ((this._NAME != value))
+				{
+					this.OnNAMEChanging(value);
+					this.SendPropertyChanging();
+					this._NAME = value;
+					this.SendPropertyChanged("NAME");
+					this.OnNAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE", DbType="Decimal(18,0)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public System.Nullable<decimal> PRICE
+		{
+			get
+			{
+				return this._PRICE;
+			}
+			set
+			{
+				if ((this._PRICE != value))
+				{
+					this.OnPRICEChanging(value);
+					this.SendPropertyChanging();
+					this._PRICE = value;
+					this.SendPropertyChanged("PRICE");
+					this.OnPRICEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUANTITY", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public System.Nullable<int> QUANTITY
+		{
+			get
+			{
+				return this._QUANTITY;
+			}
+			set
+			{
+				if ((this._QUANTITY != value))
+				{
+					this.OnQUANTITYChanging(value);
+					this.SendPropertyChanging();
+					this._QUANTITY = value;
+					this.SendPropertyChanged("QUANTITY");
+					this.OnQUANTITYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYPE_OF_DECOR", DbType="VarChar(20)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public string TYPE_OF_DECOR
+		{
+			get
+			{
+				return this._TYPE_OF_DECOR;
+			}
+			set
+			{
+				if ((this._TYPE_OF_DECOR != value))
+				{
+					this.OnTYPE_OF_DECORChanging(value);
+					this.SendPropertyChanging();
+					this._TYPE_OF_DECOR = value;
+					this.SendPropertyChanged("TYPE_OF_DECOR");
+					this.OnTYPE_OF_DECORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Decor_Invoice_Venue_Decor_Invoice", Storage="_Venue_Decor_Invoices", ThisKey="DEC_INV_DECORINVOICE_ID", OtherKey="DEC_VN_INV_DECORINVOICE")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7, EmitDefaultValue=false)]
+		public EntitySet<Venue_Decor_Invoice> Venue_Decor_Invoices
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Venue_Decor_Invoices.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Venue_Decor_Invoices;
+			}
+			set
+			{
+				this._Venue_Decor_Invoices.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_Decor_Invoice", Storage="_Client", ThisKey="CL_ID", OtherKey="CL_ID", IsForeignKey=true)]
+		public Client Client
+		{
+			get
+			{
+				return this._Client.Entity;
+			}
+			set
+			{
+				Client previousValue = this._Client.Entity;
+				if (((previousValue != value) 
+							|| (this._Client.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Client.Entity = null;
+						previousValue.Decor_Invoices.Remove(this);
+					}
+					this._Client.Entity = value;
+					if ((value != null))
+					{
+						value.Decor_Invoices.Add(this);
+						this._CL_ID = value.CL_ID;
+					}
+					else
+					{
+						this._CL_ID = default(int);
+					}
+					this.SendPropertyChanged("Client");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Venue_Decor_Invoices(Venue_Decor_Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Decor_Invoice = this;
+		}
+		
+		private void detach_Venue_Decor_Invoices(Venue_Decor_Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Decor_Invoice = null;
+		}
+		
+		private void Initialize()
+		{
+			this._Venue_Decor_Invoices = new EntitySet<Venue_Decor_Invoice>(new Action<Venue_Decor_Invoice>(this.attach_Venue_Decor_Invoices), new Action<Venue_Decor_Invoice>(this.detach_Venue_Decor_Invoices));
+			this._Client = default(EntityRef<Client>);
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerializing(StreamingContext context)
+		{
+			this.serializing = true;
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializedAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerialized(StreamingContext context)
+		{
+			this.serializing = false;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Venue_Invoice")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Venue_Invoice : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _CL_ID;
+		
+		private System.Nullable<int> _VN_ID;
+		
+		private string _VENUE_NAME;
+		
+		private System.Nullable<System.DateTime> _START_BOOKING_DATE;
+		
+		private System.Nullable<System.DateTime> _END_BOOKING_DATE;
+		
+		private System.Nullable<decimal> _DEPOSIT;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCL_IDChanging(int value);
+    partial void OnCL_IDChanged();
+    partial void OnVN_IDChanging(System.Nullable<int> value);
+    partial void OnVN_IDChanged();
+    partial void OnVENUE_NAMEChanging(string value);
+    partial void OnVENUE_NAMEChanged();
+    partial void OnSTART_BOOKING_DATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnSTART_BOOKING_DATEChanged();
+    partial void OnEND_BOOKING_DATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnEND_BOOKING_DATEChanged();
+    partial void OnDEPOSITChanging(System.Nullable<decimal> value);
+    partial void OnDEPOSITChanged();
+    #endregion
+		
+		public Venue_Invoice()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CL_ID", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public int CL_ID
+		{
+			get
+			{
+				return this._CL_ID;
+			}
+			set
+			{
+				if ((this._CL_ID != value))
+				{
+					this.OnCL_IDChanging(value);
+					this.SendPropertyChanging();
+					this._CL_ID = value;
+					this.SendPropertyChanged("CL_ID");
+					this.OnCL_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VN_ID", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public System.Nullable<int> VN_ID
+		{
+			get
+			{
+				return this._VN_ID;
+			}
+			set
+			{
+				if ((this._VN_ID != value))
+				{
+					this.OnVN_IDChanging(value);
+					this.SendPropertyChanging();
+					this._VN_ID = value;
+					this.SendPropertyChanged("VN_ID");
+					this.OnVN_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VENUE_NAME", DbType="VarChar(50)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public string VENUE_NAME
+		{
+			get
+			{
+				return this._VENUE_NAME;
+			}
+			set
+			{
+				if ((this._VENUE_NAME != value))
+				{
+					this.OnVENUE_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._VENUE_NAME = value;
+					this.SendPropertyChanged("VENUE_NAME");
+					this.OnVENUE_NAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_START_BOOKING_DATE", DbType="Date")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public System.Nullable<System.DateTime> START_BOOKING_DATE
+		{
+			get
+			{
+				return this._START_BOOKING_DATE;
+			}
+			set
+			{
+				if ((this._START_BOOKING_DATE != value))
+				{
+					this.OnSTART_BOOKING_DATEChanging(value);
+					this.SendPropertyChanging();
+					this._START_BOOKING_DATE = value;
+					this.SendPropertyChanged("START_BOOKING_DATE");
+					this.OnSTART_BOOKING_DATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_END_BOOKING_DATE", DbType="Date")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public System.Nullable<System.DateTime> END_BOOKING_DATE
+		{
+			get
+			{
+				return this._END_BOOKING_DATE;
+			}
+			set
+			{
+				if ((this._END_BOOKING_DATE != value))
+				{
+					this.OnEND_BOOKING_DATEChanging(value);
+					this.SendPropertyChanging();
+					this._END_BOOKING_DATE = value;
+					this.SendPropertyChanged("END_BOOKING_DATE");
+					this.OnEND_BOOKING_DATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEPOSIT", DbType="Decimal(18,0)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+		public System.Nullable<decimal> DEPOSIT
+		{
+			get
+			{
+				return this._DEPOSIT;
+			}
+			set
+			{
+				if ((this._DEPOSIT != value))
+				{
+					this.OnDEPOSITChanging(value);
+					this.SendPropertyChanging();
+					this._DEPOSIT = value;
+					this.SendPropertyChanged("DEPOSIT");
+					this.OnDEPOSITChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void Initialize()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
 		}
 	}
 }

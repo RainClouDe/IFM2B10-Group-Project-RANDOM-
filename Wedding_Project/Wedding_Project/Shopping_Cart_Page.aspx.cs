@@ -18,15 +18,18 @@ namespace Wedding_Project
         }
 
     }
-
+    
 
     public partial class Shopping_Cart_Page : System.Web.UI.Page
     {
+
+        ServiceReference1.Service1Client proxy = new ServiceReference1.Service1Client();
+        int loggedInClientID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ServiceReference1.Service1Client proxy = new ServiceReference1.Service1Client();
+    
             ServiceReference1.Cart_Table[] tableCartList;
-            int loggedInClientID;
+           
 
             if (HttpContext.Current.Session["ClientLoggedIn"] != null)
             {
@@ -57,7 +60,7 @@ namespace Wedding_Project
                     }
                     else if (tableCartList[i].DEC_ITEM_ID == 0)
                     {
-                        ServiceReference1.Venue VenueItemFromCart = proxy.returnSpecificVenueItem(tableCartList[i].VN_ID);
+                        ServiceReference1.Venue VenueItemFromCart = proxy.returnSpecificVenueItem((int) tableCartList[i].VN_ID);
 
                         testdiv.InnerHtml += "<IMG SRC='App_Media\\" + VenueItemFromCart.VN_IMAGE_PATH + "'/>";
 
@@ -67,15 +70,45 @@ namespace Wedding_Project
                         testdiv.InnerHtml += "<br>" + "Deposit: R" + VenueItemFromCart.VN_DEPOSIT;
 
                     }
-
-
-
                 }
             }
             else
             {
                 Response.Redirect("Login_Page.aspx");
             }
+        }
+
+        protected void btncheckout_Click(object sender, EventArgs e)
+        {
+
+            ServiceReference1.Cart_Table[] carttablelist;
+
+            carttablelist = proxy.GetListOfCartItems((int)HttpContext.Current.Session["ClientId"]);
+
+            for(int i=0;i<carttablelist.Length;i++)
+            {
+
+                MessageBox.show(this, carttablelist[i].Quantity.ToString());
+                if (carttablelist[i].DEC_ITEM_ID != 0) // if the decor item id is not equal to 0 add it to the database
+                {
+                    
+                    ServiceReference1.Decor decoritemtoaddtoinvoice = proxy.returnSpecificDecorItem((int) carttablelist[i].DEC_ITEM_ID);
+
+                    proxy.addDecorInvoice((int)HttpContext.Current.Session["ClientId"], decoritemtoaddtoinvoice.DEC_NAME, (decimal)decoritemtoaddtoinvoice.DEC_PRICE, (int)carttablelist[i].Quantity, decoritemtoaddtoinvoice.DEC_TYPE);
+
+                }
+                else if(carttablelist[i].DEC_ITEM_ID == 0)
+                {
+                    ServiceReference1.Venue venueitemtoaddtoinvoice = proxy.returnSpecificVenueItem((int) carttablelist[i].VN_ID);
+                    
+                    proxy.addVenueInvoice((int)HttpContext.Current.Session["ClientId"], (int) carttablelist[i].VN_ID, venueitemtoaddtoinvoice.VN_NAME, carttablelist[i].Venue_Booking_Start, carttablelist[i].Venue_Booking_End, (decimal) venueitemtoaddtoinvoice.VN_DEPOSIT);
+
+                }
+
+                
+            }
+            proxy.removeFromCartable((int)HttpContext.Current.Session["ClientId"]);
+            Response.Redirect("Invoice_Page.aspx");
         }
     }
 }

@@ -358,6 +358,9 @@ namespace Wedding_Project.ServiceReference1 {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> LOGIN_IDField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Decor_Invoice[] Decor_InvoicesField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -403,6 +406,19 @@ namespace Wedding_Project.ServiceReference1 {
                 if ((this.LOGIN_IDField.Equals(value) != true)) {
                     this.LOGIN_IDField = value;
                     this.RaisePropertyChanged("LOGIN_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public Wedding_Project.ServiceReference1.Decor_Invoice[] Decor_Invoices {
+            get {
+                return this.Decor_InvoicesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Decor_InvoicesField, value) != true)) {
+                    this.Decor_InvoicesField = value;
+                    this.RaisePropertyChanged("Decor_Invoices");
                 }
             }
         }
@@ -528,6 +544,240 @@ namespace Wedding_Project.ServiceReference1 {
                 if ((object.ReferenceEquals(this.WP_Working_LocationsField, value) != true)) {
                     this.WP_Working_LocationsField = value;
                     this.RaisePropertyChanged("WP_Working_Locations");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Decor_Invoice", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Decor_Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DEC_INV_DECORINVOICE_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CL_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PRICEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> QUANTITYField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TYPE_OF_DECORField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Venue_Decor_Invoice[] Venue_Decor_InvoicesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DEC_INV_DECORINVOICE_ID {
+            get {
+                return this.DEC_INV_DECORINVOICE_IDField;
+            }
+            set {
+                if ((this.DEC_INV_DECORINVOICE_IDField.Equals(value) != true)) {
+                    this.DEC_INV_DECORINVOICE_IDField = value;
+                    this.RaisePropertyChanged("DEC_INV_DECORINVOICE_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int CL_ID {
+            get {
+                return this.CL_IDField;
+            }
+            set {
+                if ((this.CL_IDField.Equals(value) != true)) {
+                    this.CL_IDField = value;
+                    this.RaisePropertyChanged("CL_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string NAME {
+            get {
+                return this.NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NAMEField, value) != true)) {
+                    this.NAMEField = value;
+                    this.RaisePropertyChanged("NAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.Nullable<decimal> PRICE {
+            get {
+                return this.PRICEField;
+            }
+            set {
+                if ((this.PRICEField.Equals(value) != true)) {
+                    this.PRICEField = value;
+                    this.RaisePropertyChanged("PRICE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.Nullable<int> QUANTITY {
+            get {
+                return this.QUANTITYField;
+            }
+            set {
+                if ((this.QUANTITYField.Equals(value) != true)) {
+                    this.QUANTITYField = value;
+                    this.RaisePropertyChanged("QUANTITY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public string TYPE_OF_DECOR {
+            get {
+                return this.TYPE_OF_DECORField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TYPE_OF_DECORField, value) != true)) {
+                    this.TYPE_OF_DECORField = value;
+                    this.RaisePropertyChanged("TYPE_OF_DECOR");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public Wedding_Project.ServiceReference1.Venue_Decor_Invoice[] Venue_Decor_Invoices {
+            get {
+                return this.Venue_Decor_InvoicesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Venue_Decor_InvoicesField, value) != true)) {
+                    this.Venue_Decor_InvoicesField = value;
+                    this.RaisePropertyChanged("Venue_Decor_Invoices");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Venue_Decor_Invoice", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Venue_Decor_Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DEC_VN_INV_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DEC_VN_INV_DECORINVOICEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DEC_VN_INV_VENUEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> VN_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DEC_VN_INV_ID {
+            get {
+                return this.DEC_VN_INV_IDField;
+            }
+            set {
+                if ((this.DEC_VN_INV_IDField.Equals(value) != true)) {
+                    this.DEC_VN_INV_IDField = value;
+                    this.RaisePropertyChanged("DEC_VN_INV_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.Nullable<int> DEC_VN_INV_DECORINVOICE {
+            get {
+                return this.DEC_VN_INV_DECORINVOICEField;
+            }
+            set {
+                if ((this.DEC_VN_INV_DECORINVOICEField.Equals(value) != true)) {
+                    this.DEC_VN_INV_DECORINVOICEField = value;
+                    this.RaisePropertyChanged("DEC_VN_INV_DECORINVOICE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.Nullable<int> DEC_VN_INV_VENUE {
+            get {
+                return this.DEC_VN_INV_VENUEField;
+            }
+            set {
+                if ((this.DEC_VN_INV_VENUEField.Equals(value) != true)) {
+                    this.DEC_VN_INV_VENUEField = value;
+                    this.RaisePropertyChanged("DEC_VN_INV_VENUE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.Nullable<int> VN_ID {
+            get {
+                return this.VN_IDField;
+            }
+            set {
+                if ((this.VN_IDField.Equals(value) != true)) {
+                    this.VN_IDField = value;
+                    this.RaisePropertyChanged("VN_ID");
                 }
             }
         }
@@ -1079,99 +1329,6 @@ namespace Wedding_Project.ServiceReference1 {
                 if ((object.ReferenceEquals(this.VideoagraphersField, value) != true)) {
                     this.VideoagraphersField = value;
                     this.RaisePropertyChanged("Videoagraphers");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Venue_Decor_Invoice", Namespace="http://schemas.datacontract.org/2004/07/Service")]
-    [System.SerializableAttribute()]
-    public partial class Venue_Decor_Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DEC_VN_INV_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> DEC_VN_INV_DECORINVOICEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> DEC_VN_INV_VENUEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> VN_IDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DEC_VN_INV_ID {
-            get {
-                return this.DEC_VN_INV_IDField;
-            }
-            set {
-                if ((this.DEC_VN_INV_IDField.Equals(value) != true)) {
-                    this.DEC_VN_INV_IDField = value;
-                    this.RaisePropertyChanged("DEC_VN_INV_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public System.Nullable<int> DEC_VN_INV_DECORINVOICE {
-            get {
-                return this.DEC_VN_INV_DECORINVOICEField;
-            }
-            set {
-                if ((this.DEC_VN_INV_DECORINVOICEField.Equals(value) != true)) {
-                    this.DEC_VN_INV_DECORINVOICEField = value;
-                    this.RaisePropertyChanged("DEC_VN_INV_DECORINVOICE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public System.Nullable<int> DEC_VN_INV_VENUE {
-            get {
-                return this.DEC_VN_INV_VENUEField;
-            }
-            set {
-                if ((this.DEC_VN_INV_VENUEField.Equals(value) != true)) {
-                    this.DEC_VN_INV_VENUEField = value;
-                    this.RaisePropertyChanged("DEC_VN_INV_VENUE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public System.Nullable<int> VN_ID {
-            get {
-                return this.VN_IDField;
-            }
-            set {
-                if ((this.VN_IDField.Equals(value) != true)) {
-                    this.VN_IDField = value;
-                    this.RaisePropertyChanged("VN_ID");
                 }
             }
         }
@@ -1746,9 +1903,6 @@ namespace Wedding_Project.ServiceReference1 {
         private Wedding_Project.ServiceReference1.Cutlery[] CutleriesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Wedding_Project.ServiceReference1.Decor_Invoice[] Decor_InvoicesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Wedding_Project.ServiceReference1.Flower_bouquet[] Flower_bouquetsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1875,19 +2029,6 @@ namespace Wedding_Project.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public Wedding_Project.ServiceReference1.Decor_Invoice[] Decor_Invoices {
-            get {
-                return this.Decor_InvoicesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Decor_InvoicesField, value) != true)) {
-                    this.Decor_InvoicesField = value;
-                    this.RaisePropertyChanged("Decor_Invoices");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public Wedding_Project.ServiceReference1.Flower_bouquet[] Flower_bouquets {
             get {
                 return this.Flower_bouquetsField;
@@ -1900,7 +2041,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public Wedding_Project.ServiceReference1.Plate[] Plates {
             get {
                 return this.PlatesField;
@@ -1913,7 +2054,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public Wedding_Project.ServiceReference1.Special[] Specials {
             get {
                 return this.SpecialsField;
@@ -1926,7 +2067,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
         public Wedding_Project.ServiceReference1.Wedding_Welcome_Card[] Wedding_Welcome_Cards {
             get {
                 return this.Wedding_Welcome_CardsField;
@@ -2028,99 +2169,6 @@ namespace Wedding_Project.ServiceReference1 {
                 if ((this.DEC_ITEM_IDField.Equals(value) != true)) {
                     this.DEC_ITEM_IDField = value;
                     this.RaisePropertyChanged("DEC_ITEM_ID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Decor_Invoice", Namespace="http://schemas.datacontract.org/2004/07/Service")]
-    [System.SerializableAttribute()]
-    public partial class Decor_Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DEC_INV_DECORINVOICE_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> DEC_INV_TOTAL_COSTField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> DEC_ITEM_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Wedding_Project.ServiceReference1.Venue_Decor_Invoice[] Venue_Decor_InvoicesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DEC_INV_DECORINVOICE_ID {
-            get {
-                return this.DEC_INV_DECORINVOICE_IDField;
-            }
-            set {
-                if ((this.DEC_INV_DECORINVOICE_IDField.Equals(value) != true)) {
-                    this.DEC_INV_DECORINVOICE_IDField = value;
-                    this.RaisePropertyChanged("DEC_INV_DECORINVOICE_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> DEC_INV_TOTAL_COST {
-            get {
-                return this.DEC_INV_TOTAL_COSTField;
-            }
-            set {
-                if ((this.DEC_INV_TOTAL_COSTField.Equals(value) != true)) {
-                    this.DEC_INV_TOTAL_COSTField = value;
-                    this.RaisePropertyChanged("DEC_INV_TOTAL_COST");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> DEC_ITEM_ID {
-            get {
-                return this.DEC_ITEM_IDField;
-            }
-            set {
-                if ((this.DEC_ITEM_IDField.Equals(value) != true)) {
-                    this.DEC_ITEM_IDField = value;
-                    this.RaisePropertyChanged("DEC_ITEM_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public Wedding_Project.ServiceReference1.Venue_Decor_Invoice[] Venue_Decor_Invoices {
-            get {
-                return this.Venue_Decor_InvoicesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Venue_Decor_InvoicesField, value) != true)) {
-                    this.Venue_Decor_InvoicesField = value;
-                    this.RaisePropertyChanged("Venue_Decor_Invoices");
                 }
             }
         }
@@ -2696,6 +2744,147 @@ namespace Wedding_Project.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Venue_Invoice", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Venue_Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CL_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> VN_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VENUE_NAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> START_BOOKING_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> END_BOOKING_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> DEPOSITField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int CL_ID {
+            get {
+                return this.CL_IDField;
+            }
+            set {
+                if ((this.CL_IDField.Equals(value) != true)) {
+                    this.CL_IDField = value;
+                    this.RaisePropertyChanged("CL_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.Nullable<int> VN_ID {
+            get {
+                return this.VN_IDField;
+            }
+            set {
+                if ((this.VN_IDField.Equals(value) != true)) {
+                    this.VN_IDField = value;
+                    this.RaisePropertyChanged("VN_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string VENUE_NAME {
+            get {
+                return this.VENUE_NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VENUE_NAMEField, value) != true)) {
+                    this.VENUE_NAMEField = value;
+                    this.RaisePropertyChanged("VENUE_NAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.Nullable<System.DateTime> START_BOOKING_DATE {
+            get {
+                return this.START_BOOKING_DATEField;
+            }
+            set {
+                if ((this.START_BOOKING_DATEField.Equals(value) != true)) {
+                    this.START_BOOKING_DATEField = value;
+                    this.RaisePropertyChanged("START_BOOKING_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> END_BOOKING_DATE {
+            get {
+                return this.END_BOOKING_DATEField;
+            }
+            set {
+                if ((this.END_BOOKING_DATEField.Equals(value) != true)) {
+                    this.END_BOOKING_DATEField = value;
+                    this.RaisePropertyChanged("END_BOOKING_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public System.Nullable<decimal> DEPOSIT {
+            get {
+                return this.DEPOSITField;
+            }
+            set {
+                if ((this.DEPOSITField.Equals(value) != true)) {
+                    this.DEPOSITField = value;
+                    this.RaisePropertyChanged("DEPOSIT");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -2821,10 +3010,52 @@ namespace Wedding_Project.ServiceReference1 {
         System.Threading.Tasks.Task<bool> CheckavailabilityAsync(System.DateTime startdate, System.DateTime enddate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/returnSpecificVenueItem", ReplyAction="http://tempuri.org/IService1/returnSpecificVenueItemResponse")]
-        Wedding_Project.ServiceReference1.Venue returnSpecificVenueItem(System.Nullable<int> VenueID);
+        Wedding_Project.ServiceReference1.Venue returnSpecificVenueItem(int VenueID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/returnSpecificVenueItem", ReplyAction="http://tempuri.org/IService1/returnSpecificVenueItemResponse")]
-        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue> returnSpecificVenueItemAsync(System.Nullable<int> VenueID);
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue> returnSpecificVenueItemAsync(int VenueID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addDecorInvoice", ReplyAction="http://tempuri.org/IService1/addDecorInvoiceResponse")]
+        void addDecorInvoice(int ClientID, string ClientName, decimal Price, int quantity, string typeOfDecor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addDecorInvoice", ReplyAction="http://tempuri.org/IService1/addDecorInvoiceResponse")]
+        System.Threading.Tasks.Task addDecorInvoiceAsync(int ClientID, string ClientName, decimal Price, int quantity, string typeOfDecor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addVenueInvoice", ReplyAction="http://tempuri.org/IService1/addVenueInvoiceResponse")]
+        void addVenueInvoice(int ClientID, int VenueID, string VenueName, System.Nullable<System.DateTime> Startdate, System.Nullable<System.DateTime> enddate, decimal deposit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addVenueInvoice", ReplyAction="http://tempuri.org/IService1/addVenueInvoiceResponse")]
+        System.Threading.Tasks.Task addVenueInvoiceAsync(int ClientID, int VenueID, string VenueName, System.Nullable<System.DateTime> Startdate, System.Nullable<System.DateTime> enddate, decimal deposit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/returnspecificclient", ReplyAction="http://tempuri.org/IService1/returnspecificclientResponse")]
+        Wedding_Project.ServiceReference1.Client returnspecificclient(int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/returnspecificclient", ReplyAction="http://tempuri.org/IService1/returnspecificclientResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Client> returnspecificclientAsync(int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/returnspecificperson", ReplyAction="http://tempuri.org/IService1/returnspecificpersonResponse")]
+        Wedding_Project.ServiceReference1.Person returnspecificperson(int PersonID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/returnspecificperson", ReplyAction="http://tempuri.org/IService1/returnspecificpersonResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Person> returnspecificpersonAsync(int PersonID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/removeFromCartable", ReplyAction="http://tempuri.org/IService1/removeFromCartableResponse")]
+        void removeFromCartable(int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/removeFromCartable", ReplyAction="http://tempuri.org/IService1/removeFromCartableResponse")]
+        System.Threading.Tasks.Task removeFromCartableAsync(int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListofDecorInvoice", ReplyAction="http://tempuri.org/IService1/GetListofDecorInvoiceResponse")]
+        Wedding_Project.ServiceReference1.Decor_Invoice[] GetListofDecorInvoice(int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListofDecorInvoice", ReplyAction="http://tempuri.org/IService1/GetListofDecorInvoiceResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Decor_Invoice[]> GetListofDecorInvoiceAsync(int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListofVenueInvoice", ReplyAction="http://tempuri.org/IService1/GetListofVenueInvoiceResponse")]
+        Wedding_Project.ServiceReference1.Venue_Invoice[] GetListofVenueInvoice(int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListofVenueInvoice", ReplyAction="http://tempuri.org/IService1/GetListofVenueInvoiceResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue_Invoice[]> GetListofVenueInvoiceAsync(int ClientID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3014,12 +3245,68 @@ namespace Wedding_Project.ServiceReference1 {
             return base.Channel.CheckavailabilityAsync(startdate, enddate);
         }
         
-        public Wedding_Project.ServiceReference1.Venue returnSpecificVenueItem(System.Nullable<int> VenueID) {
+        public Wedding_Project.ServiceReference1.Venue returnSpecificVenueItem(int VenueID) {
             return base.Channel.returnSpecificVenueItem(VenueID);
         }
         
-        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue> returnSpecificVenueItemAsync(System.Nullable<int> VenueID) {
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue> returnSpecificVenueItemAsync(int VenueID) {
             return base.Channel.returnSpecificVenueItemAsync(VenueID);
+        }
+        
+        public void addDecorInvoice(int ClientID, string ClientName, decimal Price, int quantity, string typeOfDecor) {
+            base.Channel.addDecorInvoice(ClientID, ClientName, Price, quantity, typeOfDecor);
+        }
+        
+        public System.Threading.Tasks.Task addDecorInvoiceAsync(int ClientID, string ClientName, decimal Price, int quantity, string typeOfDecor) {
+            return base.Channel.addDecorInvoiceAsync(ClientID, ClientName, Price, quantity, typeOfDecor);
+        }
+        
+        public void addVenueInvoice(int ClientID, int VenueID, string VenueName, System.Nullable<System.DateTime> Startdate, System.Nullable<System.DateTime> enddate, decimal deposit) {
+            base.Channel.addVenueInvoice(ClientID, VenueID, VenueName, Startdate, enddate, deposit);
+        }
+        
+        public System.Threading.Tasks.Task addVenueInvoiceAsync(int ClientID, int VenueID, string VenueName, System.Nullable<System.DateTime> Startdate, System.Nullable<System.DateTime> enddate, decimal deposit) {
+            return base.Channel.addVenueInvoiceAsync(ClientID, VenueID, VenueName, Startdate, enddate, deposit);
+        }
+        
+        public Wedding_Project.ServiceReference1.Client returnspecificclient(int ClientID) {
+            return base.Channel.returnspecificclient(ClientID);
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Client> returnspecificclientAsync(int ClientID) {
+            return base.Channel.returnspecificclientAsync(ClientID);
+        }
+        
+        public Wedding_Project.ServiceReference1.Person returnspecificperson(int PersonID) {
+            return base.Channel.returnspecificperson(PersonID);
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Person> returnspecificpersonAsync(int PersonID) {
+            return base.Channel.returnspecificpersonAsync(PersonID);
+        }
+        
+        public void removeFromCartable(int ClientID) {
+            base.Channel.removeFromCartable(ClientID);
+        }
+        
+        public System.Threading.Tasks.Task removeFromCartableAsync(int ClientID) {
+            return base.Channel.removeFromCartableAsync(ClientID);
+        }
+        
+        public Wedding_Project.ServiceReference1.Decor_Invoice[] GetListofDecorInvoice(int ClientID) {
+            return base.Channel.GetListofDecorInvoice(ClientID);
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Decor_Invoice[]> GetListofDecorInvoiceAsync(int ClientID) {
+            return base.Channel.GetListofDecorInvoiceAsync(ClientID);
+        }
+        
+        public Wedding_Project.ServiceReference1.Venue_Invoice[] GetListofVenueInvoice(int ClientID) {
+            return base.Channel.GetListofVenueInvoice(ClientID);
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue_Invoice[]> GetListofVenueInvoiceAsync(int ClientID) {
+            return base.Channel.GetListofVenueInvoiceAsync(ClientID);
         }
     }
 }

@@ -77,7 +77,29 @@ namespace Service
         Boolean Checkavailability(DateTime startdate, DateTime enddate);
 
         [OperationContract]
-        Venue returnSpecificVenueItem(int? VenueID);
+        Venue returnSpecificVenueItem(int VenueID);
+
+        [OperationContract]
+        void addDecorInvoice(int ClientID, String ClientName, decimal Price, int quantity, String typeOfDecor);
+
+        [OperationContract]
+        void addVenueInvoice(int ClientID, int VenueID, String VenueName, DateTime? Startdate, DateTime? enddate, decimal deposit);
+
+        [OperationContract]
+        Client returnspecificclient(int ClientID);
+
+        [OperationContract]
+        Person returnspecificperson(int PersonID);
+
+        [OperationContract]
+        void removeFromCartable(int ClientID);
+
+        [OperationContract]
+        List<Decor_Invoice> GetListofDecorInvoice(int ClientID);
+
+        [OperationContract]
+        List<Venue_Invoice> GetListofVenueInvoice(int ClientID);
+
     }
    
   

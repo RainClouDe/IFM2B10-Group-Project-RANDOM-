@@ -10,16 +10,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="Add_Client_Page.aspx">
-      <publishTime>11/03/2016 19:17:21</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
+    </File>
+    <File Include="Admin_Home_Page.aspx">
+      <publishTime>11/08/2016 20:51:04</publishTime>
     </File>
     <File Include="App_Media/Cutlery/Maxwell_And_Williams.jpg">
       <publishTime>10/25/2016 22:21:49</publishTime>
     </File>
     <File Include="App_Media/Flower_Decor/White Rose.jpg">
-      <publishTime>11/03/2016 18:37:37</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="App_Media/Page_Images/page logo.jpg">
-      <publishTime>11/06/2016 18:57:56</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="App_Media/Plate/Floral.jpg">
       <publishTime>11/02/2016 20:25:50</publishTime>
@@ -28,214 +31,232 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/12/2016 20:21:06</publishTime>
     </File>
     <File Include="App_Media/Venue/Tres Jolie.jpg">
-      <publishTime>11/03/2016 18:37:37</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="App_Media/Wedding_Planner/Test.jpg">
-      <publishTime>11/03/2016 18:37:37</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>10/25/2016 21:54:35</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>10/25/2016 21:54:35</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>10/25/2016 21:54:35</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>10/25/2016 21:54:35</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>10/25/2016 21:54:35</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>10/25/2016 21:54:35</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>10/25/2016 21:54:35</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
-      <publishTime>10/25/2016 21:54:35</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/System.Collections.Immutable.dll">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/System.Reflection.Metadata.dll">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="bin/Wedding_Project.dll">
-      <publishTime>11/07/2016 16:20:17</publishTime>
+      <publishTime>11/08/2016 21:12:41</publishTime>
     </File>
     <File Include="bin/Wedding_Project.XmlSerializers.dll">
-      <publishTime>11/07/2016 16:20:17</publishTime>
+      <publishTime>11/08/2016 21:12:42</publishTime>
     </File>
     <File Include="css/bootstrap-theme.css">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="css/bootstrap-theme.css.map">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="css/bootstrap-theme.min.css">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="css/bootstrap-theme.min.css.map">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="css/bootstrap.css">
-      <publishTime>11/06/2016 18:58:49</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="css/bootstrap.css.map">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="css/bootstrap.min.css">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="css/bootstrap.min.css.map">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="Cutlery_Page.aspx">
-      <publishTime>11/03/2016 19:17:21</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="Decor_Flower_Page.aspx">
-      <publishTime>10/26/2016 23:17:43</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.svg">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff2">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="Home.aspx">
-      <publishTime>11/03/2016 19:17:21</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="Home_Page.aspx">
-      <publishTime>11/03/2016 18:37:37</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
+    </File>
+    <File Include="Invoice_Page.aspx">
+      <publishTime>11/08/2016 16:50:23</publishTime>
     </File>
     <File Include="js/bootstrap.js">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="js/bootstrap.min.js">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="js/npm.js">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="Login_Page.aspx">
-      <publishTime>11/07/2016 11:42:28</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="Master_Page.Master">
-      <publishTime>11/06/2016 18:59:05</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="Plate_Page.aspx">
-      <publishTime>11/03/2016 18:37:37</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="scripts/ai.0.22.9-build00167.js">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="scripts/ai.0.22.9-build00167.min.js">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Cart_Table.datasource">
-      <publishTime>11/06/2016 18:23:37</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Cart_Table1.datasource">
+      <publishTime>11/07/2016 20:27:33</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Client.datasource">
+      <publishTime>11/08/2016 15:46:23</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.CompositeType.datasource">
-      <publishTime>11/06/2016 18:23:37</publishTime>
+      <publishTime>11/08/2016 15:46:23</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Cutlery.datasource">
-      <publishTime>11/06/2016 18:23:37</publishTime>
+      <publishTime>11/08/2016 15:46:23</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Decor.datasource">
-      <publishTime>11/06/2016 18:23:37</publishTime>
+      <publishTime>11/08/2016 15:46:23</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Decor_Invoice.datasource">
+      <publishTime>11/08/2016 15:46:23</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Flower_bouquet.datasource">
-      <publishTime>11/06/2016 18:23:37</publishTime>
+      <publishTime>11/08/2016 15:46:23</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Person.datasource">
-      <publishTime>11/06/2016 18:23:37</publishTime>
+      <publishTime>11/08/2016 15:46:23</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Plate.datasource">
-      <publishTime>11/06/2016 18:23:37</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Plate1.datasource">
+      <publishTime>11/07/2016 20:27:33</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Venue.datasource">
-      <publishTime>11/06/2016 18:23:37</publishTime>
+      <publishTime>11/08/2016 15:46:23</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Wedding_Planner.datasource">
-      <publishTime>11/06/2016 18:23:37</publishTime>
+      <publishTime>11/08/2016 15:46:23</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Wedding_Welcome_Card.datasource">
-      <publishTime>11/06/2016 18:23:37</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Wedding_Project.ServiceReference1.Wedding_Welcome_Card1.datasource">
+      <publishTime>11/07/2016 20:27:33</publishTime>
     </File>
     <File Include="Shopping_Cart_Page.aspx">
-      <publishTime>11/03/2016 18:37:37</publishTime>
+      <publishTime>11/07/2016 18:55:41</publishTime>
     </File>
     <File Include="styles.css">
-      <publishTime>11/03/2016 19:17:21</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="Venue_Booking_Page.aspx">
-      <publishTime>11/07/2016 11:47:04</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="Venue_Page.aspx">
-      <publishTime>10/25/2016 22:21:49</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="Web References/localhost/CompositeType.datasource">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="Web References/localhost/Reference.map">
-      <publishTime>10/25/2016 21:54:36</publishTime>
+      <publishTime>11/07/2016 17:45:25</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/07/2016 16:19:55</publishTime>
+      <publishTime>11/07/2016 17:48:57</publishTime>
     </File>
     <File Include="Wedding-Planner.aspx">
       <publishTime>10/09/2016 19:51:31</publishTime>
     </File>
     <File Include="Wedding_Planner_Page.aspx">
-      <publishTime>11/03/2016 18:31:08</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="Wedding_Welcome_Card.aspx">
-      <publishTime>11/03/2016 18:37:37</publishTime>
+      <publishTime>11/07/2016 17:47:15</publishTime>
     </File>
     <File Include="WhiteRose_Checkout.aspx">
       <publishTime>10/26/2016 23:17:43</publishTime>

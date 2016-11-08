@@ -17,3 +17,4 @@ D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Weddi
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Release\Wedding_Project.dll
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Release\Wedding_Project.pdb
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Release\Wedding_Project.XmlSerializers.dll
+D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Release\Wedding_Project.csprojResolveAssemblyReference.cache
