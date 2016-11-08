@@ -60,9 +60,9 @@
                                 <td class="auto-style6"> 
                                     <!--nav navbar-nav -->
                                     <nav class="login-nav">
-                                       <a class="navigation" href="Add_Client_Page.aspx"> Register </a><br />
-                                        <a class="navigation" href="Login_Page.aspx"> Login</a><br />
-                                       <a class="navigation" href="Login_Page.aspx"> &nbsp;</a><a class="navigation" href="WhiteRose_Checkout.aspx"><span class="glyphicon glyphicon-shopping-cart"></span>Basket </a>
+                                       <a id="registration" class="navigation" href="Add_Client_Page.aspx" runat="server"> Register </a><br />
+                                       <a id="login" class="navigation" href="Login_Page.aspx" runat="server" > Login</a><br />
+                                       <a id="cart" class="navigation" href="Login_Page.aspx" runat="server"> &nbsp;</a><a id="basket" class="navigation" href="WhiteRose_Checkout.aspx" runat="server"><span class="glyphicon glyphicon-shopping-cart"></span>Basket </a>
                                    </nav>
                              </td>
                         </tr>
@@ -72,10 +72,10 @@
             <tr>
                 <td>
                     <nav class="navbar navbar-default ">
-                   <div class="container">
-                           <a class="menu-nav" href="Home.aspx"> Home </a>
-                           <a class="menu-nav" href="Venue_Page.aspx"> Wedding Venues </a>
-                           <a class="menu-nav" href="Wedding_Planner_Page.aspx"> Wedding Planners </a>
+                   <div id="decordiv" class="container">
+                           <a id="home" class="menu-nav" href="Home.aspx" runat="server"> Home </a>
+                           <a id="venue" class="menu-nav" href="Venue_Page.aspx" runat="server"> Wedding Venues </a>
+                           <a id="decor" class="menu-nav" href="Wedding_Planner_Page.aspx" runat="server"> Wedding Planners </a>
                           <a class="dropdown-toggle menu-nav"  data-toggle="dropdown" href="#"> Decor <span class="dropdown-toggle"></span></a>
                                <ul class="dropdown-menu menu-nav">
                                    <li><a href="Decor_Flower_Page.aspx"> Decor & Flowers </a></li>

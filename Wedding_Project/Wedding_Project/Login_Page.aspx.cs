@@ -24,14 +24,24 @@ namespace Wedding_Project
 
             if (proxy.Authentication(username, password))
             {
-                int id = 0;
-                HttpContext.Current.Session["ClientLoggedIn"] = true;
+                if(proxy.isadmin(username))
+                {
+                    HttpContext.Current.Session["AdminLoggedIn"] = true;
 
-                int loginID = proxy.returnLoginID(username);
-                int clientID = proxy.returnClientId(loginID);
+                    Response.Redirect("Admin_Home_Page.aspx");
 
-                HttpContext.Current.Session["ClientId"] = clientID;
-                Response.Redirect("Invoice_Page.aspx");
+                }
+                else
+                {
+                    HttpContext.Current.Session["ClientLoggedIn"] = true;
+
+                    int loginID = proxy.returnLoginID(username);
+                    int clientID = proxy.returnClientId(loginID);
+
+                    HttpContext.Current.Session["ClientId"] = clientID;
+                    Response.Redirect("Home_Page.aspx");
+                }
+           
                 //Redirect 
             }
            /* else

@@ -182,20 +182,6 @@
       <Association Name="Wedding_Planner_WP_Working_Location" Member="Wedding_Planner" ThisKey="WP_ID" OtherKey="WP_ID" Type="Wedding_Planner" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Person" Member="Persons">
-    <Type Name="Person">
-      <Column Name="P_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="P_NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="P_SURNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="[P_PHONE NUMBER]" Member="P_PHONE_NUMBER" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="[P_EMAIL ADDRESS]" Member="P_EMAIL_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="[P_STREET ADDRESS]" Member="P_STREET_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="P_USERNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Association Name="Person_Adminstrator" Member="Adminstrators" ThisKey="P_ID" OtherKey="P_ID" Type="Adminstrator" />
-      <Association Name="Person_Client" Member="Clients" ThisKey="P_ID" OtherKey="P_ID" Type="Client" />
-      <Association Name="Person_Wedding_Planner" Member="Wedding_Planners" ThisKey="P_ID" OtherKey="P_ID" Type="Wedding_Planner" />
-    </Type>
-  </Table>
   <Table Name="dbo.Venue_Booking_Schedule" Member="Venue_Booking_Schedules">
     <Type Name="Venue_Booking_Schedule">
       <Column Name="VBS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -257,6 +243,21 @@
       <Column Name="START_BOOKING_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="END_BOOKING_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="DEPOSIT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="P_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="P_NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="P_SURNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="[P_PHONE NUMBER]" Member="P_PHONE_NUMBER" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="[P_EMAIL ADDRESS]" Member="P_EMAIL_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[P_STREET ADDRESS]" Member="P_STREET_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="P_USERNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="P_ADMIN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Person_Adminstrator" Member="Adminstrators" ThisKey="P_ID" OtherKey="P_ID" Type="Adminstrator" />
+      <Association Name="Person_Client" Member="Clients" ThisKey="P_ID" OtherKey="P_ID" Type="Client" />
+      <Association Name="Person_Wedding_Planner" Member="Wedding_Planners" ThisKey="P_ID" OtherKey="P_ID" Type="Wedding_Planner" />
     </Type>
   </Table>
 </Database>

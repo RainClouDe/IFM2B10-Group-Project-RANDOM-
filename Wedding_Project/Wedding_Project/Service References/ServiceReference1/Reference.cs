@@ -105,6 +105,9 @@ namespace Wedding_Project.ServiceReference1 {
         private string P_USERNAMEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> P_ADMINField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Wedding_Project.ServiceReference1.Adminstrator[] AdminstratorsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -214,7 +217,20 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public System.Nullable<bool> P_ADMIN {
+            get {
+                return this.P_ADMINField;
+            }
+            set {
+                if ((this.P_ADMINField.Equals(value) != true)) {
+                    this.P_ADMINField = value;
+                    this.RaisePropertyChanged("P_ADMIN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public Wedding_Project.ServiceReference1.Adminstrator[] Adminstrators {
             get {
                 return this.AdminstratorsField;
@@ -227,7 +243,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public Wedding_Project.ServiceReference1.Client[] Clients {
             get {
                 return this.ClientsField;
@@ -240,7 +256,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public Wedding_Project.ServiceReference1.Wedding_Planner[] Wedding_Planners {
             get {
                 return this.Wedding_PlannersField;
@@ -3056,6 +3072,12 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListofVenueInvoice", ReplyAction="http://tempuri.org/IService1/GetListofVenueInvoiceResponse")]
         System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue_Invoice[]> GetListofVenueInvoiceAsync(int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/isadmin", ReplyAction="http://tempuri.org/IService1/isadminResponse")]
+        bool isadmin(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/isadmin", ReplyAction="http://tempuri.org/IService1/isadminResponse")]
+        System.Threading.Tasks.Task<bool> isadminAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3307,6 +3329,14 @@ namespace Wedding_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue_Invoice[]> GetListofVenueInvoiceAsync(int ClientID) {
             return base.Channel.GetListofVenueInvoiceAsync(ClientID);
+        }
+        
+        public bool isadmin(string username) {
+            return base.Channel.isadmin(username);
+        }
+        
+        public System.Threading.Tasks.Task<bool> isadminAsync(string username) {
+            return base.Channel.isadminAsync(username);
         }
     }
 }

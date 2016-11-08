@@ -98,6 +98,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Add_Client_Page.aspx" />
+    <Content Include="Add_Decor_Item_Page.aspx" />
+    <Content Include="Add_Venue_Page.aspx" />
     <Content Include="Admin_Home_Page.aspx" />
     <Content Include="App_Media\Flower_Decor\White Rose.jpg" />
     <Content Include="App_Media\Page_Images\page logo.jpg" />
@@ -152,8 +154,12 @@
     <None Include="Service References\ServiceReference1\Service13.disco" />
     <None Include="Service References\ServiceReference1\Service11.disco" />
     <None Include="Service References\ServiceReference1\Service12.disco" />
+    <Content Include="Remove_Decor_Item.aspx" />
+    <Content Include="Remove_Venue_Page.aspx" />
     <Content Include="Shopping_Cart_Page.aspx" />
     <Content Include="styles.css" />
+    <Content Include="Update_Decor_Item.aspx" />
+    <Content Include="Update_Venue_Page.aspx" />
     <Content Include="Venue_Booking_Page.aspx" />
     <Content Include="Venue_Page.aspx" />
     <Content Include="Wedding_Planner_Page.aspx" />
@@ -280,6 +286,20 @@
     <Compile Include="Add_Client_Page.aspx.designer.cs">
       <DependentUpon>Add_Client_Page.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Add_Decor_Item_Page.aspx.cs">
+      <DependentUpon>Add_Decor_Item_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Add_Decor_Item_Page.aspx.designer.cs">
+      <DependentUpon>Add_Decor_Item_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Venue_Page.aspx.cs">
+      <DependentUpon>Add_Venue_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Add_Venue_Page.aspx.designer.cs">
+      <DependentUpon>Add_Venue_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Home_Page.aspx.cs">
       <DependentUpon>Admin_Home_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -355,6 +375,20 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Remove_Decor_Item.aspx.cs">
+      <DependentUpon>Remove_Decor_Item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Remove_Decor_Item.aspx.designer.cs">
+      <DependentUpon>Remove_Decor_Item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remove_Venue_Page.aspx.cs">
+      <DependentUpon>Remove_Venue_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Remove_Venue_Page.aspx.designer.cs">
+      <DependentUpon>Remove_Venue_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -365,6 +399,20 @@
     </Compile>
     <Compile Include="Shopping_Cart_Page.aspx.designer.cs">
       <DependentUpon>Shopping_Cart_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Decor_Item.aspx.cs">
+      <DependentUpon>Update_Decor_Item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Update_Decor_Item.aspx.designer.cs">
+      <DependentUpon>Update_Decor_Item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Venue_Page.aspx.cs">
+      <DependentUpon>Update_Venue_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Update_Venue_Page.aspx.designer.cs">
+      <DependentUpon>Update_Venue_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Venue_Booking_Page.aspx.cs">
       <DependentUpon>Venue_Booking_Page.aspx</DependentUpon>
