@@ -117,7 +117,7 @@
         <classShapeMoniker Id="85da1861-daf0-41f5-95f7-083fa798438c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.2187475 : 7.625); (1.2187475 : 6.9687475); (1.66666666666667 : 6.9687475 : JumpStart); (1.83333333333333 : 6.9687475 : JumpEnd); (3.5 : 6.9687475)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.2187475 : 7.625); (1.2187475 : 6.9687475); (3.5 : 6.9687475)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WeddingPlanningDataDataContext/Decor/Decor_Flower_bouquet" />
       <nodes>
         <classShapeMoniker Id="cf63ade3-f871-4d93-ac4c-411ff7fe3648" />
@@ -145,7 +145,7 @@
         <classShapeMoniker Id="e429b692-9ee0-4c37-aef0-0f190bd9fbfa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.2812525 : 9.78049967447917); (2.2812525 : 14.4815991210937); (3.08853916666667 : 14.4815991210937 : JumpStart); (3.25520583333333 : 14.4815991210937 : JumpEnd); (3.5 : 14.4815991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.2812525 : 9.78049967447917); (2.2812525 : 14.4815991210937); (3.5 : 14.4815991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WeddingPlanningDataDataContext/Decor/Decor_Special" />
       <nodes>
         <classShapeMoniker Id="cf63ade3-f871-4d93-ac4c-411ff7fe3648" />
@@ -180,7 +180,7 @@
         <classShapeMoniker Id="16a82e68-d4e4-410a-bf6d-d614caebdaa3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.21875 : 5.1362939453125); (10.21875 : 6.59375); (11.5 : 6.59375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(10.75 : 5.1362939453125); (11.125 : 5.5112939453125); (11.125 : 7.38544840494792); (11.5 : 7.38544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/WeddingPlanningDataDataContext/Login_Detail/Login_Detail_Wedding_Planner" />
       <nodes>
         <classShapeMoniker Id="238e4311-895f-4980-97c6-9b2e37f03113" />
@@ -199,33 +199,6 @@
       <nodes>
         <classShapeMoniker Id="408e15c1-f3ce-493d-8c3e-aaae23e0119b" />
         <classShapeMoniker Id="c7f969ce-9674-4486-b148-850910e855cb" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="fae90c6f-bc49-4c70-b470-b55cf1a8055e" absoluteBounds="7.875, 6.75, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/WeddingPlanningDataDataContext/Person" />
-      <nestedChildShapes>
-        <elementListCompartment Id="68330ca1-a8f2-4468-b239-91861e077515" absoluteBounds="7.8900000000000006, 7.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(9.875 : 6.81153746153846); (10.5625 : 6.12403746153846); (10.5625 : 5.5112939453125); (11.125 : 5.5112939453125); (11.5 : 5.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/WeddingPlanningDataDataContext/Person/Person_Adminstrator" />
-      <nodes>
-        <classShapeMoniker Id="fae90c6f-bc49-4c70-b470-b55cf1a8055e" />
-        <classShapeMoniker Id="1397fb0c-e455-461f-a355-5a54ba3c4c86" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 6.75); (8.5 : 1.06532098632813); (11.5 : 1.06532098632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/WeddingPlanningDataDataContext/Person/Person_Client" />
-      <nodes>
-        <classShapeMoniker Id="fae90c6f-bc49-4c70-b470-b55cf1a8055e" />
-        <classShapeMoniker Id="4365266a-5baa-44a8-b90c-da82fb78f66d" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(9.875 : 7.57246963571715); (11.5 : 7.57246963571715)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/WeddingPlanningDataDataContext/Person/Person_Wedding_Planner" />
-      <nodes>
-        <classShapeMoniker Id="fae90c6f-bc49-4c70-b470-b55cf1a8055e" />
-        <classShapeMoniker Id="408e15c1-f3ce-493d-8c3e-aaae23e0119b" />
       </nodes>
     </associationConnector>
     <classShape Id="f5911683-258c-42ec-b728-9b46208d12ec" absoluteBounds="6.375, 12, 2, 1.7708968098958331">
@@ -287,14 +260,14 @@
         <elementListCompartment Id="48d5f967-b330-499d-b735-8a9974e47e83" absoluteBounds="2.2649999999999997, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.25 : 2.23159912109375); (6.25 : 2.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.25 : 2.23159912109375); (6.25 : 2.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WeddingPlanningDataDataContext/Decor_Invoice/Decor_Invoice_Venue_Decor_Invoice" />
       <nodes>
         <classShapeMoniker Id="9e65ad9e-3b9a-4ee0-aa7f-93d1f0790882" />
         <classShapeMoniker Id="e68489df-7a96-4dd5-8f12-f19a5ac9b588" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.5 : 0.845160493164065); (4.25 : 0.845160493164065)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.5 : 0.845160493164065); (4.25 : 0.845160493164065)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WeddingPlanningDataDataContext/Client/Client_Decor_Invoice" />
       <nodes>
         <classShapeMoniker Id="4365266a-5baa-44a8-b90c-da82fb78f66d" />
@@ -307,5 +280,32 @@
         <elementListCompartment Id="d2408f52-f741-4ba3-b933-6589f816b992" absoluteBounds="14.265, 1.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="8c660fcd-b9f7-4306-96d7-458b6c876793" absoluteBounds="7.625, 6.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/WeddingPlanningDataDataContext/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4719a92b-1ace-409c-bffc-f0296f698aa4" absoluteBounds="7.6400000000000006, 6.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.625 : 6.5); (10 : 6.125); (11.0416666666667 : 6.125 : JumpStart); (11.2083333333333 : 6.125 : JumpEnd); (12.5 : 6.125); (12.5 : 5.1362939453125)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WeddingPlanningDataDataContext/Person/Person_Adminstrator" />
+      <nodes>
+        <classShapeMoniker Id="8c660fcd-b9f7-4306-96d7-458b6c876793" />
+        <classShapeMoniker Id="1397fb0c-e455-461f-a355-5a54ba3c4c86" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 6.5); (8.5 : 1.14415373291016); (11.5 : 1.14415373291016)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WeddingPlanningDataDataContext/Person/Person_Client" />
+      <nodes>
+        <classShapeMoniker Id="8c660fcd-b9f7-4306-96d7-458b6c876793" />
+        <classShapeMoniker Id="4365266a-5baa-44a8-b90c-da82fb78f66d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.625 : 7.89067260742187); (11.5 : 7.89067260742187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WeddingPlanningDataDataContext/Person/Person_Wedding_Planner" />
+      <nodes>
+        <classShapeMoniker Id="8c660fcd-b9f7-4306-96d7-458b6c876793" />
+        <classShapeMoniker Id="408e15c1-f3ce-493d-8c3e-aaae23e0119b" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

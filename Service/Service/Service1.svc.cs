@@ -244,6 +244,19 @@ namespace Service
             return false;
         }
 
+        public bool isadmin(string username)
+        {
+            var query = from s in db.Persons
+                        where s.P_ADMIN == true
+                        select s;
+            if (query != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         /// <summary>
         /// Start of Funtions that check the database for validation
         /// </summary>
@@ -473,7 +486,7 @@ namespace Service
             db.SubmitChanges();
         }
 
-       
+    
 
         /// <summary>
         /// End of functions that remove stuff from the database

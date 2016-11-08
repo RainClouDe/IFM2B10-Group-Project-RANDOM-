@@ -100,6 +100,8 @@ namespace Service
         [OperationContract]
         List<Venue_Invoice> GetListofVenueInvoice(int ClientID);
 
+        [OperationContract]
+        Boolean isadmin(String username);
     }
    
   
