@@ -71,7 +71,28 @@ namespace Service
         List<Wedding_Welcome_Card> GetAllWelcomecards();
 
         [OperationContract]
+        List<Venue_Contractor> GetAllContractors();
+
+        [OperationContract]
+        List<Photographer> GetAllPhotographers();
+
+        [OperationContract]
+        List<Videoagrapher> GetAllVideoGraphers();
+
+        [OperationContract]
+        List<Disc_Jockey> GetAllDiskJockeys();
+
+        [OperationContract]
+        List<Master_of_Ceremony> GetAllMasterOfCeremonies();
+
+        [OperationContract]
+        List<Venue> SortVenues();
+
+        [OperationContract]
         void addbooking(DateTime startdate, DateTime enddate, int VenueID, int ClientID);
+
+        [OperationContract]
+        void addVenue(String Name, int Capacity, String Coordinates, int Deposit, String Streetaddress, String Image, String Description, int Price, int TableCapacity);
 
         [OperationContract]
         Boolean Checkavailability(DateTime startdate, DateTime enddate);

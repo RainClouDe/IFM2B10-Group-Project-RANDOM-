@@ -13,12 +13,12 @@ namespace Wedding_Project {
     public partial class Wedding_Planner_Page {
         
         /// <summary>
-        /// Testdiv control.
+        /// col1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Testdiv;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl col1;
     }
 }

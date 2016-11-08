@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Add_Client_Page.aspx" />
+    <Content Include="Add_Venue_Page.aspx" />
     <Content Include="App_Media\Flower_Decor\White Rose.jpg" />
     <Content Include="App_Media\Page_Images\page logo.jpg" />
     <Content Include="App_Media\Venue\Tres Jolie.jpg" />
@@ -128,6 +129,8 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="Cutlery_Page.aspx" />
     <Content Include="Decor_Flower_Page.aspx" />
+    <Content Include="Decor_Page.aspx" />
+    <Content Include="Disk_Jockey_Information_Page.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Home.aspx" />
     <Content Include="Home_Page.aspx" />
@@ -135,6 +138,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="Login_Page.aspx" />
+    <Content Include="Master_Of_Ceremonies_Information_Page.aspx" />
     <Content Include="packages.config" />
     <Content Include="Master_Page.Master" />
     <Content Include="css\bootstrap-theme.css.map" />
@@ -145,15 +149,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Photographer_Information_Page.aspx" />
     <Content Include="Plate_Page.aspx" />
     <None Include="Service References\ServiceReference1\Service11.wsdl" />
-    <None Include="Service References\ServiceReference1\Service13.disco" />
     <None Include="Service References\ServiceReference1\Service11.disco" />
     <None Include="Service References\ServiceReference1\Service12.disco" />
+    <None Include="Service References\ServiceReference1\Service13.disco" />
     <Content Include="Shopping_Cart_Page.aspx" />
     <Content Include="styles.css" />
     <Content Include="Venue_Booking_Page.aspx" />
+    <Content Include="Venue_Information_Page.aspx" />
     <Content Include="Venue_Page.aspx" />
+    <Content Include="Videographer_Information_Page.aspx" />
     <Content Include="Wedding_Planner_Page.aspx" />
     <Content Include="Wedding_Welcome_Card.aspx" />
     <None Include="Properties\PublishProfiles\Website.pubxml" />
@@ -219,6 +226,9 @@
     <None Include="Service References\ServiceReference1\Service16.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Cart_Table.datasource" />
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Plate.datasource" />
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Wedding_Welcome_Card.datasource" />
     <None Include="Service References\ServiceReference1\Service17.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -228,9 +238,30 @@
     <None Include="Service References\ServiceReference1\Service19.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Cart_Table.datasource" />
-    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Plate.datasource" />
-    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Wedding_Welcome_Card.datasource" />
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Cart_Table1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Disc_Jockey.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Master_of_Ceremony.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Photographer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Plate1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Venue_Contractor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Videoagrapher.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Wedding_Project.ServiceReference1.Wedding_Welcome_Card1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web References\localhost\Service1.wsdl" />
     <None Include="Web References\localhost\Service1.xsd">
       <SubType>Designer</SubType>
@@ -263,6 +294,13 @@
     <Compile Include="Add_Client_Page.aspx.designer.cs">
       <DependentUpon>Add_Client_Page.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Add_Venue_Page.aspx.cs">
+      <DependentUpon>Add_Venue_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Add_Venue_Page.aspx.designer.cs">
+      <DependentUpon>Add_Venue_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cutlery_Page.aspx.cs">
       <DependentUpon>Cutlery_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -276,6 +314,20 @@
     </Compile>
     <Compile Include="Decor_Flower_Page.aspx.designer.cs">
       <DependentUpon>Decor_Flower_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Decor_Page.aspx.cs">
+      <DependentUpon>Decor_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Decor_Page.aspx.designer.cs">
+      <DependentUpon>Decor_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Disk_Jockey_Information_Page.aspx.cs">
+      <DependentUpon>Disk_Jockey_Information_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Disk_Jockey_Information_Page.aspx.designer.cs">
+      <DependentUpon>Disk_Jockey_Information_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -298,6 +350,13 @@
     <Compile Include="Login_Page.aspx.designer.cs">
       <DependentUpon>Login_Page.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Master_Of_Ceremonies_Information_Page.aspx.cs">
+      <DependentUpon>Master_Of_Ceremonies_Information_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master_Of_Ceremonies_Information_Page.aspx.designer.cs">
+      <DependentUpon>Master_Of_Ceremonies_Information_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Master_Page.Master.cs">
       <DependentUpon>Master_Page.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -311,6 +370,13 @@
     <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Photographer_Information_Page.aspx.cs">
+      <DependentUpon>Photographer_Information_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photographer_Information_Page.aspx.designer.cs">
+      <DependentUpon>Photographer_Information_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Plate_Page.aspx.cs">
       <DependentUpon>Plate_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -342,12 +408,26 @@
     <Compile Include="Venue_Booking_Page.aspx.designer.cs">
       <DependentUpon>Venue_Booking_Page.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Venue_Information_Page.aspx.cs">
+      <DependentUpon>Venue_Information_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Venue_Information_Page.aspx.designer.cs">
+      <DependentUpon>Venue_Information_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Venue_Page.aspx.cs">
       <DependentUpon>Venue_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Venue_Page.aspx.designer.cs">
       <DependentUpon>Venue_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Videographer_Information_Page.aspx.cs">
+      <DependentUpon>Videographer_Information_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Videographer_Information_Page.aspx.designer.cs">
+      <DependentUpon>Videographer_Information_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\localhost\Reference.cs">
       <AutoGen>True</AutoGen>

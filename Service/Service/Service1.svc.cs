@@ -176,6 +176,85 @@ namespace Service
             return null;
         }
 
+        public List<Venue_Contractor> GetAllContractors()
+        {
+
+            var query = from s in db.Venue_Contractors
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+        public List<Photographer> GetAllPhotographers()
+        {
+
+            var query = from s in db.Photographers
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+        public List<Videoagrapher> GetAllVideoGraphers()
+        {
+
+            var query = from s in db.Videoagraphers
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+        public List<Disc_Jockey> GetAllDiskJockeys()
+        {
+
+            var query = from s in db.Disc_Jockeys
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+        public List<Master_of_Ceremony> GetAllMasterOfCeremonies()
+        {
+
+            var query = from s in db.Master_of_Ceremonies
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
+        public List<Venue> SortVenues()
+        {
+
+            var query = from s in db.Venues
+                        orderby s.VN_NAME ascending
+                        select s;
+            if (query != null)
+            {
+                return query.ToList();
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// end of chunk of code that returns lists of objects from the database
         /// </summary>
@@ -287,6 +366,25 @@ namespace Service
             db.Venue_Booking_Schedules.InsertOnSubmit(bookingtoaddtoschedule);
             db.SubmitChanges();
 
+        }
+
+        public void addVenue(String Name, int Capacity, String Coordinates, int Deposit, String Streetaddress, String Image, String Description, int Price, int TableCapacity)
+        {
+            Venue objVenue = new Venue();
+
+            objVenue.VN_NAME = Name;
+            objVenue.VN_CAPACITY = Capacity;
+            objVenue.VN_COORDINATES = Coordinates;
+            objVenue.VN_DEPOSIT = Deposit;
+            objVenue.VN_IMAGE_PATH = Image;
+            objVenue.VN_STREET_ADDRESS = Streetaddress;
+            objVenue.VN_TABLEDESCRIPTION = Description;
+            objVenue.VN_PRICE = Price;
+            objVenue.VN_TABLECAPACITY = TableCapacity;
+
+            db.Venues.InsertOnSubmit(objVenue);
+
+            db.SubmitChanges();
         }
 
         /// <summary>

@@ -25,15 +25,15 @@ namespace Wedding_Project
                 {
                     if (decorlist[k].DEC_ITEM_ID == cutlerylist[i].DEC_ITEM_ID)
                     {
-                        testdiv.InnerHtml += "<IMG SRC='App_Media\\" + decorlist[k].DEC_IMAGE_PATH + "'/>";
-                        testdiv.InnerHtml += "<br>" + "Name: " + decorlist[k].DEC_NAME;
-                        testdiv.InnerHtml += "<br>" + "Make: " + decorlist[k].DEC_MAKE;
-                        testdiv.InnerHtml += "<br>" + "Price: R " + decorlist[k].DEC_PRICE;
-                        testdiv.InnerHtml += "<br>" + "Colour: " + decorlist[k].DEC_COLOUR;
-                        testdiv.InnerHtml += "<br>" + "Design: " + cutlerylist[i].PL_DESIGN;
-                        testdiv.InnerHtml += "<br>" + "Material: " + cutlerylist[i].PL_MATERIAL + "<br>";
-                        testdiv.InnerHtml += "<a href='Shopping_Cart_Page.aspx?DecID= " + decorlist[k].DEC_ITEM_ID.ToString() + " '>" + " Shop now " + "</a>";
-                    }
+                        cutleryInfo.InnerHtml += "<IMG SRC='App_Media\\" + decorlist[k].DEC_IMAGE_PATH + "' width=250 height=200 />";
+                        cutleryInfo.InnerHtml += "<p>" + "Name: " + decorlist[k].DEC_NAME + "</p>";
+                        cutleryInfo.InnerHtml += "<p>" + "Make: " + decorlist[k].DEC_MAKE + "</p>";
+                        cutleryInfo.InnerHtml += "<p>" + "Price: R" + decorlist[k].DEC_PRICE + "</p>";
+                        cutleryInfo.InnerHtml += "<p>" + "Colour: " + decorlist[k].DEC_COLOUR + "</p>";
+                        cutleryInfo.InnerHtml += "<p>" + "Design: " + cutlerylist[i].PL_DESIGN + "</p>";
+                        cutleryInfo.InnerHtml += "<p>" + "Material: " + cutlerylist[i].PL_MATERIAL + "</p>";
+                        cutleryInfo.InnerHtml += "<button type='button' class='btn btn-default btn-lg'> <span class='glyphicon glyphicon-shopping-cart' style='left: -41px; top: 0px; width: 44px; height: 34px'> <a href='Shopping_Cart_Page.aspx?DecID= " + decorlist[k].DEC_ITEM_ID.ToString() + " '>" + " Add to Cart " + "</a> </span></button>";
+    }
                 }
             }
         }

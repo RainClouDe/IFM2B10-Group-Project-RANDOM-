@@ -13,12 +13,30 @@ namespace Wedding_Project {
     public partial class Venue_Page {
         
         /// <summary>
-        /// test control.
+        /// btnSort control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl test;
+        protected global::System.Web.UI.WebControls.Button btnSort;
+        
+        /// <summary>
+        /// row control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl row;
+        
+        /// <summary>
+        /// col1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl col1;
     }
 }

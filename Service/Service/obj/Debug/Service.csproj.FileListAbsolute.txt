@@ -34,3 +34,21 @@ D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Servi
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Service\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Service\Service\obj\Debug\Service.dll
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Service\Service\obj\Debug\Service.pdb
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Service.dll.config
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Service.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Service.pdb
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.AI.Agent.Intercept.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.AI.DependencyCollector.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.AI.Web.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.AI.WindowsServer.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.ApplicationInsights.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.AI.DependencyCollector.xml
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.AI.Web.xml
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.AI.WindowsServer.xml
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\bin\Microsoft.ApplicationInsights.xml
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\obj\Debug\Service.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Service\Service\obj\Debug\Service.pdb

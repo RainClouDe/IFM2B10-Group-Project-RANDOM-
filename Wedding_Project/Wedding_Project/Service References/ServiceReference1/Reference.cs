@@ -105,6 +105,9 @@ namespace Wedding_Project.ServiceReference1 {
         private string P_USERNAMEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> P_TYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Wedding_Project.ServiceReference1.Adminstrator[] AdminstratorsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -214,7 +217,20 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public System.Nullable<int> P_TYPE {
+            get {
+                return this.P_TYPEField;
+            }
+            set {
+                if ((this.P_TYPEField.Equals(value) != true)) {
+                    this.P_TYPEField = value;
+                    this.RaisePropertyChanged("P_TYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public Wedding_Project.ServiceReference1.Adminstrator[] Adminstrators {
             get {
                 return this.AdminstratorsField;
@@ -227,7 +243,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public Wedding_Project.ServiceReference1.Client[] Clients {
             get {
                 return this.ClientsField;
@@ -240,7 +256,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public Wedding_Project.ServiceReference1.Wedding_Planner[] Wedding_Planners {
             get {
                 return this.Wedding_PlannersField;
@@ -659,6 +675,9 @@ namespace Wedding_Project.ServiceReference1 {
         private System.Nullable<decimal> VN_DEPOSITField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Wedding_Project.ServiceReference1.Venue_Booking_Schedule[] Venue_Booking_SchedulesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Wedding_Project.ServiceReference1.Venue_Contractor[] Venue_ContractorsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -669,9 +688,6 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Wedding_Project.ServiceReference1.Venue_Location_and_Contact_Detail[] Venue_Location_and_Contact_DetailsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Wedding_Project.ServiceReference1.Venue_Booking_Schedule[] Venue_Booking_SchedulesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -814,6 +830,19 @@ namespace Wedding_Project.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public Wedding_Project.ServiceReference1.Venue_Booking_Schedule[] Venue_Booking_Schedules {
+            get {
+                return this.Venue_Booking_SchedulesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Venue_Booking_SchedulesField, value) != true)) {
+                    this.Venue_Booking_SchedulesField = value;
+                    this.RaisePropertyChanged("Venue_Booking_Schedules");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
         public Wedding_Project.ServiceReference1.Venue_Contractor[] Venue_Contractors {
             get {
                 return this.Venue_ContractorsField;
@@ -826,7 +855,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
         public Wedding_Project.ServiceReference1.Venue_Decor_Invoice[] Venue_Decor_Invoices {
             get {
                 return this.Venue_Decor_InvoicesField;
@@ -839,7 +868,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
         public Wedding_Project.ServiceReference1.Venue_Decor_Invoice[] Venue_Decor_Invoices1 {
             get {
                 return this.Venue_Decor_Invoices1Field;
@@ -852,7 +881,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
         public Wedding_Project.ServiceReference1.Venue_Location_and_Contact_Detail[] Venue_Location_and_Contact_Details {
             get {
                 return this.Venue_Location_and_Contact_DetailsField;
@@ -865,15 +894,111 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
-        public Wedding_Project.ServiceReference1.Venue_Booking_Schedule[] Venue_Booking_Schedules {
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Venue_Booking_Schedule", Namespace="http://schemas.datacontract.org/2004/07/Service")]
+    [System.SerializableAttribute()]
+    public partial class Venue_Booking_Schedule : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int VBS_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> VBS_START_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> VBS_END_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> VN_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CL_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
-                return this.Venue_Booking_SchedulesField;
+                return this.extensionDataField;
             }
             set {
-                if ((object.ReferenceEquals(this.Venue_Booking_SchedulesField, value) != true)) {
-                    this.Venue_Booking_SchedulesField = value;
-                    this.RaisePropertyChanged("Venue_Booking_Schedules");
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int VBS_ID {
+            get {
+                return this.VBS_IDField;
+            }
+            set {
+                if ((this.VBS_IDField.Equals(value) != true)) {
+                    this.VBS_IDField = value;
+                    this.RaisePropertyChanged("VBS_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> VBS_START_DATE {
+            get {
+                return this.VBS_START_DATEField;
+            }
+            set {
+                if ((this.VBS_START_DATEField.Equals(value) != true)) {
+                    this.VBS_START_DATEField = value;
+                    this.RaisePropertyChanged("VBS_START_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.Nullable<System.DateTime> VBS_END_DATE {
+            get {
+                return this.VBS_END_DATEField;
+            }
+            set {
+                if ((this.VBS_END_DATEField.Equals(value) != true)) {
+                    this.VBS_END_DATEField = value;
+                    this.RaisePropertyChanged("VBS_END_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.Nullable<int> VN_ID {
+            get {
+                return this.VN_IDField;
+            }
+            set {
+                if ((this.VN_IDField.Equals(value) != true)) {
+                    this.VN_IDField = value;
+                    this.RaisePropertyChanged("VN_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.Nullable<int> CL_ID {
+            get {
+                return this.CL_IDField;
+            }
+            set {
+                if ((this.CL_IDField.Equals(value) != true)) {
+                    this.CL_IDField = value;
+                    this.RaisePropertyChanged("CL_ID");
                 }
             }
         }
@@ -914,6 +1039,9 @@ namespace Wedding_Project.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> VNC_RATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> VNC_TYPEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> VN_IDField;
@@ -1019,6 +1147,19 @@ namespace Wedding_Project.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public System.Nullable<int> VNC_TYPE {
+            get {
+                return this.VNC_TYPEField;
+            }
+            set {
+                if ((this.VNC_TYPEField.Equals(value) != true)) {
+                    this.VNC_TYPEField = value;
+                    this.RaisePropertyChanged("VNC_TYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
         public System.Nullable<int> VN_ID {
             get {
                 return this.VN_IDField;
@@ -1031,7 +1172,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public Wedding_Project.ServiceReference1.Disc_Jockey[] Disc_Jockeys {
             get {
                 return this.Disc_JockeysField;
@@ -1044,7 +1185,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public Wedding_Project.ServiceReference1.Master_of_Ceremony[] Master_of_Ceremonies {
             get {
                 return this.Master_of_CeremoniesField;
@@ -1057,7 +1198,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public Wedding_Project.ServiceReference1.Photographer[] Photographers {
             get {
                 return this.PhotographersField;
@@ -1070,7 +1211,7 @@ namespace Wedding_Project.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
         public Wedding_Project.ServiceReference1.Videoagrapher[] Videoagraphers {
             get {
                 return this.VideoagraphersField;
@@ -1313,115 +1454,6 @@ namespace Wedding_Project.ServiceReference1 {
                 if ((this.VN_IDField.Equals(value) != true)) {
                     this.VN_IDField = value;
                     this.RaisePropertyChanged("VN_ID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Venue_Booking_Schedule", Namespace="http://schemas.datacontract.org/2004/07/Service")]
-    [System.SerializableAttribute()]
-    public partial class Venue_Booking_Schedule : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VBS_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> VBS_START_DATEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> VBS_END_DATEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> VN_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> CL_IDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VBS_ID {
-            get {
-                return this.VBS_IDField;
-            }
-            set {
-                if ((this.VBS_IDField.Equals(value) != true)) {
-                    this.VBS_IDField = value;
-                    this.RaisePropertyChanged("VBS_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> VBS_START_DATE {
-            get {
-                return this.VBS_START_DATEField;
-            }
-            set {
-                if ((this.VBS_START_DATEField.Equals(value) != true)) {
-                    this.VBS_START_DATEField = value;
-                    this.RaisePropertyChanged("VBS_START_DATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public System.Nullable<System.DateTime> VBS_END_DATE {
-            get {
-                return this.VBS_END_DATEField;
-            }
-            set {
-                if ((this.VBS_END_DATEField.Equals(value) != true)) {
-                    this.VBS_END_DATEField = value;
-                    this.RaisePropertyChanged("VBS_END_DATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public System.Nullable<int> VN_ID {
-            get {
-                return this.VN_IDField;
-            }
-            set {
-                if ((this.VN_IDField.Equals(value) != true)) {
-                    this.VN_IDField = value;
-                    this.RaisePropertyChanged("VN_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public System.Nullable<int> CL_ID {
-            get {
-                return this.CL_IDField;
-            }
-            set {
-                if ((this.CL_IDField.Equals(value) != true)) {
-                    this.CL_IDField = value;
-                    this.RaisePropertyChanged("CL_ID");
                 }
             }
         }
@@ -2808,11 +2840,53 @@ namespace Wedding_Project.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllWelcomecards", ReplyAction="http://tempuri.org/IService1/GetAllWelcomecardsResponse")]
         System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Wedding_Welcome_Card[]> GetAllWelcomecardsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllContractors", ReplyAction="http://tempuri.org/IService1/GetAllContractorsResponse")]
+        Wedding_Project.ServiceReference1.Venue_Contractor[] GetAllContractors();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllContractors", ReplyAction="http://tempuri.org/IService1/GetAllContractorsResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue_Contractor[]> GetAllContractorsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllPhotographers", ReplyAction="http://tempuri.org/IService1/GetAllPhotographersResponse")]
+        Wedding_Project.ServiceReference1.Photographer[] GetAllPhotographers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllPhotographers", ReplyAction="http://tempuri.org/IService1/GetAllPhotographersResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Photographer[]> GetAllPhotographersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllVideoGraphers", ReplyAction="http://tempuri.org/IService1/GetAllVideoGraphersResponse")]
+        Wedding_Project.ServiceReference1.Videoagrapher[] GetAllVideoGraphers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllVideoGraphers", ReplyAction="http://tempuri.org/IService1/GetAllVideoGraphersResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Videoagrapher[]> GetAllVideoGraphersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDiskJockeys", ReplyAction="http://tempuri.org/IService1/GetAllDiskJockeysResponse")]
+        Wedding_Project.ServiceReference1.Disc_Jockey[] GetAllDiskJockeys();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDiskJockeys", ReplyAction="http://tempuri.org/IService1/GetAllDiskJockeysResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Disc_Jockey[]> GetAllDiskJockeysAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllMasterOfCeremonies", ReplyAction="http://tempuri.org/IService1/GetAllMasterOfCeremoniesResponse")]
+        Wedding_Project.ServiceReference1.Master_of_Ceremony[] GetAllMasterOfCeremonies();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllMasterOfCeremonies", ReplyAction="http://tempuri.org/IService1/GetAllMasterOfCeremoniesResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Master_of_Ceremony[]> GetAllMasterOfCeremoniesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortVenues", ReplyAction="http://tempuri.org/IService1/SortVenuesResponse")]
+        Wedding_Project.ServiceReference1.Venue[] SortVenues();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortVenues", ReplyAction="http://tempuri.org/IService1/SortVenuesResponse")]
+        System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue[]> SortVenuesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addbooking", ReplyAction="http://tempuri.org/IService1/addbookingResponse")]
         void addbooking(System.DateTime startdate, System.DateTime enddate, int VenueID, int ClientID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addbooking", ReplyAction="http://tempuri.org/IService1/addbookingResponse")]
         System.Threading.Tasks.Task addbookingAsync(System.DateTime startdate, System.DateTime enddate, int VenueID, int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addVenue", ReplyAction="http://tempuri.org/IService1/addVenueResponse")]
+        void addVenue(string Name, int Capacity, string Coordinates, int Deposit, string Streetaddress, string Image, string Description, int Price, int TableCapacity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addVenue", ReplyAction="http://tempuri.org/IService1/addVenueResponse")]
+        System.Threading.Tasks.Task addVenueAsync(string Name, int Capacity, string Coordinates, int Deposit, string Streetaddress, string Image, string Description, int Price, int TableCapacity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Checkavailability", ReplyAction="http://tempuri.org/IService1/CheckavailabilityResponse")]
         bool Checkavailability(System.DateTime startdate, System.DateTime enddate);
@@ -2998,12 +3072,68 @@ namespace Wedding_Project.ServiceReference1 {
             return base.Channel.GetAllWelcomecardsAsync();
         }
         
+        public Wedding_Project.ServiceReference1.Venue_Contractor[] GetAllContractors() {
+            return base.Channel.GetAllContractors();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue_Contractor[]> GetAllContractorsAsync() {
+            return base.Channel.GetAllContractorsAsync();
+        }
+        
+        public Wedding_Project.ServiceReference1.Photographer[] GetAllPhotographers() {
+            return base.Channel.GetAllPhotographers();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Photographer[]> GetAllPhotographersAsync() {
+            return base.Channel.GetAllPhotographersAsync();
+        }
+        
+        public Wedding_Project.ServiceReference1.Videoagrapher[] GetAllVideoGraphers() {
+            return base.Channel.GetAllVideoGraphers();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Videoagrapher[]> GetAllVideoGraphersAsync() {
+            return base.Channel.GetAllVideoGraphersAsync();
+        }
+        
+        public Wedding_Project.ServiceReference1.Disc_Jockey[] GetAllDiskJockeys() {
+            return base.Channel.GetAllDiskJockeys();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Disc_Jockey[]> GetAllDiskJockeysAsync() {
+            return base.Channel.GetAllDiskJockeysAsync();
+        }
+        
+        public Wedding_Project.ServiceReference1.Master_of_Ceremony[] GetAllMasterOfCeremonies() {
+            return base.Channel.GetAllMasterOfCeremonies();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Master_of_Ceremony[]> GetAllMasterOfCeremoniesAsync() {
+            return base.Channel.GetAllMasterOfCeremoniesAsync();
+        }
+        
+        public Wedding_Project.ServiceReference1.Venue[] SortVenues() {
+            return base.Channel.SortVenues();
+        }
+        
+        public System.Threading.Tasks.Task<Wedding_Project.ServiceReference1.Venue[]> SortVenuesAsync() {
+            return base.Channel.SortVenuesAsync();
+        }
+        
         public void addbooking(System.DateTime startdate, System.DateTime enddate, int VenueID, int ClientID) {
             base.Channel.addbooking(startdate, enddate, VenueID, ClientID);
         }
         
         public System.Threading.Tasks.Task addbookingAsync(System.DateTime startdate, System.DateTime enddate, int VenueID, int ClientID) {
             return base.Channel.addbookingAsync(startdate, enddate, VenueID, ClientID);
+        }
+        
+        public void addVenue(string Name, int Capacity, string Coordinates, int Deposit, string Streetaddress, string Image, string Description, int Price, int TableCapacity) {
+            base.Channel.addVenue(Name, Capacity, Coordinates, Deposit, Streetaddress, Image, Description, Price, TableCapacity);
+        }
+        
+        public System.Threading.Tasks.Task addVenueAsync(string Name, int Capacity, string Coordinates, int Deposit, string Streetaddress, string Image, string Description, int Price, int TableCapacity) {
+            return base.Channel.addVenueAsync(Name, Capacity, Coordinates, Deposit, Streetaddress, Image, Description, Price, TableCapacity);
         }
         
         public bool Checkavailability(System.DateTime startdate, System.DateTime enddate) {

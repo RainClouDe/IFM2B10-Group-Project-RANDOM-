@@ -8,93 +8,15 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="test" runat="server">
-          <div class ="container-pages">
-            <div class ="row">
-                <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-                    <h1> Venue Name </h1>
-                      <p> Venue Location<br/>
-                          Venue Price <br />
-                          Venue Manager Contact Details <br />
-                          Venue Features <br />
-                          Venue Picture <br />
-                         <img class="auto-style11" src="App_Media/Venue/Tres Jolie.jpg" /><br />
-                            <button type="button" class="btn btn-default btn-lg">
-                                <span class="glyphicon glyphicon-shopping-cart" style="left: -41px; top: 0px; width: 44px; height: 34px"></span> Add to Cart
-                          </button>
-                      </p>
-                </div>
-
-                 <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-                    <h1> Venue Name </h1>
-                      <p> Venue Location<br/>
-                          Venue Price <br />
-                          Venue Manager Contact Details <br />
-                          Venue Features <br />
-                          Venue Picture <br />
-                         <img class="auto-style11" src="App_Media/Venue/Tres Jolie.jpg" /><br />
-                            <button type="button" class="btn btn-default btn-lg">
-                                <span class="glyphicon glyphicon-shopping-cart" style="left: -41px; top: 0px; width: 44px; height: 34px"></span> Add to Cart
-                          </button>
-                      </p>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-                    <h1> Venue Name </h1>
-                      <p> Venue Location<br/>
-                          Venue Price <br />
-                          Venue Manager Contact Details <br />
-                          Venue Features <br />
-                          Venue Picture <br />
-                         <<img class="auto-style11" src="App_Media/Venue/Tres Jolie.jpg" /><br />
-                            <button type="button" class="btn btn-default btn-lg">
-                                <span class="glyphicon glyphicon-shopping-cart" style="left: -41px; top: 0px; width: 44px; height: 34px"></span> Add to Cart
-                          </button>
-                      </p>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-                    <h1> Venue Name </h1>
-                      <p> Venue Location<br/>
-                          Venue Price <br />
-                          Venue Manager Contact Details <br />
-                          Venue Features <br />
-                          Venue Picture <br />
-                         <img class="auto-style11" src="App_Media/Venue/Tres Jolie.jpg" /><br />
-                            <button type="button" class="btn btn-default btn-lg">
-                                <span class="glyphicon glyphicon-shopping-cart" style="left: -41px; top: 0px; width: 44px; height: 34px"></span> Add to Cart
-                          </button>
-                      </p>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-                    <h1> Venue Name </h1>
-                      <p> Venue Location<br/>
-                          Venue Price <br />
-                          Venue Manager Contact Details <br />
-                          Venue Features <br />
-                          Venue Picture <br />
-                         <img class="auto-style11" src="App_Media/Venue/Tres Jolie.jpg" /><br />
-                            <button type="button" class="btn btn-default btn-lg">
-                                <span class="glyphicon glyphicon-shopping-cart" style="left: -41px; top: 0px; width: 44px; height: 34px"></span> Add to Cart
-                          </button>
-                      </p>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-                    <h1> Venue Name </h1>
-                      <p> Venue Location<br/>
-                          Venue Price <br />
-                          Venue Manager Contact Details <br />
-                          Venue Features <br />
-                          Venue Picture <br />
-                         <img class="auto-style11" src="App_Media/Venue/Tres Jolie.jpg" /><br />
-                            <button type="button" class="btn btn-default btn-lg">
-                                <span class="glyphicon glyphicon-shopping-cart" style="left: -41px; top: 0px; width: 44px; height: 34px"></span> Add to Cart
-                          </button>
-                      </p>
-                </div>
-
+   <div class="container-pages">
+       <div class="row">
+            <div class="col-lg-6 col-md-4 col-sm-8 col-xs-12">
+                <asp:Button ID="btnSort" runat="server" Text="Sort By Name" OnClick="btnSort_Click" />
+            </div>
+       </div>
+        <div class="row" id="row" runat="server"> 
+            <div class="col-lg-6 col-md-4 col-sm-8 col-xs-12" id="col1" runat="server">
+                
             </div>
         </div>
     </div>

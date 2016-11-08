@@ -18,18 +18,27 @@ namespace Wedding_Project
         {
             ServiceReference1.Service1Client proxy = new ServiceReference1.Service1Client();
             ServiceReference1.Wedding_Planner[] weddingplannerlist;
-
-
-
+            ServiceReference1.Person[] personlist;
+            
             weddingplannerlist = proxy.GetAllWeddingPlanners();
+            personlist = proxy.GetPerson();
 
             for (int i = 0; i < weddingplannerlist.Length; i++)
             {
 
-                MessageBox.show(this, weddingplannerlist[i].WP_IMAGELOCATION);
-                Testdiv.InnerHtml += "<br>" + weddingplannerlist[i].WP_HISTORYDESCRIPTION;
-                Testdiv.InnerHtml += "<IMG SRC='App_Media\\" +weddingplannerlist[i].WP_IMAGELOCATION+"'/>";
-
+                for(int j = 0; j < personlist.Length; j++)
+                {
+                    if(personlist[j].P_ID == weddingplannerlist[i].P_ID)
+                    {
+                        col1.InnerHtml += "<p>" + personlist[j].P_NAME +"</p>";
+                        col1.InnerHtml += "<p>" + personlist[j].P_SURNAME +"</p>";
+                        col1.InnerHtml += "<p>" + personlist[j].P_PHONE_NUMBER +"</p>";
+                        col1.InnerHtml += "<p>" + personlist[j].P_EMAIL_ADDRESS +"</p>";
+                        col1.InnerHtml += "<p>" + personlist[j].P_STREET_ADDRESS +"</p>";
+                        col1.InnerHtml += "<p>" + weddingplannerlist[i].WP_HISTORYDESCRIPTION + "</p>";
+                        col1.InnerHtml += "<IMG SRC='App_Media\\" + weddingplannerlist[i].WP_IMAGELOCATION + "' width=200 height=150 />";
+                    }
+                }
             }
         }
     }

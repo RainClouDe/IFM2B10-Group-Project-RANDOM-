@@ -15,3 +15,21 @@ D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Weddi
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.pdb
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.dll
 D:\Applications\Informatics 2B Group project\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.pdb
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\csc.exe
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\System.Collections.Immutable.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\System.Reflection.Metadata.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\vbc.exe
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\VBCSCompiler.exe
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\roslyn\VBCSCompiler.exe.config
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.dll.config
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\bin\Wedding_Project.pdb
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.csprojResolveAssemblyReference.cache
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.dll
+F:\github\IFM2B10-Group-Project-RANDOM-\Wedding_Project\Wedding_Project\obj\Debug\Wedding_Project.pdb

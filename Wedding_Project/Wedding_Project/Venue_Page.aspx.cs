@@ -17,28 +17,49 @@ namespace Wedding_Project
 
     public partial class Venue_Page : System.Web.UI.Page
     {
+        ServiceReference1.Service1Client service;
 
-  
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ServiceReference1.Service1Client proxy = new ServiceReference1.Service1Client();
-            ServiceReference1.Venue[] venuelist;
+            service = new ServiceReference1.Service1Client();
+            ServiceReference1.Venue[] venues;
+            
 
+            venues = service.GetAllVenues();
+            
 
-
-            venuelist = proxy.GetAllVenues();
-
-            for (int i = 0; i < venuelist.Length; i++)
+            for (int i = 0; i < venues.Length; i++)
             {
-                MessageBox.show(this, venuelist[i].VN_IMAGE_PATH);
-                test.InnerHtml = "<IMG SRC='App_Media\\" +venuelist[i].VN_IMAGE_PATH+ "'/>";
-                test.InnerHtml += "<br>" + "Name:" + venuelist[i].VN_NAME;
-                test.InnerHtml += "<br>" + "Price:" + venuelist[i].VN_PRICE;
-                test.InnerHtml += "<br>" + "Street Address:" + venuelist[i].VN_STREET_ADDRESS + "<br>";
-                test.InnerHtml += "<a href='Venue_Booking_Page.aspx?VnID= " + venuelist[i].VN_ID.ToString() + " '>" + " Book now " + "</a>";
+                col1.InnerHtml += "<br /> <br />";
+                col1.InnerHtml += "<a href='Venue_Information_Page.aspx?VenueID=" + venues[i].VN_ID + "'><img src='App_Media\\Venue\\" + venues[i].VN_IMAGE_PATH + "' width=500 height=400 /></a>";
+                col1.InnerHtml += "<h3>Venue: <a href='Venue_Information_Page.aspx?VenueID=" + venues[i].VN_ID + "'>" + venues[i].VN_NAME + "</a></h3>";
+                col1.InnerHtml += "<p>Address: " + venues[i].VN_STREET_ADDRESS + "</p>";
+                col1.InnerHtml += "<p>Capacity: " + venues[i].VN_CAPACITY.ToString() + "</p>";
+                col1.InnerHtml += "<p>Price: " + venues[i].VN_PRICE.ToString() + "</p>";
+                col1.InnerHtml += "<a href='Shopping_Cart_Page.aspx?VenID= " + venues[i].VN_ID.ToString() + " '>" + " Add to Cart " + "</a>";
             }
+            //if user is an administrator. They can add a venue to the database
+            col1.InnerHtml += "<br /><a href='Add_Venue_Page.aspx'>Add Venue</a>";
+        }
+
+        protected void btnSort_Click(object sender, EventArgs e)
+        {
+            service = new ServiceReference1.Service1Client();
+            ServiceReference1.Venue[] sortedVenues;
+            sortedVenues = service.SortVenues();
+            col1.InnerHtml = "<br>";
+            for (int i = 0; i < sortedVenues.Length; i++)
+            {
+                col1.InnerHtml += "<br /> <br />";
+                col1.InnerHtml += "<a href='Venue_Information_Page.aspx?VenueID=" + sortedVenues[i].VN_ID + "'><img src='App_Media\\Venue\\" + sortedVenues[i].VN_IMAGE_PATH + "' width=500 height=400 /></a>";
+                col1.InnerHtml += "<h3>Venue: <a href='Venue_Information_Page.aspx?VenueID=" + sortedVenues[i].VN_ID + "'>" + sortedVenues[i].VN_NAME + "</a></h3>";
+                col1.InnerHtml += "<p>Address: " + sortedVenues[i].VN_STREET_ADDRESS + "</p>";
+                col1.InnerHtml += "<p>Capacity: " + sortedVenues[i].VN_CAPACITY.ToString() + "</p>";
+                col1.InnerHtml += "<p>Price: " + sortedVenues[i].VN_PRICE.ToString() + "</p>";
+                col1.InnerHtml += "<a href='Shopping_Cart_Page.aspx?VenID= " + sortedVenues[i].VN_ID.ToString() + " '>" + " Add to Cart " + "</a>";
             }
+        }
     }
 }

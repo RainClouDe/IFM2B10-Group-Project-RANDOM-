@@ -17,22 +17,23 @@ namespace Wedding_Project
 
             flowerbouquetlist = proxy.GetAllFlowers();
             decorlist = proxy.GetAllDecorItems();
-
-            for(int i = 0;i< flowerbouquetlist.Length;i++)
+            
+            for (int i = 0; i < flowerbouquetlist.Length; i++)
             {
-                for(int k = 0;k<decorlist.Length;k++)
+                for (int j = 0; j < decorlist.Length; j++)
                 {
-                    if(decorlist[k].DEC_ITEM_ID == flowerbouquetlist[i].DEC_ITEM_ID)
+                    if (decorlist[j].DEC_ITEM_ID == flowerbouquetlist[i].DEC_ITEM_ID)
                     {
-                        testdiv.InnerHtml += "<IMG SRC='App_Media\\" + decorlist[k].DEC_IMAGE_PATH + "'/>";
-                        testdiv.InnerHtml += "<br>" + "Flower Name: " + decorlist[k].DEC_NAME;
-                        testdiv.InnerHtml += "<br>" + "Flower Colour: " + decorlist[k].DEC_COLOUR;
-                        testdiv.InnerHtml += "<br>" + "Price : R" + decorlist[k].DEC_PRICE;
-                        testdiv.InnerHtml += "<br>" + "Type of Decor: " + decorlist[k].DEC_TYPE;
-                        testdiv.InnerHtml += "<br>" + "Manufaturer: " + decorlist[k].DEC_MAKE;
-                        testdiv.InnerHtml += "<br>" + "Type of Flower: " + flowerbouquetlist[i].FB_TYPE_OF_FLOWER;
-                        testdiv.InnerHtml += "<br>" + "Estimated life span: " + flowerbouquetlist[i].FB_LIFE_SPAN + " days" + "<br>";
-                        testdiv.InnerHtml += "<a href='Shopping_Cart_Page.aspx?DecID= " + decorlist[k].DEC_ITEM_ID.ToString()+ " '>" + " Shop now " + "</a>";
+                        col1.InnerHtml += "<br /> <br />";
+                        col1.InnerHtml += "<p>Flower Name: " + decorlist[j].DEC_NAME + "<p>";
+                        col1.InnerHtml += "<p>Flower Colour: " + decorlist[j].DEC_COLOUR + "</p>";
+                        col1.InnerHtml += "<p>Estimated life span: " + flowerbouquetlist[i].FB_LIFE_SPAN + " days</p> ";
+                        col1.InnerHtml += "<p>" + "Manufaturer: " + decorlist[j].DEC_MAKE + "</p>";
+                        col1.InnerHtml += "<p>" + "Type of Decor: " + decorlist[j].DEC_TYPE + "</p>";
+                        col1.InnerHtml += "<p>" + "Type of Flower: " + flowerbouquetlist[i].FB_TYPE_OF_FLOWER + "</p>";
+                        col1.InnerHtml += "<IMG class='auto - style11' SRC='App_Media\\" + decorlist[j].DEC_IMAGE_PATH + "' width=250 height=200 />";
+                        col1.InnerHtml += "<p>Price : R" + decorlist[j].DEC_PRICE + "</p>";
+                        col1.InnerHtml += "<a href='Shopping_Cart_Page.aspx?DecID= " + decorlist[j].DEC_ITEM_ID.ToString() + " '>" + " Add to Cart " + "</a>";
                     }
                 }
             }
